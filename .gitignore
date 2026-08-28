@@ -1,0 +1,23 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.tmp
+*.log
+
+# Node / Remotion
+video-top/node_modules/
+video-top/.remotion/
+video-top/.cache/
+
+# Generated captures and renders
+video-top/out/
+video-top/public/capture/
+video-top/public/top-page.webm
+
+# Local environment
+.env
+.env.*
+!.env.example
+

@@ -1,0 +1,21 @@
+{
+  "name": "kaihatsu-hyogen-top-video",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "capture": "node scripts/capture.cjs",
+    "studio": "remotion studio src/index.ts --no-open",
+    "render": "remotion render src/index.ts TopPageVideo out/kaihatsu-hyogen-top.mp4 --codec=h264 --crf=18"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.518",
+    "@remotion/media": "4.0.518",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "remotion": "4.0.518"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "typescript": "5.9.2"
+  }
+}
