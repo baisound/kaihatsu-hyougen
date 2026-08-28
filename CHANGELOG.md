@@ -9,6 +9,7 @@
 - `public/pages/` に支援領域、つくる人、相談する下層ページを追加。
 - 下層ページ共通の「Connection Trace」デザインを追加。
 - Git運用向けの `AGENTS.md`、`AGENT.md`、`CODEX.MD`、`ARCHITECTURE.md`、`CONTRIBUTING.md`、`.gitignore`、`.gitattributes` を追加。
+- `public/` をGitHub Pagesへ公開するGitHub Actionsワークフローを追加。
 
 ### Changed
 
