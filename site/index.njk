@@ -1,3 +1,8 @@
+---
+pageKey: home
+rootPath: "./"
+sectionPath: ""
+---
 <!doctype html>
 <html lang="ja">
 <head>
@@ -11,41 +16,7 @@
   <script src="scripts/script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#content">本文へ移動</a>
-
-  <header class="site-header" data-header>
-    <div class="header-colors" aria-hidden="true">
-      <span class="color-cyan"></span><span class="color-violet"></span><span class="color-orange"></span>
-    </div>
-    <div class="header-inner">
-      <a class="header-brand" href="#top" aria-label="開発と表現 トップへ">
-        <img src="images/assets/company-wordmark.png" width="2172" height="724" alt="開発と表現">
-      </a>
-      <nav class="desktop-nav" aria-label="主要ナビゲーション">
-        <a href="#about">思想</a>
-        <a href="pages/services.html">支援領域</a>
-        <a href="#products">プロダクト</a>
-        <a href="#activity">活動・YouTube</a>
-        <a href="pages/about-isamu.html">つくる人</a>
-      </nav>
-      <a class="header-contact" href="pages/contact.html"><span>相談する</span><span aria-hidden="true">↗</span></a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
-        <span class="sr-only">メニューを開く</span><span></span><span></span>
-      </button>
-    </div>
-    <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション" data-mobile-menu>
-      <a href="#about"><span>01</span>思想</a>
-      <a href="pages/services.html"><span>02</span>支援領域</a>
-      <a href="#products"><span>03</span>プロダクト</a>
-      <a href="#activity"><span>04</span>活動・YouTube</a>
-      <a href="pages/about-isamu.html"><span>05</span>つくる人</a>
-      <a href="pages/contact.html"><span>06</span>相談する</a>
-    </nav>
-  </header>
-
-  <aside class="signal-rail" aria-hidden="true">
-    <span class="signal-cyan"></span><span class="signal-violet" data-signal></span><span class="signal-orange"></span>
-  </aside>
+  {% include "partials/header.njk" %}
 
   <main id="content">
     <section class="hero" id="top" data-section>
@@ -65,11 +36,11 @@
 
       <div class="hero-studio reveal" style="--delay:120ms">
         <figure class="studio-frame studio-dev drift drift-a" data-parallax="-0.035">
-          <img src="images/assets/photo-development-v4.png" width="1536" height="1024" alt="Codex、配信マルチビュー、OBS、DaVinci Resolveを4面で運用する開発環境">
+          <picture class="responsive-picture"><source srcset="images/assets/photo-development-v4.avif" type="image/avif"><source srcset="images/assets/photo-development-v4.webp" type="image/webp"><img src="images/assets/photo-development-v4.png" width="1536" height="1024" alt="Codex、配信マルチビュー、OBS、DaVinci Resolveを4面で運用する開発環境" fetchpriority="high"></picture>
           <figcaption><span></span> SYSTEM / AI / AUTOMATION</figcaption>
         </figure>
         <figure class="studio-frame studio-exp drift drift-b" data-parallax="0.045">
-          <img src="images/assets/photo-expression-v4.png" width="1536" height="1024" alt="映像編集、配信制御、音声制作を同じ机で往復する表現環境">
+          <picture class="responsive-picture"><source srcset="images/assets/photo-expression-v4.avif" type="image/avif"><source srcset="images/assets/photo-expression-v4.webp" type="image/webp"><img src="images/assets/photo-expression-v4.png" width="1536" height="1024" alt="映像編集、配信制御、音声制作を同じ机で往復する表現環境" fetchpriority="high"></picture>
           <figcaption><span></span> VIDEO / SOUND / STREAM</figcaption>
         </figure>
         <div class="connector-node drift drift-c">
@@ -107,19 +78,19 @@
         <p>入口は選べます。途中からは必要に応じて行き来します。</p>
       </div>
       <div class="service-deck">
-        <a class="service-card lift-card tilt-card reveal" href="pages/services.html#development">
+        <a class="service-card lift-card tilt-card reveal" href="services/#development">
           <div class="service-top"><span>01 / DEVELOPMENT</span><span>↘</span></div>
           <h3 class="word-development">開発</h3>
           <p>課題を整理し、実際に動く仕組みに変えます。</p>
           <ul><li>Web・業務システム</li><li>AI導入・自動化</li><li>API・DB・インフラ</li><li>配信連携ツール</li></ul>
         </a>
-        <a class="service-card service-connect lift-card tilt-card reveal" href="pages/services.html#integration" style="--delay:90ms">
+        <a class="service-card service-connect lift-card tilt-card reveal" href="services/#integration" style="--delay:90ms">
           <div class="service-top"><span>02 / INTEGRATION</span><span>↘</span></div>
           <h3 class="word-connect">と</h3>
           <p><span class="word-development">開発</span>と制作を、最初からつながる工程にします。</p>
           <ul><li>制作ワークフロー</li><li>AI映像・音声パイプライン</li><li>品質基準・承認履歴</li><li>手順書・引継ぎ</li></ul>
         </a>
-        <a class="service-card service-expression lift-card tilt-card reveal" href="pages/services.html#expression" style="--delay:180ms">
+        <a class="service-card service-expression lift-card tilt-card reveal" href="services/#expression" style="--delay:180ms">
           <div class="service-top"><span>03 / EXPRESSION</span><span>↘</span></div>
           <h3 class="word-expression">表現</h3>
           <p>仕組みと価値を、人に届く体験へ整えます。</p>
@@ -137,7 +108,7 @@
 
       <div class="product-feature lift-card reveal">
         <div class="product-media">
-          <img src="images/assets/photo-baivoice-v4.png" width="1536" height="1024" alt="BLUEマイク、SSL 2+、MDR-900ST、Stream Deckを接続した音声制作環境" loading="lazy">
+          <picture class="responsive-picture"><source srcset="images/assets/photo-baivoice-v4.avif" type="image/avif"><source srcset="images/assets/photo-baivoice-v4.webp" type="image/webp"><img src="images/assets/photo-baivoice-v4.png" width="1536" height="1024" alt="BLUEマイク、SSL 2+、MDR-900ST、Stream Deckを接続した音声制作環境" loading="lazy" decoding="async"></picture>
           <span class="product-state">PRODUCT / IN DEVELOPMENT</span>
         </div>
         <div class="product-copy">
@@ -147,7 +118,7 @@
           <p class="product-lead">自分の声を、制作に使えるナレーション環境へ。</p>
           <p>自声AI音声の生成、原稿管理、品質確認、再生成、編集ソフトへの受け渡しまでを一つの制作工程として扱うシステムです。</p>
           <div class="tag-row"><span>VOICE</span><span>AI</span><span>QUALITY CHECK</span><span>WORKFLOW</span></div>
-          <a class="inline-link" href="pages/contact.html"><span class="word-development">開発</span>状況について相談する <span>↗</span></a>
+          <a class="inline-link" href="contact/"><span class="word-development">開発</span>状況について相談する <span>↗</span></a>
         </div>
       </div>
 
@@ -176,7 +147,7 @@
 
       <article class="channel-block channel-behind reveal" id="channel-behind">
         <div class="channel-intro">
-          <div class="channel-visual"><img src="images/assets/photo-channel-behind-v4.png" width="1536" height="1024" alt="椅子越しにCodex、配信マルチビュー、OBS、DaVinci Resolveを見渡す制作環境" loading="lazy"><span></span></div>
+          <div class="channel-visual"><picture class="responsive-picture"><source srcset="images/assets/photo-channel-behind-v4.avif" type="image/avif"><source srcset="images/assets/photo-channel-behind-v4.webp" type="image/webp"><img src="images/assets/photo-channel-behind-v4.png" width="1536" height="1024" alt="椅子越しにCodex、配信マルチビュー、OBS、DaVinci Resolveを見渡す制作環境" loading="lazy" decoding="async"></picture><span></span></div>
           <div class="channel-copy">
             <p class="eyebrow">BUILD LOG / PROCESS / DECISION</p>
             <h3>いさむの<br><span class="word-development">開発</span><span class="word-connect">×</span><span class="word-expression">表現</span> 裏側ch</h3>
@@ -214,7 +185,7 @@
 
       <article class="channel-block channel-baisound reveal" id="channel-baisound">
         <div class="channel-intro channel-intro-reverse">
-          <div class="channel-visual"><img src="images/assets/photo-baisound-v4.png" width="1536" height="1024" alt="MDR-900ST、SSL 2+、BLUEマイクと接続ケーブルへ寄った音響制作環境" loading="lazy"><span></span></div>
+          <div class="channel-visual"><picture class="responsive-picture"><source srcset="images/assets/photo-baisound-v4.avif" type="image/avif"><source srcset="images/assets/photo-baisound-v4.webp" type="image/webp"><img src="images/assets/photo-baisound-v4.png" width="1536" height="1024" alt="MDR-900ST、SSL 2+、BLUEマイクと接続ケーブルへ寄った音響制作環境" loading="lazy" decoding="async"></picture><span></span></div>
           <div class="channel-copy">
             <p class="eyebrow">CREATOR / SOUND / STREAM</p>
             <h3>バイサウンド</h3>
@@ -269,7 +240,7 @@
     <section class="portrait section-pad" id="portrait" data-section>
       <div class="portrait-grid">
         <figure class="portrait-image reveal">
-          <img src="images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="ATEM系マルチビュー、OBS、Codex、DaVinci Resolveを4面表示した生活感ある制作環境" loading="lazy">
+          <picture class="responsive-picture"><source srcset="images/assets/photo-workspace-master-v4.avif" type="image/avif"><source srcset="images/assets/photo-workspace-master-v4.webp" type="image/webp"><img src="images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="ATEM系マルチビュー、OBS、Codex、DaVinci Resolveを4面表示した生活感ある制作環境" loading="lazy" decoding="async"></picture>
           <figcaption>WORKSPACE / BETWEEN TASKS</figcaption>
         </figure>
         <div class="portrait-copy reveal" style="--delay:120ms">
@@ -279,7 +250,7 @@
           <blockquote>技術を動かすだけでなく、誰かに届き、使われ、続いていくところまでを仕事にしたい。</blockquote>
           <p>20年以上のエンジニアリング経験を基盤に、システム<span class="word-development">開発</span>、AI、自動化、映像、音楽、配信を横断しています。できることと検証中のことを分け、判断と工程を記録しながら完成まで進めます。</p>
           <div class="portrait-roles"><span>ENGINEERING</span><span>AI / AUTOMATION</span><span>VIDEO / AUDIO</span><span>DOCUMENTATION</span></div>
-          <a class="inline-link" href="pages/about-isamu.html">いさむと仕事の考え方を見る <span>→</span></a>
+          <a class="inline-link" href="about-isamu/">いさむと仕事の考え方を見る <span>→</span></a>
           <div class="equipment-list" aria-label="制作環境の使用機材">
             <div class="equipment-heading"><span>ACTUAL WORKSPACE</span><strong>使用機材</strong></div>
             <ul>
@@ -300,41 +271,17 @@
     </section>
 
     <section class="contact section-pad" id="contact" data-section>
-      <div class="contact-symbol drift drift-a" aria-hidden="true"><img src="images/assets/company-symbol.png" width="396" height="200" alt=""></div>
+      <div class="contact-symbol drift drift-a" aria-hidden="true"><img src="images/assets/company-symbol.png" width="396" height="200" alt="" loading="lazy" decoding="async"></div>
       <div class="contact-copy reveal">
         <div class="section-index"><span>07</span><span>CONTACT</span></div>
         <p class="eyebrow">要件が決まる前でも大丈夫です。</p>
         <h2>作りたいを、<br>設計から完成まで。</h2>
         <p>構想、困っている工程、いま使っている道具。分かる範囲から聞かせてください。</p>
-        <a class="action action-white" href="pages/contact.html">相談の進め方を見る <span>→</span></a>
+        <a class="action action-white" href="contact/">相談の進め方を見る <span>→</span></a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-colors" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="footer-brand-link" href="index.html" aria-label="開発と表現 トップへ戻る"><img src="images/assets/company-wordmark.png" width="2172" height="724" alt="開発と表現"></a>
-        <p>構想を、動く仕組みと伝わる体験へ。</p>
-      </div>
-      <div>
-        <h2>EXPLORE</h2>
-        <a href="#about">思想</a><a href="pages/services.html">支援領域</a><a href="#products">プロダクト</a><a href="#activity">活動・YouTube</a><a href="pages/about-isamu.html">つくる人</a>
-      </div>
-      <div>
-        <h2>CHANNELS</h2>
-        <a href="#channel-behind">いさむの<span class="word-development">開発</span><span class="word-connect">×</span><span class="word-expression">表現</span> 裏側ch</a><a href="#channel-baisound">バイサウンド</a><a href="#behind-picks">裏側ch おすすめ</a><a href="#baisound-picks">バイサウンド おすすめ</a>
-      </div>
-      <div class="footer-meta">
-        <h2>INFORMATION</h2>
-        <p><a href="#about">屋号：<span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a></p>
-        <p><a href="pages/about-isamu.html">活動名：いさむ</a></p>
-        <p><a href="https://kaihatsu-hyogen.co.jp/" aria-label="開発と表現 公式Webサイト">Web：kaihatsu-hyogen.co.jp</a></p>
-        <p><a href="pages/contact.html">個人事業として準備・活動中</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom"><a href="#top">© <span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a><a href="#about"><span class="word-development">Development</span> <b>と</b> <span class="word-expression">Expression</span></a><a href="#top">BACK TO TOP ↑</a></div>
-  </footer>
+  {% include "partials/footer.njk" %}
 </body>
 </html>

@@ -27,23 +27,25 @@
 この文書内のページ名は情報設計上の名称です。Gitリポジトリ上の正本は次の場所にあります。
 
 ```text
-TOP             → public/index.html
-支援領域        → public/pages/services.html
-つくる人        → public/pages/about-isamu.html
-相談する        → public/pages/contact.html
-共有CSS         → public/css/
-共有JavaScript  → public/scripts/
-画像            → public/images/assets/
+TOP             → site/index.njk                  → /
+支援領域        → site/services/index.njk         → /services/
+つくる人        → site/about-isamu/index.njk      → /about-isamu/
+相談する        → site/contact/index.njk          → /contact/
+共通部品        → site/_includes/partials/
+共有CSS         → site/css/
+共有JavaScript  → site/scripts/
+画像            → site/images/assets/
+生成サイト      → _site/（Git管理外）
 ```
 
-今後の実装も `public/` 配下へ追加し、旧フォルダの複製は更新しません。
+今後の実装も `site/` 配下へ追加し、`_site/` や旧フォルダの複製は直接更新しません。
 
 ## 3. 推奨サイトマップ
 
 ```text
 開発と表現
 │
-├─ TOP / index.html
+├─ TOP / /
 │  ├─ 思想（トップ内）
 │  ├─ 支援領域の要約
 │  ├─ プロダクトの要約
@@ -51,7 +53,7 @@ TOP             → public/index.html
 │  ├─ 仕事の進め方の要約
 │  └─ いさむの要約
 │
-├─ 支援領域 / services.html
+├─ 支援領域 / services/
 │  ├─ 開発
 │  ├─ 接続・統合「と」
 │  ├─ 表現
@@ -66,14 +68,14 @@ TOP             → public/index.html
 │  ├─ いさむの開発×表現 裏側ch / channel-isamu.html
 │  └─ バイサウンド / channel-baisound.html
 │
-├─ つくる人 / about-isamu.html
+├─ つくる人 / about-isamu/
 │  ├─ いさむについて
 │  ├─ 扱う領域
 │  ├─ 仕事で大切にすること
 │  ├─ 制作環境・使用機材
 │  └─ プロダクト／チャンネルとの関係
 │
-├─ 相談する / contact.html
+├─ 相談する / contact/
 │  ├─ 相談できる内容
 │  ├─ 相談前に決まっていなくてよいこと
 │  └─ 連絡手段
@@ -89,12 +91,12 @@ TOP             → public/index.html
 
 | ラベル | 遷移先 | 役割 |
 |---|---|---|
-| 思想 | `index.html#about` | 屋号の考え方を読む |
-| 支援領域 | `services.html` | 依頼・相談できる内容を確認する |
+| 思想 | `/#about` | 屋号の考え方を読む |
+| 支援領域 | `/services/` | 依頼・相談できる内容を確認する |
 | プロダクト | `products.html` | 開発中の仕組みを見る |
 | 活動 | `activity.html` | YouTubeと制作過程を見る |
-| つくる人 | `about-isamu.html` | 「いさむ」と制作環境を知る |
-| 相談する | `contact.html` | 相談方法を確認して連絡する |
+| つくる人 | `/about-isamu/` | 「いさむ」と制作環境を知る |
+| 相談する | `/contact/` | 相談方法を確認して連絡する |
 
 「ポートレート」は写真作品にも読めるため、メニューでは「つくる人」を推奨する。ページ内の英字ラベルとして `PORTRAIT / ISAMU` を残すことはできる。
 
@@ -102,12 +104,12 @@ TOP             → public/index.html
 
 ### 支援領域
 
-3枚のカードは、ホバー表現だけで終わらせず、カード全体を `services.html` の該当見出しへリンクする。
+3枚のカードは、ホバー表現だけで終わらせず、カード全体を `/services/` の該当見出しへリンクする。
 
 ```text
-開発     → services.html#development
-と       → services.html#integration
-表現     → services.html#expression
+開発     → /services/#development
+と       → /services/#integration
+表現     → /services/#expression
 ```
 
 カード下部の行動ラベル：`この領域でできること →`
@@ -139,14 +141,14 @@ AI Development OS   → product-development-os.html
 トップには現在の写真・活動名・短い宣言だけを残す。
 
 ```text
-いさむについて、活動と制作環境を見る → about-isamu.html
+いさむについて、活動と制作環境を見る → /about-isamu/
 ```
 
 実名は使用しない。機材一覧の完全版、経験、考え方、各活動との関係は下層へ移す。
 
 ### 相談
 
-トップのメール直リンクは補助導線にし、主導線は `contact.html` にする。相談ページで「何を送ればよいか」を説明してからメールへつなぐ。
+トップのメール直リンクは補助導線にし、主導線は `/contact/` にする。相談ページで「何を送ればよいか」を説明してからメールへつなぐ。
 
 ## 6. 下層ページ共通構造
 
@@ -193,9 +195,9 @@ AI Development OS   → product-development-os.html
 
 ### Phase 1：行き止まり解消
 
-1. `about-isamu.html`
-2. `services.html`
-3. `contact.html`
+1. `/about-isamu/`
+2. `/services/`
+3. `/contact/`
 4. トップとフッターのリンク変更
 
 ### Phase 2：活動の整理

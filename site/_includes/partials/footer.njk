@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="footer-colors" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-brand-link" href="{{ sectionPath }}#top" aria-label="開発と表現 トップへ戻る"><img src="{{ rootPath }}images/assets/company-wordmark.png" width="2172" height="724" alt="開発と表現" loading="lazy" decoding="async"></a>
+      <p>構想を、動く仕組みと伝わる体験へ。</p>
+    </div>
+    <div>
+      <h2>EXPLORE</h2>
+      <a href="{{ sectionPath }}#about">思想</a><a href="{{ rootPath }}services/">支援領域</a><a href="{{ sectionPath }}#products">プロダクト</a><a href="{{ sectionPath }}#activity">活動・YouTube</a><a href="{{ rootPath }}about-isamu/">つくる人</a>
+    </div>
+    {% if pageKey == "home" %}
+    <div>
+      <h2>CHANNELS</h2>
+      <a href="#channel-behind">いさむの<span class="word-development">開発</span><span class="word-connect">×</span><span class="word-expression">表現</span> 裏側ch</a><a href="#channel-baisound">バイサウンド</a><a href="#behind-picks">裏側ch おすすめ</a><a href="#baisound-picks">バイサウンド おすすめ</a>
+    </div>
+    {% elseif pageKey == "about" %}
+    <div>
+      <h2>ACTIVITY</h2>
+      <a href="{{ sectionPath }}#channel-behind">いさむの裏側ch</a><a href="{{ sectionPath }}#channel-baisound">バイサウンド</a><a href="{{ sectionPath }}#behind-picks">裏側ch おすすめ</a><a href="{{ sectionPath }}#baisound-picks">バイサウンド おすすめ</a>
+    </div>
+    {% elseif pageKey == "contact" %}
+    <div>
+      <h2>CONTACT</h2>
+      <a href="#entrances">相談の入口</a><a href="#process">相談の進め方</a><a href="#mail">メールを送る</a><a href="{{ rootPath }}services/">支援領域を確認</a>
+    </div>
+    {% else %}
+    <div>
+      <h2>CONNECTION</h2>
+      <a href="{{ rootPath }}services/#development">開発</a><a href="{{ rootPath }}services/#integration">工程をつなぐ</a><a href="{{ rootPath }}services/#expression">表現</a><a href="{{ rootPath }}contact/">相談する</a>
+    </div>
+    {% endif %}
+    <div class="footer-meta">
+      <h2>INFORMATION</h2>
+      <p><a href="{{ sectionPath }}#about">屋号：<span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a></p>
+      <p><a href="{{ rootPath }}about-isamu/">活動名：いさむ</a></p>
+      <p><a href="https://kaihatsu-hyogen.co.jp/" aria-label="開発と表現 公式Webサイト">Web：kaihatsu-hyogen.co.jp</a></p>
+      <p><a href="{{ rootPath }}contact/">個人事業として準備・活動中</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom"><a href="{{ sectionPath }}#top">© <span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a><a href="{{ sectionPath }}#about"><span class="word-development">Development</span> <b>と</b> <span class="word-expression">Expression</span></a><a href="#top">BACK TO TOP ↑</a></div>
+</footer>

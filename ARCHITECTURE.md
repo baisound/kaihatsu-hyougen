@@ -2,16 +2,21 @@
 
 ## 全体構成
 
-このリポジトリは、静的ブランドサイトと、そのトップページを素材にしたRemotion動画プロジェクトを分離して管理する。
+このリポジトリは、Eleventyで生成する静的ブランドサイトと、そのトップページを素材にしたRemotion動画プロジェクトを分離して管理する。
 
 ```text
 kaihatsu-hyougen/
-├─ public/                  # Web公開ルート
-│  ├─ index.html            # トップページ
-│  ├─ pages/                # 下層ページ
+├─ site/                    # Webサイトの編集元
+│  ├─ index.njk             # トップページ
+│  ├─ services/             # 支援領域
+│  ├─ about-isamu/          # つくる人
+│  ├─ contact/              # 相談する
+│  ├─ _includes/partials/   # 共通ヘッダー・フッター
 │  ├─ css/                  # 共通スタイル
 │  ├─ scripts/              # 共通クライアント処理
 │  └─ images/assets/        # サイト画像
+├─ scripts/                 # 画像派生・リンク検査・動画素材同期
+├─ _site/                   # Eleventy生成物・Git対象外
 ├─ video-top/               # トップページPVのソース
 │  ├─ src/                  # Remotionコンポジション
 │  ├─ scripts/              # Webページ収録処理
@@ -24,20 +29,17 @@ kaihatsu-hyougen/
 ## 依存方向
 
 ```text
-public/index.html
-  ├─ public/css/styles.css
-  ├─ public/scripts/script.js
-  ├─ public/images/assets/*
-  └─ public/pages/*.html
+site/**/*.njk
+  ├─ site/_includes/partials/*.njk
+  ├─ site/css/*.css
+  ├─ site/scripts/script.js
+  └─ site/images/assets/*
 
-public/pages/*.html
-  ├─ public/css/styles.css
-  ├─ public/css/subpages.css
-  ├─ public/scripts/script.js
-  └─ public/images/assets/*
+Eleventy
+  └─ _site/**/*
 
 video-top/scripts/capture.cjs
-  └─ HTTP配信中の public/index.html
+  └─ HTTP配信中の _site/index.html
 
 video-top/src/*
   └─ video-top/public/top-page.webm
@@ -47,18 +49,17 @@ video-top/src/*
 
 ## URLとファイル配置
 
-現在の公開URLは、`public/` をドキュメントルートにした相対パスを前提とする。
+現在の公開URLは、`_site/` をドキュメントルートにしたディレクトリ形式を前提とする。
 
-- `/index.html`
-- `/pages/services.html`
-- `/pages/about-isamu.html`
-- `/pages/contact.html`
-
-将来、URLを短くする場合は `public/services/index.html` のようなディレクトリ形式へ一括移行し、混在させない。
+- `/`
+- `/services/`
+- `/about-isamu/`
+- `/contact/`
 
 ## 共有部品
 
-現時点ではビルド工程を持たない静的HTMLのため、ヘッダーとフッターは各HTMLに存在する。変更時は全ページを同時に更新する。
+ヘッダーは `site/_includes/partials/header.njk`、フッターは `site/_includes/partials/footer.njk` を正本とする。ページごとの差分は `pageKey` と `rootPath` のFront Matterで制御する。
 
-ページ数が増える段階で、Eleventy、Astro等の静的サイト生成へ移行し、共通レイアウトをテンプレート化することを推奨する。移行前にフレームワークを追加してはならない。
+写真は確定済みPNGを原本とし、`scripts/optimize-images.mjs` が同じベース名のAVIF/WebPを生成する。HTMLは `picture` のAVIF、WebP、PNGの順でフォールバックする。
 
+動画用ワードマークは `site/images/assets/company-wordmark.png` を正本とし、`scripts/sync-video-assets.mjs` が `video-top/public/` へ同期する。

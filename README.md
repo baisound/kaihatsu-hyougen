@@ -17,18 +17,20 @@ D:\Data\Projects\【開発ｘ表現 裏側ｃｈーOPxED】\07-会社ブラン�
 ## ディレクトリ
 
 ```text
-public/
-├─ index.html                  # トップページ
-├─ pages/
-│  ├─ services.html           # 支援領域
-│  ├─ about-isamu.html        # つくる人
-│  └─ contact.html            # 相談する
+site/
+├─ index.njk                  # トップページの正本
+├─ services/index.njk         # 支援領域
+├─ about-isamu/index.njk      # つくる人
+├─ contact/index.njk          # 相談する
+├─ _includes/partials/        # 共通ヘッダー・フッター
 ├─ css/
 │  ├─ styles.css              # サイト共通
 │  └─ subpages.css            # 下層ページ共通
 ├─ scripts/script.js          # 表示・メニュー・モーション
 └─ images/assets/             # ロゴ、写真、YouTubeサムネイル
 
+scripts/                      # 画像最適化・リンク検査・動画素材同期
+_site/                        # Eleventy生成物・Git対象外
 video-top/                    # RemotionによるトップページPV
 ```
 
@@ -36,21 +38,29 @@ video-top/                    # RemotionによるトップページPV
 
 ## ローカル確認
 
-`public/` をドキュメントルートとしてHTTP配信します。
+依存関係を導入し、Eleventyで生成・配信します。
 
 ```powershell
-cd public
-python -m http.server 4173 --bind 127.0.0.1
+pnpm install
+pnpm serve
 ```
 
 次のURLを開きます。
 
-- トップ：`http://127.0.0.1:4173/index.html`
-- 支援領域：`http://127.0.0.1:4173/pages/services.html`
-- つくる人：`http://127.0.0.1:4173/pages/about-isamu.html`
-- 相談する：`http://127.0.0.1:4173/pages/contact.html`
+- トップ：`http://127.0.0.1:4173/`
+- 支援領域：`http://127.0.0.1:4173/services/`
+- つくる人：`http://127.0.0.1:4173/about-isamu/`
+- 相談する：`http://127.0.0.1:4173/contact/`
 
 `file://` ではなくHTTP配信で確認してください。相対パス、スクロール移動、動画収録条件を本番に近い状態で確認できます。
+
+完全な検査は次で実行します。
+
+```powershell
+pnpm check
+```
+
+この処理は写真のAVIF/WebP派生、動画用ロゴ同期、Eleventyビルド、ローカルリンク検査を行います。
 
 ## ブランドサイトの内容
 
@@ -81,7 +91,7 @@ pnpm capture
 pnpm render
 ```
 
-`pnpm capture` の前に `public/` を `http://127.0.0.1:4173/` で配信してください。
+`pnpm capture` の前に、リポジトリ直下で `pnpm serve` を実行し、生成サイトを `http://127.0.0.1:4173/` で配信してください。動画用ロゴはルートの `pnpm build` または `pnpm sync:video-assets` でサイト正本から同期されます。
 
 `video-top/out/`、`video-top/public/capture/`、`video-top/public/top-page.webm` は再生成可能なためGit管理外です。
 

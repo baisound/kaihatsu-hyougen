@@ -8,21 +8,24 @@ Codexによる今後の変更は、必ずこのリポジトリ内で行う。
 
 1. `AGENTS.md` を読む。
 2. Gitのブランチ・未コミット変更を確認する。
-3. `public/` と `video-top/` のどちらが変更対象かを分ける。
+3. `site/` と `video-top/` のどちらが変更対象かを分ける。
 4. 既存の画像・文言・未コミット変更を保持する。
 
 ### Webサイト
 
-- 配信ルートは `public/`。
+- 編集元は `site/`、Eleventy出力は `_site/`。
+- ヘッダーとフッターは `site/_includes/partials/` で共通管理する。
+- 下層ページは `site/<route>/index.njk` とし、公開URLを `/<route>/` にする。
 - HTMLを移動した場合、見た目の確認前に相対パスを検査する。
-- 下層ページは共通の `css/styles.css`、`css/subpages.css`、`scripts/script.js` を再利用する。
+- 写真を変更した場合は `pnpm optimize:images` でAVIF/WebPを再生成する。
 - 空の下層ページは公開しない。内容が成立するまではトップ内アンカーへ接続する。
 - PC・スマートフォン・キーボード操作・`prefers-reduced-motion` を確認する。
 
 ### トップページ動画
 
-- `video-top/` は `public/index.html` を収録する独立したRemotionプロジェクト。
-- `public/` をポート4173で配信してからキャプチャする。
+- `video-top/` はEleventyで生成した `_site/index.html` を収録する独立したRemotionプロジェクト。
+- リポジトリ直下で `pnpm serve` を実行し、ポート4173で配信してからキャプチャする。
+- 動画用ロゴは `pnpm sync:video-assets` でサイト正本から同期する。
 - `video-top/out/` とキャプチャ中間物は生成物であり、通常のGitコミット対象外。
 - サイト変更後に動画を更新する場合は、旧動画を流用せず再キャプチャから実施する。
 
@@ -33,4 +36,3 @@ Codexによる今後の変更は、必ずこのリポジトリ内で行う。
 - ブラウザのエラーが0件。
 - `CHANGELOG.md` を更新している。
 - 変更内容と未解決事項をユーザーへ分けて報告する。
-
