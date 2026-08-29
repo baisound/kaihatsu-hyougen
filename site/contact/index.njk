@@ -1,3 +1,8 @@
+---
+pageKey: contact
+rootPath: "../"
+sectionPath: "../"
+---
 <!doctype html>
 <html lang="ja">
 <head>
@@ -12,30 +17,19 @@
   <script src="../scripts/script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#content">本文へ移動</a>
-  <header class="site-header" data-header>
-    <div class="header-colors" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="header-inner">
-      <a class="header-brand" href="../index.html" aria-label="開発と表現 トップへ"><img src="../images/assets/company-wordmark.png" width="2172" height="724" alt="開発と表現"></a>
-      <nav class="desktop-nav" aria-label="主要ナビゲーション"><a href="../index.html#about">思想</a><a href="services.html">支援領域</a><a href="../index.html#products">プロダクト</a><a href="../index.html#activity">活動・YouTube</a><a href="about-isamu.html">つくる人</a></nav>
-      <a class="header-contact" href="#mail"><span>相談する</span><span aria-hidden="true">↓</span></a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button><span class="sr-only">メニューを開く</span><span></span><span></span></button>
-    </div>
-    <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション" data-mobile-menu><a href="../index.html#about"><span>01</span>思想</a><a href="services.html"><span>02</span>支援領域</a><a href="../index.html#products"><span>03</span>プロダクト</a><a href="../index.html#activity"><span>04</span>活動・YouTube</a><a href="about-isamu.html"><span>05</span>つくる人</a><a href="#mail"><span>06</span>相談する</a></nav>
-  </header>
-  <aside class="signal-rail" aria-hidden="true"><span class="signal-cyan"></span><span class="signal-violet" data-signal></span><span class="signal-orange"></span></aside>
+  {% include "partials/header.njk" %}
 
   <main id="content" class="subpage-main">
     <section class="subhero" data-section id="top">
       <div class="subhero-grid">
         <div class="reveal">
-          <nav class="breadcrumbs" aria-label="パンくず"><a href="../index.html">HOME</a><b aria-hidden="true">/</b><span>相談する</span></nav>
+          <nav class="breadcrumbs" aria-label="パンくず"><a href="../">HOME</a><b aria-hidden="true">/</b><span>相談する</span></nav>
           <p class="route-code">ROUTE 06 / CONTACT</p>
           <h1>決まる前から、<br><span class="word-connect">相談できる。</span></h1>
           <p class="subhero-lead">必要な機能、制作方法、予算、スケジュールが揃っていなくても大丈夫です。いま困っていることと、こうなったらよいという状態から一緒に整理します。</p>
         </div>
         <div class="subhero-visual reveal" style="--delay:120ms">
-          <figure class="drift drift-a"><img src="../images/assets/photo-expression-v4.png" width="1536" height="1024" alt="開発から映像、音声、配信までを一つの机で扱う相談後の制作環境"><figcaption>START WITH WHAT YOU KNOW</figcaption></figure>
+          <figure class="drift drift-a"><picture class="responsive-picture"><source srcset="../images/assets/photo-expression-v4.avif" type="image/avif"><source srcset="../images/assets/photo-expression-v4.webp" type="image/webp"><img src="../images/assets/photo-expression-v4.png" width="1536" height="1024" alt="開発から映像、音声、配信までを一つの机で扱う相談後の制作環境" fetchpriority="high"></picture><figcaption>START WITH WHAT YOU KNOW</figcaption></figure>
           <div class="visual-node drift drift-c" aria-hidden="true">?</div>
         </div>
       </div>
@@ -69,18 +63,9 @@
       </div>
     </section>
 
-    <section class="next-connection"><div class="next-inner reveal"><div><p class="eyebrow">BEFORE CONTACT / 支援領域</p><h2>相談の前に、<br>扱っている範囲を確認する。</h2></div><a class="action" href="services.html">支援領域を見る <span>←</span></a></div></section>
+    <section class="next-connection"><div class="next-inner reveal"><div><p class="eyebrow">BEFORE CONTACT / 支援領域</p><h2>相談の前に、<br>扱っている範囲を確認する。</h2></div><a class="action" href="../services/">支援領域を見る <span>←</span></a></div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-colors" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="footer-grid">
-      <div class="footer-brand"><a class="footer-brand-link" href="../index.html"><img src="../images/assets/company-wordmark.png" width="2172" height="724" alt="開発と表現"></a><p>構想を、動く仕組みと伝わる体験へ。</p></div>
-      <div><h2>EXPLORE</h2><a href="../index.html#about">思想</a><a href="services.html">支援領域</a><a href="../index.html#products">プロダクト</a><a href="../index.html#activity">活動・YouTube</a><a href="about-isamu.html">つくる人</a></div>
-      <div><h2>CONTACT</h2><a href="#entrances">相談の入口</a><a href="#process">相談の進め方</a><a href="#mail">メールを送る</a><a href="services.html">支援領域を確認</a></div>
-      <div class="footer-meta"><h2>INFORMATION</h2><p><a href="../index.html#about">屋号：<span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a></p><p><a href="about-isamu.html">活動名：いさむ</a></p><p><a href="https://kaihatsu-hyogen.co.jp/">Web：kaihatsu-hyogen.co.jp</a></p><p><a href="contact.html">個人事業として準備・活動中</a></p></div>
-    </div>
-    <div class="footer-bottom"><a href="../index.html">© <span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a><a href="../index.html#about"><span class="word-development">Development</span> <b>と</b> <span class="word-expression">Expression</span></a><a href="#top">BACK TO TOP ↑</a></div>
-  </footer>
+  {% include "partials/footer.njk" %}
 </body>
 </html>

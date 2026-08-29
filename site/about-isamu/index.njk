@@ -1,3 +1,8 @@
+---
+pageKey: about
+rootPath: "../"
+sectionPath: "../"
+---
 <!doctype html>
 <html lang="ja">
 <head>
@@ -12,30 +17,19 @@
   <script src="../scripts/script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#content">本文へ移動</a>
-  <header class="site-header" data-header>
-    <div class="header-colors" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="header-inner">
-      <a class="header-brand" href="../index.html" aria-label="開発と表現 トップへ"><img src="../images/assets/company-wordmark.png" width="2172" height="724" alt="開発と表現"></a>
-      <nav class="desktop-nav" aria-label="主要ナビゲーション"><a href="../index.html#about">思想</a><a href="services.html">支援領域</a><a href="../index.html#products">プロダクト</a><a href="../index.html#activity">活動・YouTube</a><a class="nav-current" href="about-isamu.html" aria-current="page">つくる人</a></nav>
-      <a class="header-contact" href="contact.html"><span>相談する</span><span aria-hidden="true">↗</span></a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button><span class="sr-only">メニューを開く</span><span></span><span></span></button>
-    </div>
-    <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション" data-mobile-menu><a href="../index.html#about"><span>01</span>思想</a><a href="services.html"><span>02</span>支援領域</a><a href="../index.html#products"><span>03</span>プロダクト</a><a href="../index.html#activity"><span>04</span>活動・YouTube</a><a href="about-isamu.html"><span>05</span>つくる人</a><a href="contact.html"><span>06</span>相談する</a></nav>
-  </header>
-  <aside class="signal-rail" aria-hidden="true"><span class="signal-cyan"></span><span class="signal-violet" data-signal></span><span class="signal-orange"></span></aside>
+  {% include "partials/header.njk" %}
 
   <main id="content" class="subpage-main">
     <section class="subhero" data-section id="top">
       <div class="subhero-grid">
         <div class="reveal">
-          <nav class="breadcrumbs" aria-label="パンくず"><a href="../index.html">HOME</a><b aria-hidden="true">/</b><span>つくる人</span></nav>
+          <nav class="breadcrumbs" aria-label="パンくず"><a href="../">HOME</a><b aria-hidden="true">/</b><span>つくる人</span></nav>
           <p class="route-code">ROUTE 05 / MAKER PORTRAIT</p>
           <h1>公開名は、<br><span class="word-connect">いさむ。</span></h1>
           <p class="subhero-lead">屋号「<span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span>」を運営し、設計・実装・制作・発信を行っています。実名ではなく、活動名「いさむ」で統一しています。</p>
         </div>
         <div class="subhero-visual reveal" style="--delay:120ms">
-          <figure class="drift drift-b"><img src="../images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="いさむが実際に開発、収録、編集、配信に使う作業環境"><figcaption>ISAMU / ACTUAL WORKSPACE</figcaption></figure>
+          <figure class="drift drift-b"><picture class="responsive-picture"><source srcset="../images/assets/photo-workspace-master-v4.avif" type="image/avif"><source srcset="../images/assets/photo-workspace-master-v4.webp" type="image/webp"><img src="../images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="いさむが実際に開発、収録、編集、配信に使う作業環境" fetchpriority="high"></picture><figcaption>ISAMU / ACTUAL WORKSPACE</figcaption></figure>
           <div class="visual-node drift drift-c" aria-hidden="true">人</div>
         </div>
       </div>
@@ -45,7 +39,7 @@
 
     <section class="sub-section" id="portrait" data-section>
       <div class="sub-section-inner identity-board">
-        <figure class="identity-photo reveal"><img src="../images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="4面モニター、音響機材、編集機材を備えた実際の制作机" loading="lazy"><figcaption>NOT A SHOWROOM / BETWEEN TASKS</figcaption></figure>
+        <figure class="identity-photo reveal"><picture class="responsive-picture"><source srcset="../images/assets/photo-workspace-master-v4.avif" type="image/avif"><source srcset="../images/assets/photo-workspace-master-v4.webp" type="image/webp"><img src="../images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="4面モニター、音響機材、編集機材を備えた実際の制作机" loading="lazy" decoding="async"></picture><figcaption>NOT A SHOWROOM / BETWEEN TASKS</figcaption></figure>
         <div class="identity-copy reveal" style="--delay:100ms">
           <div class="connection-label violet"><i></i>01 / PORTRAIT</div>
           <h1>いさむ<span class="roman">ISAMU / PUBLIC ACTIVITY NAME</span></h1>
@@ -85,18 +79,9 @@
       </div>
     </section>
 
-    <section class="next-connection"><div class="next-inner reveal"><div><p class="eyebrow">NEXT CONNECTION / ACTIVITY</p><h2>完成品だけでなく、<br>作っている途中を見る。</h2></div><a class="action" href="../index.html#activity">活動・YouTubeへ <span>→</span></a></div></section>
+    <section class="next-connection"><div class="next-inner reveal"><div><p class="eyebrow">NEXT CONNECTION / ACTIVITY</p><h2>完成品だけでなく、<br>作っている途中を見る。</h2></div><a class="action" href="../#activity">活動・YouTubeへ <span>→</span></a></div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-colors" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="footer-grid">
-      <div class="footer-brand"><a class="footer-brand-link" href="../index.html"><img src="../images/assets/company-wordmark.png" width="2172" height="724" alt="開発と表現"></a><p>構想を、動く仕組みと伝わる体験へ。</p></div>
-      <div><h2>EXPLORE</h2><a href="../index.html#about">思想</a><a href="services.html">支援領域</a><a href="../index.html#products">プロダクト</a><a href="../index.html#activity">活動・YouTube</a><a href="about-isamu.html">つくる人</a></div>
-      <div><h2>ACTIVITY</h2><a href="../index.html#channel-behind">いさむの裏側ch</a><a href="../index.html#channel-baisound">バイサウンド</a><a href="../index.html#behind-picks">裏側ch おすすめ</a><a href="../index.html#baisound-picks">バイサウンド おすすめ</a></div>
-      <div class="footer-meta"><h2>INFORMATION</h2><p><a href="../index.html#about">屋号：<span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a></p><p><a href="about-isamu.html">活動名：いさむ</a></p><p><a href="https://kaihatsu-hyogen.co.jp/">Web：kaihatsu-hyogen.co.jp</a></p><p><a href="contact.html">個人事業として準備・活動中</a></p></div>
-    </div>
-    <div class="footer-bottom"><a href="../index.html">© <span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a><a href="../index.html#about"><span class="word-development">Development</span> <b>と</b> <span class="word-expression">Expression</span></a><a href="#top">BACK TO TOP ↑</a></div>
-  </footer>
+  {% include "partials/footer.njk" %}
 </body>
 </html>

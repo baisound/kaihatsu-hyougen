@@ -6,7 +6,9 @@ Desktop.ini
 *.tmp
 *.log
 
-# Node / Remotion
+# Node / static site / Remotion
+node_modules/
+_site/
 video-top/node_modules/
 video-top/.remotion/
 video-top/.cache/
@@ -20,4 +22,3 @@ video-top/public/top-page.webm
 .env
 .env.*
 !.env.example
-
