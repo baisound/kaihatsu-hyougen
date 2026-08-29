@@ -6,6 +6,7 @@
 
 ### Added
 
+- Googleへのログイン不要で利用できる公開相談フォームと、新着回答メール通知を追加。
 - `site/` に支援領域、つくる人、相談する下層ページを追加。
 - 下層ページ共通の「Connection Trace」デザインを追加。
 - Git運用向けの `AGENTS.md`、`AGENT.md`、`CODEX.MD`、`ARCHITECTURE.md`、`CONTRIBUTING.md`、`.gitignore`、`.gitattributes` を追加。
@@ -15,6 +16,7 @@
 
 ### Changed
 
+- 相談ページのメール導線をGoogle Formへ変更し、フォームの入力内容と外部遷移を事前に案内する構成へ更新。
 - Web編集元を `site/`、生成サイトを `_site/` として明文化。
 - 動画キャプチャが使用する `playwright@1.62.1` を直接devDependencyとして固定。
 - CSS、JavaScript、画像、下層ページを用途別フォルダへ整理。
