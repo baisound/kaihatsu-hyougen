@@ -50,11 +50,19 @@ jobs:
       - name: 依存関係をインストール
         run: pnpm install --frozen-lockfile
 
-      - name: サイトを生成
+      - name: 本番用サイトを生成
+        env:
+          ANALYTICS_ENABLED: "true"
+          GTM_CONTAINER_ID: ${{ vars.GTM_CONTAINER_ID }}
         run: pnpm run build
 
       - name: ローカルリンクを検査
         run: pnpm run check:links
+
+      - name: 全ページのGTM構成を検査
+        env:
+          GTM_CONTAINER_ID: ${{ vars.GTM_CONTAINER_ID }}
+        run: pnpm run check:analytics
 
       - name: GitHub Pagesを設定
         uses: actions/configure-pages@v5

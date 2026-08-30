@@ -6,6 +6,7 @@ sectionPath: "../"
 <!doctype html>
 <html lang="ja">
 <head>
+  {% include "partials/analytics-head.njk" %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="開発と表現への相談窓口。要件が決まる前でも、構想、困っている工程、現在の道具から相談できます。">
@@ -17,6 +18,7 @@ sectionPath: "../"
   <script src="../scripts/script.js" defer></script>
 </head>
 <body>
+  {% include "partials/analytics-body.njk" %}
   {% include "partials/header.njk" %}
 
   <main id="content" class="subpage-main">
@@ -58,7 +60,7 @@ sectionPath: "../"
 
     <section class="sub-section dark" id="form" data-section>
       <div class="sub-section-inner form-panel reveal">
-        <div class="form-copy"><div class="connection-label orange"><i></i>03 / GOOGLE FORM</div><h2>分かる範囲を、<br>聞かせてください。</h2><p>相談の種類、現在の状況、こうなったらよいという状態をGoogle Formで伺います。未定の項目は、そのまま「未定」と回答できます。</p><p class="form-external-note">外部サイトのGoogle Formが新しいタブで開きます。</p><a class="action action-white" href="https://docs.google.com/forms/d/e/1FAIpQLScnhcFL3mMl_rhC9Ibj278Q9J_XWDqQ-ATIBZp0nYjzezsD-w/viewform" target="_blank" rel="noopener noreferrer">相談フォームを開く <span>↗</span></a></div>
+        <div class="form-copy"><div class="connection-label orange"><i></i>03 / GOOGLE FORM</div><h2>分かる範囲を、<br>聞かせてください。</h2><p>相談の種類、現在の状況、こうなったらよいという状態をGoogle Formで伺います。未定の項目は、そのまま「未定」と回答できます。</p><p class="form-external-note">外部サイトのGoogle Formが新しいタブで開きます。</p><a class="action action-white" data-cta-id="contact-google-form" href="https://docs.google.com/forms/d/e/1FAIpQLScnhcFL3mMl_rhC9Ibj278Q9J_XWDqQ-ATIBZp0nYjzezsD-w/viewform" target="_blank" rel="noopener noreferrer">相談フォームを開く <span>↗</span></a></div>
         <aside class="form-notes"><h3>フォームについて</h3><ol><li>入力時間の目安は3〜5分</li><li>Googleへのログインは不要</li><li>希望時期・予算は未定でも可</li><li>機密情報やパスワードは入力しない</li></ol><p><b>返信先</b><br>フォームへ入力したメールアドレス</p><p><b>返信名</b><br>活動名「いさむ」から返信します。</p></aside>
       </div>
     </section>

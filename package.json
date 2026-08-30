@@ -14,6 +14,7 @@
     "sync:video-assets": "node scripts/sync-video-assets.mjs",
     "check:video-assets": "node scripts/sync-video-assets.mjs --check",
     "check:links": "node scripts/check-links.mjs _site",
+    "check:analytics": "node scripts/check-analytics.mjs",
     "check": "pnpm run build && pnpm run check:links && pnpm run check:video-assets"
   },
   "devDependencies": {

@@ -81,6 +81,72 @@
   }, { passive: true });
   updateScrollEffects();
 
+  const sendAnalyticsEvent = (name, parameters) => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: name,
+      site_environment: ['localhost', '127.0.0.1'].includes(window.location.hostname) ? 'local' : 'production',
+      ...parameters
+    });
+  };
+
+  const getLinkText = (link) => (
+    link.getAttribute('aria-label') || link.textContent || ''
+  ).replace(/\s+/g, ' ').trim().slice(0, 100);
+
+  const getLinkLocation = (link) => (
+    link.closest('[id]')?.id || document.body.className || 'page'
+  ).toString().slice(0, 100);
+
+  const getSafeLinkUrl = (url) => `${url.origin}${url.pathname}`;
+
+  const getCtaId = (link, url) => (
+    link.dataset.ctaId
+    || `${getLinkLocation(link)}:${url.pathname || 'page'}:${url.hash || 'link'}`
+  ).toString().slice(0, 100);
+
+  const getYouTubeId = (url) => {
+    if (url.hostname === 'youtu.be') return url.pathname.slice(1);
+    return url.searchParams.get('v') || url.pathname.split('/').filter(Boolean).pop();
+  };
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+
+    const url = new URL(link.href, window.location.href);
+    const ctaText = getLinkText(link);
+    const ctaLocation = getLinkLocation(link);
+    const ctaId = getCtaId(link, url);
+
+    if (url.hostname === 'docs.google.com' && url.pathname.includes('/forms/')) {
+      sendAnalyticsEvent('contact_form_open', {
+        cta_id: ctaId,
+        cta_text: ctaText,
+        cta_location: ctaLocation,
+        link_url: getSafeLinkUrl(url)
+      });
+      return;
+    }
+
+    if (url.hostname === 'youtube.com' || url.hostname === 'www.youtube.com' || url.hostname === 'youtu.be') {
+      sendAnalyticsEvent('select_content', {
+        content_type: 'youtube_video',
+        item_id: getYouTubeId(url)
+      });
+      return;
+    }
+
+    if (link.matches('.action')) {
+      sendAnalyticsEvent('cta_click', {
+        cta_id: ctaId,
+        cta_text: ctaText,
+        cta_location: ctaLocation,
+        link_url: getSafeLinkUrl(url)
+      });
+    }
+  });
+
   if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
     document.querySelectorAll('.tilt-card').forEach((card) => {
       card.addEventListener('pointermove', (event) => {
