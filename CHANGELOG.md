@@ -9,6 +9,7 @@
 - Google AnalyticsをBasic Consent Modeへ変更。解析許可前はGTMを読み込まず、広告関連の同意は常に拒否する構成を追加。
 - 同意パネル、180日の選択保存、フッターからの設定変更、拒否時の解析Cookie削除を追加。
 - Local GA4の標準イベント実受信と、本番タグを発火させない環境分離をTag Assistant／DebugViewで確認。カスタムイベント3種は公開前ゲートとして未確認状態を明記。
+- GitHub PagesとGTMバージョン2を本番公開し、GA4リアルタイムで `cta_click`、`contact_form_open`、`select_content` の実受信を確認。
 
 - 全16ページに固有title・description・canonical・OGP・X Card・robots・JSON-LDを追加し、重複・欠落・JSON不正を検出する `check:meta` を追加。
 - アクセス解析、Cookie、Google Formで扱う情報を説明する `/privacy/` とフッター導線を追加。
