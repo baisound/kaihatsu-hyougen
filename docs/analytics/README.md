@@ -67,28 +67,30 @@ GA4のストリーム作成画面はlocalhostをURLとして受理しないた�
 - ローカル通常ビルドにはGTMを出力しない。明示的に `ANALYTICS_ENABLED=true` と `GTM_CONTAINER_ID` を指定したときだけローカル計測を有効にする。
 - GitHub Pages用ビルドはRepository Variable `GTM_CONTAINER_ID` を受け取り、未設定・不正形式なら失敗する。
 - GTM側はホスト名によってProduction測定IDとLocal測定IDを振り分ける。直接 `gtag.js` は使用しない。
-- Production公開、公開サイトへの反映、公開後の送信確認はこの作業では行わない。
+- Production公開とGTM公開は2026-08-31に実施済み。以後は同意率、イベント品質、Local混入の有無を継続確認する。
 - 内部トラフィック除外はIPが確定してからテスト状態で導入し、確認前に有効化しない。
 - Search Console連携は公開ドメインの所有権確認後に行う。
 - Looker Studioは実データが蓄積してから、KPIカード、期間推移、チャネル、LP、デバイスの順で構成する。
 
 ## QA結果（2026-08-31）
 
-- GTMの未公開バージョン2 `v1｜本番・ローカル分離計測（未公開）` を作成した。公開版は空コンテナのままで、サイトへの配信はしていない。
+- GTMバージョン2 `v1｜本番・ローカル分離計測` を公開し、「ライブ, 最新」であることを確認した。
 - GTMのローカル判定は、開発サーバーのポート変更で本番タグへ流れないよう、`localhost` と `127.0.0.1` の任意ポートを対象にした。
 - 全16ページで共有Analytics partialを各1件、直接gtagライブラリを0件確認した。
 - 本番相当ビルド後HTMLは全16ページで、同意前はGTMを読み込まず、許可後loaderのみを各1件持つ。noscript iframeは置かない。通常ローカルビルドはGTM、同意UIとも0件。
 - Tag AssistantでローカルGoogleタグ `G-H68SYXZ86L` の1回発火と、Production Googleタグ `G-TWNC4EVTYD` の未発火を確認した。
 - GA4 DebugViewの直前30分に `page_view` 2件、`session_start` 1件、`user_engagement` 1件のLocal受信を確認した。
-- `cta_click`、`contact_form_open`、`select_content` と各カスタムパラメータのLocal GA4実受信は、Tag Assistant接続断により未確認。静的実装だけでPASSにせず、GTM公開前QAの未完了項目として残す。
+- `cta_click`、`contact_form_open`、`select_content` と各カスタムパラメータのLocal GA4実受信は、Tag Assistant接続断により未確認。これはLocalストリームのQA履歴として残し、本番ストリームの実受信結果とは分けて扱う。
 - 同意前はGTMを読み込まず、許可後に1回だけ読み込み、許可を取り消して再読込すると0件へ戻ることをブラウザQAで確認した。
+- 本番公開後、解析同意後に `GTM-NH7W8HHZ` とProduction測定ID `G-TWNC4EVTYD` が読み込まれることを確認した。
+- GA4リアルタイムで本番ページの `page_view` と、`cta_click`、`contact_form_open`、`select_content` 各1件の実受信を確認した。
 
-## 公開前ゲート
+## 公開後の運用ゲート
 
 - 計測目的、取得項目、Google Analytics／Cookie利用、問い合わせ先を説明するプライバシーポリシーを用意し、全ページのフッターから到達できるようにする。
 - 必要な同意管理の範囲を確認し、同意要否が未確定のままGTMコンテナを公開しない。
-- GTM未公開バージョンをProductionへ公開する操作とGitHub Pagesへの反映は、Ownerが別途明示承認した作業でのみ行う。
-- 公開後はProductionストリームだけに本番データが入り、Localストリームへ本番データが混入しないことを確認する。
+- GTM公開とGitHub Pages反映はOwnerの明示承認により2026-08-31に実施した。以後のバージョン更新も同じ承認境界を維持する。
+- Productionストリームだけに本番データが入り、Localストリームへ本番データが混入しないことを継続確認する。
 
 ## 操作記録
 
