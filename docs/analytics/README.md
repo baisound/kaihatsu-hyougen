@@ -77,9 +77,10 @@ GA4のストリーム作成画面はlocalhostをURLとして受理しないた�
 - GTMの未公開バージョン2 `v1｜本番・ローカル分離計測（未公開）` を作成した。公開版は空コンテナのままで、サイトへの配信はしていない。
 - 既定の `localhost:4173` は別プロセスが使用中だったため、今回のブラウザQAだけ `localhost:4178` を代替使用した。GTMのローカル許可条件には4173と4178を登録している。
 - `/`、`/services/`、`/about-isamu/`、`/contact/` の4ページで、共有GTM scriptを各1件、直接gtagを0件確認した。
-- ビルド後HTMLは4ページすべてGTM scriptとnoscriptが各1組、直接gtagが0件。内部リンク検査は4ページ、問題0件。
+- 本番相当ビルド後HTMLは4ページすべてGTM scriptとnoscriptが各1組、`GTM-NH7W8HHZ` が各2箇所、直接gtagが0件。通常ローカルビルドはGTM/gtagとも0件。内部リンク検査は4ページ、問題0件。
 - Tag Assistant履歴で `GTM-NH7W8HHZ` とローカル測定ID `G-H68SYXZ86L` を検出した。
 - GA4 DebugViewの直前30分に `page_view`、`first_visit`、`session_start` を含む4件のローカル受信を確認した。Tag Assistantの接続が短時間で切れたため、デバッグ端末表示は0のままだった。
+- `cta_click`、`contact_form_open`、`select_content` と各カスタムパラメータのLocal GA4実受信は、Tag Assistant接続断により未確認。GTM公開前QAの未完了項目として残す。
 
 ## 公開前ゲート
 
