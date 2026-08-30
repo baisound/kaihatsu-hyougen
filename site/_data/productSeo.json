@@ -1,0 +1,42 @@
+{
+  "make-tiktok-gift-master": {
+    "title": "makeTikTokGiftMaster｜TikTok LIVEギフト連携ツール",
+    "description": "TikTok LIVEのギフトを順番に処理し、MinecraftやOBSの演出へつなぐWindows向けツール。現在の運用範囲と導入条件を紹介します。",
+    "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+  },
+  "bai-voice-app": {
+    "title": "BAI VOICE APP｜ローカルAI音声入力アプリ（設計中）",
+    "description": "話した内容を端末内で文字起こしし、確認して入力欄へ渡すWindows向け音声入力アプリ。現在は設計完了・実装前です。",
+    "robots": "noindex,follow,max-image-preview:large"
+  },
+  "bai-creative-os": {
+    "title": "BAI CREATIVE OS｜動画・SNS制作の運用基盤",
+    "description": "調査、企画、台本、素材、公開後の振り返りをつなぎ、次の制作に生かす仕組み。現在は内部運用を構築中です。",
+    "robots": "noindex,follow,max-image-preview:large"
+  },
+  "bai-davinci-extends": {
+    "title": "BAI DaVinci EXTENDS｜DaVinci Resolve編集ツール",
+    "description": "DaVinci Resolveで使うプリセット、トランジション、LUTを、選びやすく調整・再利用できる編集ツール群。現在は開発・検証中です。",
+    "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+  },
+  "creator-streaming-tools": {
+    "title": "Creator / Streaming Tools｜配信・映像ツールの構想",
+    "description": "配信、映像、販売、VTuber支援に残る手作業を減らすための製品構想。現在は個別製品化の前段階です。",
+    "robots": "noindex,follow,max-image-preview:large"
+  },
+  "bai-development-os": {
+    "title": "BAI DEVELOPMENT OS｜AI開発の管理基盤",
+    "description": "AIを使った開発で、目的、変更、確認結果、人の承認を記録し、安全に進めるための内部基盤です。一般利用者向け製品ではありません。",
+    "robots": "noindex,follow,max-image-preview:large"
+  },
+  "bai-knowledge-hub": {
+    "title": "BAI Knowledge Hub｜製品改善の記録基盤",
+    "description": "製品で起きた成功や失敗を必要な情報だけ記録し、次の改善候補へつなぐ内部基盤。現在は本番利用前の検証段階です。",
+    "robots": "noindex,follow,max-image-preview:large"
+  },
+  "bai-development-hub": {
+    "title": "BAI Development Hub｜開発基盤の運用環境",
+    "description": "開発・記録基盤を安全に動かすためのサーバー構成、監視、バックアップ、復旧を扱う内部環境。現在は本番公開前です。",
+    "robots": "noindex,follow,max-image-preview:large"
+  }
+}

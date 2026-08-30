@@ -3,15 +3,19 @@ pageKey: contact
 rootPath: "../"
 sectionPath: "../"
 ---
+{% set metaTitle = "開発・制作の相談フォーム｜開発と表現" %}
+{% set metaDescription = "Web、AI、自動化、映像、音声、配信について、要件・予算・時期が未定でも相談できます。Googleログイン不要、入力目安3〜5分です。" %}
+{% set canonicalPath = "/contact/" %}
+{% set metaCurrentTitle = "相談する" %}
+{% set metaSchemaType = "ContactPage" %}
+{% set metaImage = "/images/assets/photo-development-v4.png" %}
+{% set metaImageAlt = "開発、映像編集、音声制作に使う作業環境" %}
 <!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="開発と表現への相談窓口。要件が決まる前でも、構想、困っている工程、現在の道具から相談できます。">
-  <meta name="theme-color" content="#0B132B">
-  <link rel="icon" type="image/png" href="../images/assets/company-symbol.png">
-  <title>相談する｜開発と表現</title>
+{% include "partials/meta.njk" %}
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/subpages.css">
   <script src="../scripts/script.js" defer></script>
@@ -24,7 +28,7 @@ sectionPath: "../"
       <div class="subhero-grid">
         <div class="reveal">
           <nav class="breadcrumbs" aria-label="パンくず"><a href="../">HOME</a><b aria-hidden="true">/</b><span>相談する</span></nav>
-          <p class="route-code">ROUTE 06 / CONTACT</p>
+          <p class="route-code">CONTACT / GOOGLE FORM</p>
           <h1>決まる前から、<br><span class="word-connect">相談できる。</span></h1>
           <p class="subhero-lead">必要な機能、制作方法、予算、スケジュールが揃っていなくても大丈夫です。いま困っていることと、こうなったらよいという状態から一緒に整理します。</p>
         </div>
@@ -35,11 +39,11 @@ sectionPath: "../"
       </div>
     </section>
 
-    <nav class="route-map reveal" aria-label="相談ページ内メニュー"><div class="route-map-inner"><a href="#entrances"><b>01 / 相談の入口</b><span>↓</span></a><a href="#process"><b>02 / 進め方</b><span>↓</span></a><a href="#form"><b>03 / フォーム</b><span>↓</span></a></div></nav>
+    <nav class="route-map reveal" aria-label="相談ページ内メニュー"><div class="route-map-inner"><a href="#entrances"><b>相談の入口</b><span>↓</span></a><a href="#process"><b>進め方</b><span>↓</span></a><a href="#form"><b>フォーム</b><span>↓</span></a></div></nav>
 
     <section class="sub-section" id="entrances" data-section>
       <div class="sub-section-inner">
-        <div class="sub-intro reveal"><div><div class="connection-label violet"><i></i>01 / ENTRANCES</div><h2>相談の入口を、<br>選ぶ。</h2></div><p>ぴったり一致しなくても構いません。最も近いものを入口にして、必要な領域へつなぎます。</p></div>
+        <div class="sub-intro reveal"><div><div class="connection-label violet"><i></i>ENTRANCES</div><h2>相談の入口を、<br>選ぶ。</h2></div><p>ぴったり一致しなくても構いません。最も近いものを入口にして、必要な領域へつなぎます。</p></div>
         <div class="contact-paths">
           <article class="contact-path reveal"><small>DEVELOPMENT</small><div><h3>仕組みを作りたい。</h3><p>Web、業務システム、AI、自動化、ツール連携について。</p></div></article>
           <article class="contact-path reveal" style="--delay:90ms"><small>INTEGRATION</small><div><h3>工程をつなぎたい。</h3><p>制作フロー、データ受け渡し、品質確認、引継ぎについて。</p></div></article>
@@ -50,7 +54,7 @@ sectionPath: "../"
 
     <section class="sub-section cyan-wash" id="process" data-section>
       <div class="sub-section-inner">
-        <div class="sub-intro reveal"><div><div class="connection-label cyan"><i></i>02 / HOW TO START</div><h2>最初に必要なのは、<br>完成した要件ではありません。</h2></div><p>分かる範囲の情報から現在地を整理し、次に確かめることを決めます。</p></div>
+        <div class="sub-intro reveal"><div><div class="connection-label cyan"><i></i>HOW TO START</div><h2>最初に必要なのは、<br>完成した要件ではありません。</h2></div><p>分かる範囲の情報から現在地を整理し、次に確かめることを決めます。</p></div>
         <div class="detail-grid reveal"><p class="detail-statement">相談時点で、<br>未定のままでよいこと。</p><div class="detail-copy"><p>仕様書、使用技術、正確な制作方法、完成後の運用方法まで決めておく必要はありません。</p><p>一方で、「誰が困っているか」「今はどうしているか」「どうなったら前進か」が少しでも分かると、整理が早くなります。</p></div></div>
         <div class="process-strip reveal" aria-label="相談から開始まで"><div class="process-step"><span>01 / SHARE</span><b>現在地</b><p>困りごとと使っている道具</p></div><div class="process-step"><span>02 / DEFINE</span><b>完成条件</b><p>何が変われば前進か</p></div><div class="process-step"><span>03 / CHECK</span><b>確かめる</b><p>必要なら小さく試作</p></div><div class="process-step"><span>04 / DECIDE</span><b>進め方</b><p>範囲と次の行動を合意</p></div></div>
       </div>
@@ -58,12 +62,12 @@ sectionPath: "../"
 
     <section class="sub-section dark" id="form" data-section>
       <div class="sub-section-inner form-panel reveal">
-        <div class="form-copy"><div class="connection-label orange"><i></i>03 / GOOGLE FORM</div><h2>分かる範囲を、<br>聞かせてください。</h2><p>相談の種類、現在の状況、こうなったらよいという状態をGoogle Formで伺います。未定の項目は、そのまま「未定」と回答できます。</p><p class="form-external-note">外部サイトのGoogle Formが新しいタブで開きます。</p><a class="action action-white" href="https://docs.google.com/forms/d/e/1FAIpQLScnhcFL3mMl_rhC9Ibj278Q9J_XWDqQ-ATIBZp0nYjzezsD-w/viewform" target="_blank" rel="noopener noreferrer">相談フォームを開く <span>↗</span></a></div>
-        <aside class="form-notes"><h3>フォームについて</h3><ol><li>入力時間の目安は3〜5分</li><li>Googleへのログインは不要</li><li>希望時期・予算は未定でも可</li><li>機密情報やパスワードは入力しない</li></ol><p><b>返信先</b><br>フォームへ入力したメールアドレス</p><p><b>返信名</b><br>活動名「いさむ」から返信します。</p></aside>
+        <div class="form-copy"><div class="connection-label orange"><i></i>GOOGLE FORM</div><h2>分かる範囲を、<br>聞かせてください。</h2><p>相談の種類、現在の状況、こうなったらよいという状態をGoogle Formで伺います。未定の項目は、そのまま「未定」と回答できます。</p><p>送信だけで依頼の成立や費用の発生にはなりません。内容を確認し、返信できる相談には活動名「いさむ」からメールでご連絡します。</p><p class="form-external-note">外部サイトのGoogle Formが新しいタブで開きます。</p><a class="action action-white" data-cta-id="contact-form-open" href="https://docs.google.com/forms/d/e/1FAIpQLScnhcFL3mMl_rhC9Ibj278Q9J_XWDqQ-ATIBZp0nYjzezsD-w/viewform" target="_blank" rel="noopener noreferrer">相談フォームを開く <span>↗</span></a></div>
+        <aside class="form-notes"><h3>送信後の流れ</h3><ol><li>入力内容を確認します</li><li>返信できる相談へメールで連絡します</li><li>必要に応じて範囲と進め方を確認します</li></ol><p><b>入力情報の利用</b><br>相談内容の確認と返信に使用します。機密情報やパスワードは入力しないでください。</p><p><b>フォーム条件</b><br>入力目安3〜5分。Googleへのログイン、希望時期・予算の確定は不要です。</p></aside>
       </div>
     </section>
 
-    <section class="next-connection"><div class="next-inner reveal"><div><p class="eyebrow">BEFORE CONTACT / 支援領域</p><h2>相談の前に、<br>扱っている範囲を確認する。</h2></div><a class="action" href="../services/">支援領域を見る <span>←</span></a></div></section>
+    <section class="next-connection"><div class="next-inner reveal"><div><p class="eyebrow">BEFORE CONTACT / 支援領域</p><h2>相談の前に、<br>扱っている範囲を確認する。</h2></div><a class="action" data-cta-id="contact-services" href="../services/">支援領域を見る <span>←</span></a></div></section>
   </main>
 
   {% include "partials/footer.njk" %}

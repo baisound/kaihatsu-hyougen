@@ -3,15 +3,17 @@ pageKey: services
 rootPath: "../"
 sectionPath: "../"
 ---
+{% set metaTitle = "Web・AI・映像・配信の支援領域｜開発と表現" %}
+{% set metaDescription = "仕組みをつくる、工程をつなぐ、伝わる形にする。Web・業務システム、AI・自動化、映像・音声・配信について、要件が固まる前から相談できます。" %}
+{% set canonicalPath = "/services/" %}
+{% set metaCurrentTitle = "支援領域" %}
+{% set metaSchemaType = "WebPage" %}
 <!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="開発と表現の支援領域。Web・業務システム、AI・自動化、映像・音声・配信を、分断しない一つの工程として設計します。">
-  <meta name="theme-color" content="#0B132B">
-  <link rel="icon" type="image/png" href="../images/assets/company-symbol.png">
-  <title>支援領域｜開発と表現</title>
+{% include "partials/meta.njk" %}
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/subpages.css">
   <script src="../scripts/script.js" defer></script>
@@ -24,7 +26,7 @@ sectionPath: "../"
       <div class="subhero-grid">
         <div class="reveal">
           <nav class="breadcrumbs" aria-label="パンくず"><a href="../">HOME</a><b aria-hidden="true">/</b><span>支援領域</span></nav>
-          <p class="route-code">ROUTE 02 / SERVICES</p>
+          <p class="route-code">SERVICES / SCOPE</p>
           <h1>入口は三つ。<br>工程は<span class="word-connect">一つ。</span></h1>
           <p class="subhero-lead"><span class="word-development">開発</span>、その間をつなぐ設計、<span class="word-expression">表現</span>。相談の入口は違っても、使われ、伝わり、続けられる完成形までを一つの流れとして扱います。</p>
         </div>
@@ -50,10 +52,10 @@ sectionPath: "../"
           <div class="detail-copy"><p>機能の多さではなく、誰が、どの場面で、何をできれば完成なのかを明確にします。試作で確かめ、必要な範囲から実装します。</p><p>既存の道具や業務をすべて置き換える前提にはしません。残すもの、つなぐもの、新しく作るものを分けて設計します。</p></div>
         </div>
         <ul class="scope-list reveal">
-          <li><span>D—01</span><b>Web・業務システム</b><p>情報整理、画面設計、実装、運用まで。</p></li>
-          <li><span>D—02</span><b>AI導入・自動化</b><p>人が判断する工程を残し、繰り返し作業を軽くします。</p></li>
-          <li><span>D—03</span><b>API・DB・インフラ</b><p>散らばった情報とサービスを、扱える流れに接続します。</p></li>
-          <li><span>D—04</span><b>配信連携ツール</b><p>配信・収録・編集で必要な制御や受け渡しを組み立てます。</p></li>
+          <li><span>DEVELOPMENT</span><b>Web・業務システム</b><p>情報整理、画面設計、実装、運用まで。</p></li>
+          <li><span>AUTOMATION</span><b>AI導入・自動化</b><p>人が判断する工程を残し、繰り返し作業を軽くします。</p></li>
+          <li><span>INTEGRATION</span><b>API・DB・インフラ</b><p>散らばった情報とサービスを、扱える流れに接続します。</p></li>
+          <li><span>STREAMING</span><b>配信連携ツール</b><p>配信・収録・編集で必要な制御や受け渡しを組み立てます。</p></li>
         </ul>
       </div>
     </section>
@@ -69,10 +71,10 @@ sectionPath: "../"
           <div class="detail-copy"><p>ツール同士が接続されていても、仕事がつながるとは限りません。入力形式、確認方法、承認者、やり直し方まで揃って、初めて運用できます。</p><p>生成AIを使う工程では、生成・検証・人の承認・記録を分けます。速さだけでなく、結果を確認し、再現できる形にします。</p></div>
         </div>
         <ul class="scope-list reveal">
-          <li><span>C—01</span><b>制作ワークフロー</b><p>素材、作業、確認、完成データの流れを見える形にします。</p></li>
-          <li><span>C—02</span><b>AI映像・音声パイプライン</b><p>生成から編集ソフトへの受け渡しまでを整理します。</p></li>
-          <li><span>C—03</span><b>品質基準・承認履歴</b><p>何を見て判断したかを残し、やり直せる状態にします。</p></li>
-          <li><span>C—04</span><b>手順書・引継ぎ</b><p>作った人だけに依存しない、続けられる工程へ整えます。</p></li>
+          <li><span>WORKFLOW</span><b>制作ワークフロー</b><p>素材、作業、確認、完成データの流れを見える形にします。</p></li>
+          <li><span>PIPELINE</span><b>AI映像・音声パイプライン</b><p>生成から編集ソフトへの受け渡しまでを整理します。</p></li>
+          <li><span>QUALITY</span><b>品質基準・承認履歴</b><p>何を見て判断したかを残し、やり直せる状態にします。</p></li>
+          <li><span>HANDOVER</span><b>手順書・引継ぎ</b><p>作った人だけに依存しない、続けられる工程へ整えます。</p></li>
         </ul>
       </div>
     </section>
@@ -88,10 +90,10 @@ sectionPath: "../"
           <div class="detail-copy"><p>映像、音楽、ナレーション、配信は最後の飾りではありません。何を感じてほしいか、次に何をしてほしいかから逆算します。</p><p>実際の制作環境で、収録・編集・配信・確認を往復します。機材とソフトの接続まで含め、現場で成立する形にします。</p></div>
         </div>
         <ul class="scope-list reveal">
-          <li><span>E—01</span><b>映像・AI動画</b><p>企画、素材生成、編集、書き出しまで。</p></li>
-          <li><span>E—02</span><b>音楽・整音・MA</b><p>聴き取りやすさと意図の両方を整えます。</p></li>
-          <li><span>E—03</span><b>ナレーション</b><p>原稿、収録、品質確認、映像との同期を扱います。</p></li>
-          <li><span>E—04</span><b>配信・VTuber支援</b><p>音・画面・操作をまとめ、配信体験を組み立てます。</p></li>
+          <li><span>VIDEO</span><b>映像・AI動画</b><p>企画、素材生成、編集、書き出しまで。</p></li>
+          <li><span>AUDIO</span><b>音楽・整音・MA</b><p>聴き取りやすさと意図の両方を整えます。</p></li>
+          <li><span>VOICE</span><b>ナレーション</b><p>原稿、収録、品質確認、映像との同期を扱います。</p></li>
+          <li><span>STREAMING</span><b>配信・VTuber支援</b><p>音・画面・操作をまとめ、配信体験を組み立てます。</p></li>
         </ul>
         <div class="process-strip reveal" aria-label="基本的な仕事の流れ">
           <div class="process-step"><span>INPUT</span><b>相談</b><p>構想と現在地を共有</p></div><div class="process-step"><span>STRUCTURE</span><b>整理・試作</b><p>完成条件を確かめる</p></div><div class="process-step"><span>CONNECT</span><b>実装・制作</b><p>工程を往復して仕上げる</p></div><div class="process-step"><span>OUTPUT</span><b>公開・運用</b><p>使われ、続く状態へ</p></div>
@@ -100,7 +102,7 @@ sectionPath: "../"
     </section>
 
     <section class="next-connection">
-      <div class="next-inner reveal"><div><p class="eyebrow">NEXT CONNECTION / 相談する</p><h2>入口が決まらなくても、<br>現在地から整理できます。</h2></div><a class="action" href="../contact/">相談の進め方を見る <span>→</span></a></div>
+      <div class="next-inner reveal"><div><p class="eyebrow">NEXT CONNECTION / 相談する</p><h2>入口が決まらなくても、<br>現在地から整理できます。</h2></div><a class="action" data-cta-id="services-final-contact" href="../contact/">相談の進め方を見る <span>→</span></a></div>
     </section>
   </main>
 

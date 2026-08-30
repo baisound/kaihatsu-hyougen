@@ -3,15 +3,19 @@ pageKey: about
 rootPath: "../"
 sectionPath: "../"
 ---
+{% set metaTitle = "いさむについて｜開発と表現" %}
+{% set metaDescription = "個人事業の屋号「開発と表現」を活動名いさむで運営。20年以上のエンジニアリング経験を基に、開発、AI、映像、音声、配信をつないでいます。" %}
+{% set canonicalPath = "/about-isamu/" %}
+{% set metaCurrentTitle = "いさむについて" %}
+{% set metaSchemaType = "ProfilePage" %}
+{% set metaImage = "/images/assets/photo-workspace-master-v4.png" %}
+{% set metaImageAlt = "いさむが開発、映像編集、音声制作に使う作業環境" %}
 <!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="開発と表現を運営する、いさむについて。技術、映像、音、配信を横断し、仕事がつながる過程を設計・公開しています。">
-  <meta name="theme-color" content="#0B132B">
-  <link rel="icon" type="image/png" href="../images/assets/company-symbol.png">
-  <title>つくる人・いさむ｜開発と表現</title>
+{% include "partials/meta.njk" %}
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/subpages.css">
   <script src="../scripts/script.js" defer></script>
@@ -24,7 +28,7 @@ sectionPath: "../"
       <div class="subhero-grid">
         <div class="reveal">
           <nav class="breadcrumbs" aria-label="パンくず"><a href="../">HOME</a><b aria-hidden="true">/</b><span>つくる人</span></nav>
-          <p class="route-code">ROUTE 05 / MAKER PORTRAIT</p>
+          <p class="route-code">MAKER / ISAMU</p>
           <h1>公開名は、<br><span class="word-connect">いさむ。</span></h1>
           <p class="subhero-lead">屋号「<span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span>」を運営し、設計・実装・制作・発信を行っています。実名ではなく、活動名「いさむ」で統一しています。</p>
         </div>
@@ -35,17 +39,17 @@ sectionPath: "../"
       </div>
     </section>
 
-    <nav class="route-map reveal" aria-label="このページ内のメニュー"><div class="route-map-inner"><a href="#portrait"><b>01 / PORTRAIT</b><span>↓</span></a><a href="#principles"><b>02 / PRINCIPLES</b><span>↓</span></a><a href="#workspace"><b>03 / WORKSPACE</b><span>↓</span></a></div></nav>
+    <nav class="route-map reveal" aria-label="このページ内のメニュー"><div class="route-map-inner"><a href="#portrait"><b>いさむについて</b><span>↓</span></a><a href="#principles"><b>仕事の考え方</b><span>↓</span></a><a href="#workspace"><b>実際の作業環境</b><span>↓</span></a></div></nav>
 
     <section class="sub-section" id="portrait" data-section>
       <div class="sub-section-inner identity-board">
         <figure class="identity-photo reveal"><picture class="responsive-picture"><source srcset="../images/assets/photo-workspace-master-v4.avif" type="image/avif"><source srcset="../images/assets/photo-workspace-master-v4.webp" type="image/webp"><img src="../images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="4面モニター、音響機材、編集機材を備えた実際の制作机" loading="lazy" decoding="async"></picture><figcaption>NOT A SHOWROOM / BETWEEN TASKS</figcaption></figure>
         <div class="identity-copy reveal" style="--delay:100ms">
-          <div class="connection-label violet"><i></i>01 / PORTRAIT</div>
-          <h1>いさむ<span class="roman">ISAMU / PUBLIC ACTIVITY NAME</span></h1>
+          <div class="connection-label violet"><i></i>PORTRAIT</div>
+          <h2>いさむ<span class="roman">ISAMU / PUBLIC ACTIVITY NAME</span></h2>
           <blockquote>技術を動かすだけでなく、誰かに届き、使われ、続いていくところまでを仕事にしたい。</blockquote>
           <p>20年以上のエンジニアリング経験を基盤に、システム<span class="word-development">開発</span>、AI、自動化、映像、音楽、配信を横断しています。</p>
-          <p>一人で何でもできると見せたいのではありません。工程が切り替わる場所に立ち、必要な技術と表現をつなぎ、完成までの判断を見える形にすることが役割です。</p>
+          <p>工程が切り替わる場所に立ち、必要な技術と表現をつなぎ、完成までの判断を見える形にすることが役割です。</p>
           <p>活動では、できることと検証中のことを分けます。YouTubeでは完成物だけでなく、試作、失敗、改善、機材や制作工程の裏側も公開しています。</p>
           <div class="portrait-roles"><span>ENGINEERING</span><span>AI / AUTOMATION</span><span>VIDEO / AUDIO</span><span>STREAM</span><span>DOCUMENTATION</span></div>
         </div>
@@ -54,7 +58,7 @@ sectionPath: "../"
 
     <section class="sub-section cyan-wash" id="principles" data-section>
       <div class="sub-section-inner">
-        <div class="sub-intro reveal"><div><div class="connection-label cyan"><i></i>02 / PRINCIPLES</div><h2>仕事で、<br>大切にしていること。</h2></div><p>完成の見た目だけでなく、そこへ至る判断と、続けられる工程を残します。</p></div>
+        <div class="sub-intro reveal"><div><div class="connection-label cyan"><i></i>PRINCIPLES</div><h2>仕事で、<br>大切にしていること。</h2></div><p>完成の見た目だけでなく、そこへ至る判断と、続けられる工程を残します。</p></div>
         <div class="principle-grid">
           <article class="principle-card reveal"><span>01 / MOVE</span><div><h3>まず、動く形で確かめる。</h3><p>言葉だけで決め切らず、小さな試作を通して要件と違和感を見つけます。</p></div></article>
           <article class="principle-card reveal" style="--delay:90ms"><span>02 / CONNECT</span><div><h3>工程の境目を放置しない。</h3><p>実装から制作、制作から公開への受け渡しまでを仕事の一部として設計します。</p></div></article>
@@ -66,7 +70,7 @@ sectionPath: "../"
 
     <section class="sub-section dark" id="workspace" data-section>
       <div class="sub-section-inner">
-        <div class="sub-intro reveal"><div><div class="connection-label orange"><i></i>03 / ACTUAL WORKSPACE</div><h2>実際に使っている、<br>仕事の道具。</h2></div><p>見せるための架空スタジオではなく、開発、配信、収録、編集を往復している実際の構成です。</p></div>
+        <div class="sub-intro reveal"><div><div class="connection-label orange"><i></i>ACTUAL WORKSPACE</div><h2>実際に使っている、<br>仕事の道具。</h2></div><p>見せるための架空スタジオではなく、開発、配信、収録、編集を往復している実際の構成です。</p></div>
         <ul class="scope-list reveal">
           <li><span>DISPLAY</span><b>27インチモニター × 4</b><p>Codex、配信マルチビュー、OBS、DaVinci Resolveを同時に確認。</p></li>
           <li><span>COMPUTE</span><b>PC × 2</b><p>開発・制作と配信・処理を分けて運用。</p></li>
@@ -79,7 +83,7 @@ sectionPath: "../"
       </div>
     </section>
 
-    <section class="next-connection"><div class="next-inner reveal"><div><p class="eyebrow">NEXT CONNECTION / ACTIVITY</p><h2>完成品だけでなく、<br>作っている途中を見る。</h2></div><a class="action" href="../#activity">活動・YouTubeへ <span>→</span></a></div></section>
+    <section class="next-connection"><div class="next-inner reveal"><div><p class="eyebrow">NEXT CONNECTION / ACTIVITY</p><h2>完成品だけでなく、<br>作っている途中を見る。</h2></div><a class="action" data-cta-id="about-activity" href="../#activity">活動・YouTubeへ <span>→</span></a></div></section>
   </main>
 
   {% include "partials/footer.njk" %}

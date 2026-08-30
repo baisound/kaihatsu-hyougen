@@ -3,15 +3,16 @@ pageKey: home
 rootPath: "./"
 sectionPath: ""
 ---
+{% set metaTitle = "Web・AI・映像・配信をつなぐ｜開発と表現" %}
+{% set metaDescription = "開発と表現は、いさむが活動名で運営する個人事業の屋号です。Web・業務システム、AI・自動化、映像・音声・配信を、企画から公開・運用までつなぎます。" %}
+{% set canonicalPath = "/" %}
+{% set metaCurrentTitle = "開発と表現" %}
 <!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="開発と表現は、システム、AI、映像、音楽、配信をつなぎ、構想を実際に使える完成形へ変える個人事業の屋号です。">
-  <meta name="theme-color" content="#0B132B">
-  <link rel="icon" type="image/png" href="images/assets/company-symbol.png">
-  <title>開発と表現｜構想を、動く仕組みと伝わる体験へ。</title>
+{% include "partials/meta.njk" %}
   <link rel="stylesheet" href="css/styles.css">
   <script src="scripts/script.js" defer></script>
 </head>
@@ -25,9 +26,10 @@ sectionPath: ""
         <p class="hero-kicker"><span class="word-development">Development</span> <b class="word-connect">と</b> <span class="word-expression">Expression</span></p>
         <h1>構想を、<br><span class="ink-cyan">動く仕組み</span>と<br><span class="ink-orange">伝わる体験</span>へ。</h1>
         <p class="hero-lead"><span class="word-development">開発</span>、AI、自動化、映像、音楽、配信。分かれてしまいがちな工程を、実際に使えて、伝わって、続けられる一つの流れに設計します。</p>
+        <p class="hero-identity">個人事業の屋号「開発と表現」／公開上の活動名「いさむ」</p>
         <div class="hero-actions">
-          <a class="action action-dark" href="#products">作っているものを見る <span>↘</span></a>
-          <a class="action action-light" href="#activity">活動をのぞく <span>↘</span></a>
+          <a class="action action-dark" data-cta-id="home-hero-services" href="services/">相談できることを見る <span>→</span></a>
+          <a class="action action-light" data-cta-id="home-hero-products" href="products/">作っているものを見る <span>→</span></a>
         </div>
         <div class="hero-note" aria-label="ブランド宣言">
           <span>動くこと。</span><span>伝わること。</span><span>続けられること。</span>
@@ -103,38 +105,42 @@ sectionPath: ""
       <div class="section-heading heading-on-dark reveal">
         <div class="section-index"><span>03</span><span>PRODUCT SHELF</span></div>
         <h2>いま、作っているもの。</h2>
-        <p>生成しただけで終わらせず、使える状態まで検証するプロダクトと仕組み。</p>
+        <p>相談や利用場面につながりやすいものから、現在の提供状況と一緒に紹介します。</p>
       </div>
 
       <div class="product-feature lift-card reveal">
         <div class="product-media">
           <picture class="responsive-picture"><source srcset="images/assets/photo-baivoice-v4.avif" type="image/avif"><source srcset="images/assets/photo-baivoice-v4.webp" type="image/webp"><img src="images/assets/photo-baivoice-v4.png" width="1536" height="1024" alt="BLUEマイク、SSL 2+、MDR-900ST、Stream Deckを接続した音声制作環境" loading="lazy" decoding="async"></picture>
-          <span class="product-state">PRODUCT / IN DEVELOPMENT</span>
+          <span class="product-state">MAIN PRODUCT / IN DEVELOPMENT</span>
         </div>
         <div class="product-copy">
-          <div class="product-seq">P—01</div>
+          <div class="product-seq">VIDEO PRODUCTION APP</div>
           <p class="eyebrow">A Product by <span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></p>
-          <h3>BaiVoice Studio</h3>
-          <p class="product-lead">自分の声を、制作に使えるナレーション環境へ。</p>
-          <p>自声AI音声の生成、原稿管理、品質確認、再生成、編集ソフトへの受け渡しまでを一つの制作工程として扱うシステムです。</p>
-          <div class="tag-row"><span>VOICE</span><span>AI</span><span>QUALITY CHECK</span><span>WORKFLOW</span></div>
-          <a class="inline-link" href="contact/"><span class="word-development">開発</span>状況について相談する <span>↗</span></a>
+          <h3>BAI VIDEO<br>PRODUCTION</h3>
+          <p class="product-lead">映像素材を、分析から編集・公開までつなぐ制作環境へ。</p>
+          <p>映像・音声・画像の取り込み、文字起こし、字幕、カットやテンポ設計、音声・画像生成、DaVinci Resolveとの受け渡しまでを一つの制作工程として扱うローカルアプリです。</p>
+          <div class="tag-row"><span>VIDEO</span><span>AI</span><span>ASR</span><span>DAVINCI</span><span>WORKFLOW</span></div>
+          <a class="inline-link" href="products/bai-video-production/"><span class="word-development">開発</span>中の全体像を見る <span>→</span></a>
         </div>
       </div>
 
-      <div class="product-secondary lift-card reveal">
-        <div class="os-screen" aria-hidden="true">
-          <div class="os-line"><i></i><span>brief</span><b>ready</b></div>
-          <div class="os-line"><i></i><span>build</span><b>running</b></div>
-          <div class="os-line"><i></i><span>review</span><b>human gate</b></div>
-          <div class="os-line"><i></i><span>handoff</span><b>documented</b></div>
-        </div>
-        <div>
-          <div class="product-seq">P—02 / PROTOTYPE</div>
-          <h3>AI <span class="word-development">Development</span> OS</h3>
-          <p>AIによる生成、検証、人の承認、記録、引継ぎを分けて管理する<span class="word-development">開発</span>・制作基盤。自動化してよい工程と、人が判断する工程を見える形にします。</p>
-          <div class="tag-row"><span>AUTOMATION</span><span>HUMAN GATE</span><span>DOCUMENTATION</span></div>
-        </div>
+      <div class="product-demand-grid reveal">
+        <a class="product-demand-card product-demand-stream" href="products/make-tiktok-gift-master/">
+          <div><span class="product-demand-state">運用中の範囲あり</span><span>配信連携</span></div>
+          <h3>makeTikTok<br>GiftMaster</h3>
+          <p>TikTok LIVEのギフトを順番に整理し、MinecraftやOBSの出来事へつなぎます。</p>
+          <span class="product-demand-link">配信での使い方を見る ↗</span>
+        </a>
+        <a class="product-demand-card product-demand-voice" href="products/bai-voice-app/">
+          <div><span class="product-demand-state">設計完了・実装前</span><span>音声入力</span></div>
+          <h3>BAI VOICE<br>APP</h3>
+          <p>話した内容をローカルAIで文字と文章へ整え、入力先を確認してから渡す設計です。</p>
+          <span class="product-demand-link">予定している体験を見る ↗</span>
+        </a>
+      </div>
+      <div class="product-index-route reveal">
+        <p>そのほかの<span class="word-development">製品</span>、制作を支える仕組み、<span class="word-expression">開発基盤</span>は、現在地と対象者から選べます。</p>
+        <a class="action" data-cta-id="home-products-all" href="products/">プロダクト全体を見る <span>→</span></a>
       </div>
     </section>
 
@@ -250,22 +256,7 @@ sectionPath: ""
           <blockquote>技術を動かすだけでなく、誰かに届き、使われ、続いていくところまでを仕事にしたい。</blockquote>
           <p>20年以上のエンジニアリング経験を基盤に、システム<span class="word-development">開発</span>、AI、自動化、映像、音楽、配信を横断しています。できることと検証中のことを分け、判断と工程を記録しながら完成まで進めます。</p>
           <div class="portrait-roles"><span>ENGINEERING</span><span>AI / AUTOMATION</span><span>VIDEO / AUDIO</span><span>DOCUMENTATION</span></div>
-          <a class="inline-link" href="about-isamu/">いさむと仕事の考え方を見る <span>→</span></a>
-          <div class="equipment-list" aria-label="制作環境の使用機材">
-            <div class="equipment-heading"><span>ACTUAL WORKSPACE</span><strong>使用機材</strong></div>
-            <ul>
-              <li><span>DISPLAY</span><b>27インチモニター × 4</b></li>
-              <li><span>COMPUTE</span><b>PC × 2</b></li>
-              <li><span>MONITORING</span><b>SONY MDR-900ST</b></li>
-              <li><span>AUDIO I/O</span><b>SSL 2+</b></li>
-              <li><span>MICROPHONE</span><b><a href="https://www.soundhouse.co.jp/products/detail/item/231459/">BLUE Baby Bottle SL ↗</a></b></li>
-              <li><span>CONTROL</span><b>Stream Deck</b></li>
-              <li><span>DESK 01</span><b><a href="https://www.bauhutte.jp/product/bhd1200sac/">Bauhutte BHD-1200SAC ↗</a></b></li>
-              <li><span>DESK 02</span><b><a href="https://www.bauhutte.jp/product/bhd700k/">Bauhutte BHD-700K ↗</a></b></li>
-              <li><span>SIDE DESK</span><b>黒・長方形机</b></li>
-              <li><span>CHAIR</span><b>GTRACING フットレスト付き</b></li>
-            </ul>
-          </div>
+          <div class="portrait-links"><a class="inline-link" href="skills/">対応できる仕事と経験を見る <span>→</span></a><a class="inline-link" href="about-isamu/">いさむについて見る <span>→</span></a></div>
         </div>
       </div>
     </section>
@@ -277,7 +268,7 @@ sectionPath: ""
         <p class="eyebrow">要件が決まる前でも大丈夫です。</p>
         <h2>作りたいを、<br>設計から完成まで。</h2>
         <p>構想、困っている工程、いま使っている道具。分かる範囲から聞かせてください。</p>
-        <a class="action action-white" href="contact/">相談の進め方を見る <span>→</span></a>
+        <a class="action action-white" data-cta-id="home-final-contact" href="contact/">相談の進め方を見る <span>→</span></a>
       </div>
     </section>
   </main>
