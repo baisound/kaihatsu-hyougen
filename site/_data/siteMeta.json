@@ -1,0 +1,39 @@
+{
+  "name": "開発と表現",
+  "alternateName": "Development and Expression",
+  "url": "https://baisound.github.io/kaihatsu-hyougen",
+  "locale": "ja_JP",
+  "language": "ja-JP",
+  "defaultImage": "/images/assets/photo-development-v4.png",
+  "defaultImageAlt": "開発、映像、音声、配信を横断する開発と表現の制作環境",
+  "routes": [
+    "/",
+    "/services/",
+    "/products/",
+    "/products/bai-video-production/",
+    "/products/make-tiktok-gift-master/",
+    "/products/bai-voice-app/",
+    "/products/bai-creative-os/",
+    "/products/bai-davinci-extends/",
+    "/products/creator-streaming-tools/",
+    "/products/bai-development-os/",
+    "/products/bai-knowledge-hub/",
+    "/products/bai-development-hub/",
+    "/skills/",
+    "/about-isamu/",
+    "/contact/",
+    "/privacy/"
+  ],
+  "sitemapRoutes": [
+    "/",
+    "/services/",
+    "/products/",
+    "/products/bai-video-production/",
+    "/products/make-tiktok-gift-master/",
+    "/products/bai-davinci-extends/",
+    "/skills/",
+    "/about-isamu/",
+    "/contact/",
+    "/privacy/"
+  ]
+}

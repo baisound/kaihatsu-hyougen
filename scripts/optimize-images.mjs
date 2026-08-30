@@ -11,7 +11,26 @@ const sourceNames = [
   "photo-baivoice-v4",
   "photo-channel-behind-v4",
   "photo-baisound-v4",
-  "photo-workspace-master-v4"
+  "photo-workspace-master-v4",
+  "products/bai-video-production/bvp-hero-floating-build",
+  "products/bai-video-production/bvp-workflow-before-after",
+  "products/bai-video-production/bvp-human-decision",
+  "products/bai-video-production/bvp-roadmap-model",
+  "products/bai-video-production/bvp-recovery-workspace",
+  "products/bai-video-production/bvp-home-v611",
+  "products/bai-video-production/bvp-home-routes-v611",
+  "products/bai-video-production/bvp-edit-timeline-v611",
+  "products/bai-video-production/bvp-edit-workspace-v611",
+  "products/bai-video-production/bvp-export-v611",
+  "products/bai-video-production/bvp-world-lock-v611",
+  "products/make-tiktok-gift-master-concept-v1",
+  "products/bai-voice-app-concept-v1",
+  "products/bai-creative-os-concept-v1",
+  "products/bai-davinci-extends-concept-v1",
+  "products/creator-streaming-tools-concept-v1",
+  "products/bai-development-os-concept-v1",
+  "products/bai-knowledge-hub-concept-v1",
+  "products/bai-development-hub-concept-v1"
 ];
 
 async function needsUpdate(sourcePath, outputPath) {

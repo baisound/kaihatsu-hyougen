@@ -1,0 +1,106 @@
+---
+pageKey: skills
+rootPath: "../"
+sectionPath: "../"
+---
+{% set metaTitle = "対応スキル｜Web・DB・インフラ・AI・映像・配信｜開発と表現" %}
+{% set metaDescription = "いさむが対応できるWeb開発、データベース、インフラ、AI・自動化、映像・音声・配信の領域を、任せられる仕事と経験の根拠から紹介します。" %}
+{% set canonicalPath = "/skills/" %}
+{% set metaCurrentTitle = "対応スキル" %}
+{% set metaImage = "/images/assets/photo-workspace-master-v4.png" %}
+{% set metaImageAlt = "Web開発、AI、映像、音声、配信に使ういさむの作業環境" %}
+<!doctype html>
+<html lang="ja">
+<head>
+  {% include "partials/analytics-head.njk" %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+{% include "partials/meta.njk" %}
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/subpages.css">
+  <script src="../scripts/script.js" defer></script>
+</head>
+<body>
+  {% include "partials/analytics-body.njk" %}
+  {% include "partials/header.njk" %}
+
+  <main id="content" class="skills-page">
+    <section class="skills-hero" id="top" data-section>
+      <div class="skills-shell">
+        <nav class="breadcrumbs" aria-label="パンくず"><a href="../">HOME</a><b aria-hidden="true">/</b><span>対応スキル</span></nav>
+        <div class="skills-hero-grid">
+          <div class="reveal">
+            <p class="route-code">CAPABILITIES / ISAMU</p>
+            <h1>技術名ではなく、<br><span class="word-development">任せられる仕事</span>で見る。</h1>
+            <p class="skills-lead">Web、データベース、インフラを長く運用してきた経験へ、AI・自動化、映像・音声・配信を接続しています。公開名は「いさむ」です。</p>
+            <div class="skills-actions"><a class="action" data-cta-id="skills-hero-capabilities" href="#work">対応できる仕事を見る <span>↓</span></a><a class="action action-light" data-cta-id="skills-hero-contact" href="../contact/">相談前の案内を見る <span>→</span></a></div>
+          </div>
+          <dl class="skills-proof reveal" style="--delay:120ms">
+            <div><dt>20年以上</dt><dd>要件整理から設計、実装、テスト、リリース、運用改善まで</dd></div>
+            <div><dt>10件以上</dt><dd>データベース設計・移行・性能改善に関わった案件</dd></div>
+            <div><dt>6時間 → 約1分</dt><dd>高負荷SQLを特定し、処理時間を改善した実績</dd></div>
+          </dl>
+          <p class="skills-proof-note">数値は匿名化した職務実績の代表例です。案件条件や計測環境により結果は異なります。</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="skills-local-nav" aria-label="このページ内のメニュー"><div class="skills-shell"><a href="#work">対応できる仕事</a><a href="#foundation">実務経験の土台</a><a href="#new-fields">個人開発・研究</a><a href="#stack">技術スタック</a></div></nav>
+
+    <section class="skills-section" id="work" data-section>
+      <div class="skills-shell">
+        <div class="skills-heading reveal"><div><span>WHAT I CAN HANDLE</span><h2>相談内容から、<br>対応領域を選ぶ。</h2></div><p>単一技術の作業だけでなく、前後の工程を含めて整理できます。必要な範囲を一緒に切り分けます。</p></div>
+        <div class="skills-work-grid">
+          <article class="skills-work-card reveal"><span>Web / Application</span><h3>Web・業務システムをつくる</h3><p>要件整理、画面・API・データ設計、実装、テスト、リリース、保守までを扱います。</p><ul><li>既存システムの調査・改修</li><li>管理画面、Webアプリ、API、バッチ</li><li>長期運用を前提にした設計と文書化</li></ul></article>
+          <article class="skills-work-card reveal"><span>Database / Infrastructure</span><h3>遅い・止まる・移せないを整える</h3><p>データベース、サーバー、クラウドを横断し、原因調査から移行・改善・監視まで進めます。</p><ul><li>MySQL・PostgreSQLの設計と性能改善</li><li>Windows・Linuxサーバー、AWS、Docker</li><li>移行計画、権限、バックアップ、復旧</li></ul></article>
+          <article class="skills-work-card reveal"><span>AI / Automation</span><h3>AIと自動化を仕事の流れへ入れる</h3><p>AIへ丸投げせず、入力、処理、人の確認、記録、再実行までを工程として設計します。</p><ul><li>OpenAI API、Python、Make、GAS</li><li>AIを使った調査・実装・テスト支援</li><li>Git、CI/CD、確認記録を含む運用</li></ul></article>
+          <article class="skills-work-card reveal"><span>Creator Tech</span><h3>映像・音声・配信を仕組みとつなぐ</h3><p>制作ソフトや配信環境の間に残る手作業を、再利用できる流れと道具へ変えます。</p><ul><li>DaVinci Resolve、Fusion、FFmpeg</li><li>OBS、リアルタイムイベント連携</li><li>字幕、音声、配信演出、制作自動化</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section skills-foundation" id="foundation" data-section>
+      <div class="skills-shell">
+        <div class="skills-heading reveal"><div><span>PROFESSIONAL FOUNDATION</span><h2>新しい技術の前に、<br>運用してきた土台がある。</h2></div><p>AI関連の取り組みと、職務として積み上げた経験を混同せずに表示しています。</p></div>
+        <div class="skills-timeline reveal">
+          <article><h3>インフラから開始</h3><p>Windows Serverの構築・保守運用から始まり、Linux、Web、メール、DNS、監視へ範囲を拡張。</p></article>
+          <article><h3>Web・DBへ拡張</h3><p>PHPを中心とするWebサービス、業務システム、API、MySQL・PostgreSQLの設計と実装。</p></article>
+          <article><h3>品質と長期運用</h3><p>見積、要件整理、テスト、リリース、保守チームの進行、手順と仕様の標準化を横断。</p></article>
+          <article><h3>技術と制作を接続</h3><p>Web・DB・インフラの経験を、AI、自動化、動画解析、配信連携、映像・音響制作へ展開。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section skills-rnd" id="new-fields" data-section>
+      <div class="skills-shell">
+        <div class="skills-heading reveal"><div><span>PERSONAL R&amp;D / CURRENT</span><h2>現在、個人開発で<br>深めている領域。</h2></div><p>以下は職務経験とは分けた個人開発・技術研究です。完成済みと開発中を混同しません。</p></div>
+        <div class="skills-rnd-grid">
+          <article class="reveal"><b>AI支援開発</b><h3>AIを設計・実装・テストへ組み込む</h3><p>Codex、MCP、GitHub Actions、pytestなどを使い、変更と確認結果を追える開発工程を検証。</p></article>
+          <article class="reveal"><b>ローカルAI・音声</b><h3>音声を文字と編集工程へつなぐ</h3><p>Faster Whisper、ASR、TTS、VADを、字幕、ナレーション、音声入力の設計へ適用。</p></article>
+          <article class="reveal"><b>動画制作支援</b><h3>映像解析から編集ソフトへ渡す</h3><p>FFmpeg、DaVinci Resolve、Fusion、字幕・カット候補・ビート同期の連携を開発中。</p></article>
+          <article class="reveal"><b>配信連携</b><h3>視聴者の反応を配信内の出来事へ</h3><p>TikTok LIVEのイベントを受け取り、MinecraftやOBSへつなぐ仕組みを運用・改善。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section" id="stack" data-section>
+      <div class="skills-shell">
+        <div class="skills-heading reveal"><div><span>TECHNOLOGY STACK</span><h2>使うための技術。</h2></div><p>技術名は、目的と経験の区分が分かる形でまとめています。</p></div>
+        <dl class="skills-stack reveal">
+          <div><dt>Frontend</dt><dd>TypeScript、JavaScript、React、Vue.js、Tailwind CSS、Ajax</dd></div>
+          <div><dt>Backend</dt><dd>PHP、Laravel、Java、Node.js、C#、Bash・Shell、REST API、OpenAPI、Webhook</dd></div>
+          <div><dt>Database</dt><dd>MySQL、PostgreSQL、ER・スキーマ設計、SQL解析、移行、冗長化、性能改善</dd></div>
+          <div><dt>Cloud / Infra</dt><dd>AWS、Windows Server、Linux、Docker、Nginx、Apache、DNS、AWS CDK、OAuth 2.0、JWT、IAM、WAF</dd></div>
+          <div><dt>AI / Automation</dt><dd>OpenAI API、Codex、MCP、Python、pytest、GAS、Make、GitHub Actions</dd></div>
+          <div><dt>Video / Audio / Stream</dt><dd>DaVinci Resolve、Fusion、After Effects、FFmpeg、OBS、Cubase、Figma、Photoshop、Illustrator</dd></div>
+          <div><dt>Quality / Operation</dt><dd>要件整理、基本・詳細設計、テスト設計、リリース、監視、障害対応、標準化、マニュアル、研修</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="skills-cta"><div class="skills-shell reveal"><div><p>どの技術を使うか決まっていなくても構いません。</p><h2>困っている工程から、<br>相談できます。</h2></div><a class="action action-white" data-cta-id="skills-final-contact" href="../contact/">相談前の案内を見る <span>→</span></a></div></section>
+  </main>
+
+  {% include "partials/footer.njk" %}
+</body>
+</html>

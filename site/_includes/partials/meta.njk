@@ -1,0 +1,65 @@
+{% set resolvedImage = metaImage or siteMeta.defaultImage %}
+{% set resolvedImageAlt = metaImageAlt or siteMeta.defaultImageAlt %}
+{% set resolvedSchemaType = metaSchemaType or "WebPage" %}
+  <meta name="description" content="{{ metaDescription | escape }}">
+  <meta name="robots" content="{{ metaRobots or 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }}">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no,address=no,email=no">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#0B132B">
+  <meta name="author" content="開発と表現">
+  <meta name="application-name" content="開発と表現">
+  <link rel="canonical" href="{{ siteMeta.url }}{{ canonicalPath }}">
+  <link rel="icon" type="image/png" href="{{ rootPath }}images/assets/company-symbol.png">
+  <link rel="apple-touch-icon" href="{{ rootPath }}images/assets/company-symbol.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="{{ siteMeta.locale }}">
+  <meta property="og:site_name" content="{{ siteMeta.name }}">
+  <meta property="og:title" content="{{ metaTitle | escape }}">
+  <meta property="og:description" content="{{ metaDescription | escape }}">
+  <meta property="og:url" content="{{ siteMeta.url }}{{ canonicalPath }}">
+  <meta property="og:image" content="{{ siteMeta.url }}{{ resolvedImage }}">
+  <meta property="og:image:alt" content="{{ resolvedImageAlt | escape }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ metaTitle | escape }}">
+  <meta name="twitter:description" content="{{ metaDescription | escape }}">
+  <meta name="twitter:image" content="{{ siteMeta.url }}{{ resolvedImage }}">
+  <meta name="twitter:image:alt" content="{{ resolvedImageAlt | escape }}">
+  <title>{{ metaTitle }}</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {% if canonicalPath == "/" %}
+      {
+        "@type": "WebSite",
+        "@id": "{{ siteMeta.url }}/#website",
+        "url": "{{ siteMeta.url }}/",
+        "name": "{{ siteMeta.name }}",
+        "alternateName": "{{ siteMeta.alternateName }}",
+        "inLanguage": "{{ siteMeta.language }}"
+      },
+      {% endif %}
+      {
+        "@type": "{{ resolvedSchemaType }}",
+        "@id": "{{ siteMeta.url }}{{ canonicalPath }}#webpage",
+        "url": "{{ siteMeta.url }}{{ canonicalPath }}",
+        "name": "{{ metaTitle | escape }}",
+        "description": "{{ metaDescription | escape }}",
+        "isPartOf": {"@id": "{{ siteMeta.url }}/#website"},
+        "inLanguage": "{{ siteMeta.language }}"{% if canonicalPath != "/" %},
+        "breadcrumb": {"@id": "{{ siteMeta.url }}{{ canonicalPath }}#breadcrumb"}{% endif %}
+      }{% if canonicalPath != "/" %},
+      {
+        "@type": "BreadcrumbList",
+        "@id": "{{ siteMeta.url }}{{ canonicalPath }}#breadcrumb",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "開発と表現", "item": "{{ siteMeta.url }}/"}{% if metaParentTitle %},
+          {"@type": "ListItem", "position": 2, "name": "{{ metaParentTitle | escape }}", "item": "{{ siteMeta.url }}{{ metaParentPath }}"},
+          {"@type": "ListItem", "position": 3, "name": "{{ metaCurrentTitle | escape }}", "item": "{{ siteMeta.url }}{{ canonicalPath }}"}{% else %},
+          {"@type": "ListItem", "position": 2, "name": "{{ metaCurrentTitle | escape }}", "item": "{{ siteMeta.url }}{{ canonicalPath }}"}{% endif %}
+        ]
+      }{% endif %}
+    ]
+  }
+  </script>

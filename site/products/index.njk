@@ -1,0 +1,139 @@
+---
+pageKey: products
+rootPath: "../"
+sectionPath: "../"
+---
+{% set metaTitle = "製品・開発中ツール一覧｜開発と表現" %}
+{% set metaDescription = "動画制作、配信連携、音声入力の製品と、制作・開発を支える仕組みを、対象者と現在の提供状況から確認できます。" %}
+{% set canonicalPath = "/products/" %}
+{% set metaCurrentTitle = "プロダクト" %}
+{% set metaSchemaType = "CollectionPage" %}
+{% set metaImage = "/images/assets/products/bai-video-production/bvp-home-routes-v611.png" %}
+{% set metaImageAlt = "BAI VIDEO PRODUCTIONの開発中ホーム画面" %}
+<!doctype html>
+<html lang="ja">
+<head>
+  {% include "partials/analytics-head.njk" %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+{% include "partials/meta.njk" %}
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/subpages.css">
+  <script src="../scripts/script.js" defer></script>
+</head>
+<body>
+  {% include "partials/analytics-body.njk" %}
+  {% include "partials/header.njk" %}
+
+  <main id="content" class="subpage-main product-hub2-page">
+    <section class="product-hub2-hero" id="top" data-section>
+      <div class="product-hub2-shell">
+        <nav class="breadcrumbs" aria-label="パンくず"><a href="../">HOME</a><b aria-hidden="true">/</b><span>プロダクト</span></nav>
+        <div class="product-hub2-hero-grid">
+          <div class="reveal">
+            <p class="route-code">PRODUCTS / CURRENT PORTFOLIO</p>
+            <h1>つくっているものを、<br><span class="word-development">いま使えるか</span>で選ぶ。</h1>
+            <p>利用者が直接使う製品、制作を支える仕組み、開発を支える基盤。それぞれを、対象者と現在の段階が分かる形に整理しました。</p>
+          </div>
+          <aside class="product-hub2-guide reveal" style="--delay:100ms" aria-label="製品状態の見方">
+            <span>VIEWING GUIDE</span>
+            <h2>同じ「開発中」でも、位置は違います。</h2>
+            <ul><li><i class="is-live"></i><b>運用・利用中</b><small>現在使っている範囲あり</small></li><li><i class="is-building"></i><b>開発・検証中</b><small>機能や運用を確認中</small></li><li><i class="is-design"></i><b>設計・構想中</b><small>一般提供や実装前を含む</small></li><li><i class="is-foundation"></i><b>開発基盤</b><small>一般利用者向けアプリではない</small></li></ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <nav class="product-hub2-nav reveal" aria-label="プロダクト一覧内メニュー">
+      <div class="product-hub2-shell"><a href="#user-products"><span>利用者が使う製品</span><b>↓</b></a><a href="#creative-products"><span>制作を支える仕組み</span><b>↓</b></a><a href="#foundation-products"><span>開発を支える基盤</span><b>↓</b></a></div>
+    </nav>
+
+    <section class="product-hub2-section" id="user-products" data-section>
+      <div class="product-hub2-shell">
+        <div class="product-hub2-heading reveal"><p class="connection-label cyan"><i></i>FOR CREATORS</p><h2>利用者が、<br><span class="word-development">直接使う製品。</span></h2><p>動画制作、配信連携、音声入力。何をしたいかと、現在使えるかを先に確認できます。</p></div>
+
+        <article class="product-hub2-feature reveal">
+          <div class="product-hub2-feature-copy">
+            <p class="product-hub2-meta"><span class="is-building">開発・検証中</span><b>Windows</b></p>
+            <h3>BAI VIDEO<br>PRODUCTION</h3>
+            <p class="product-hub2-lead">動画素材、字幕、音声を、一つの制作プロジェクトで仕上げる。</p>
+            <p>複数のツールを行き来しながら動画を作っている、一人または少人数のクリエイター向け。現在は一般提供前です。</p>
+            <dl><div><dt>対象</dt><dd>動画・ゲーム実況・配信を作る人</dd></div><div><dt>現在地</dt><dd>Alpha / 実映像とWindows環境を検証中</dd></div></dl>
+            <a class="product-hub2-link" href="bai-video-production/">詳しい説明と現在地を見る <span aria-hidden="true">↗</span></a>
+          </div>
+          <figure><picture><source srcset="../images/assets/products/bai-video-production/bvp-home-routes-v611.avif" type="image/avif"><source srcset="../images/assets/products/bai-video-production/bvp-home-routes-v611.webp" type="image/webp"><img src="../images/assets/products/bai-video-production/bvp-home-routes-v611.png" width="1676" height="590" alt="BAI VIDEO PRODUCTIONの開発中ホーム画面。三つの開始方法と最近のプロジェクトを表示" fetchpriority="high"></picture><figcaption>ACTUAL PRODUCT SCREEN / V6.1.1</figcaption></figure>
+        </article>
+
+        {% set userSlugs = ["make-tiktok-gift-master", "bai-voice-app"] %}
+        <div class="product-hub2-list">
+          {% for slug in userSlugs %}
+          {% set item = productDetails[slug] %}
+          {% set seoItem = productSeo[slug] %}
+          <article class="product-hub2-row reveal">
+            <figure class="product-hub2-thumb"><picture><source srcset="..{{ seoItem.imageBase }}.avif" type="image/avif"><source srcset="..{{ seoItem.imageBase }}.webp" type="image/webp"><img src="..{{ seoItem.image }}" width="1672" height="941" alt="{{ seoItem.imageAlt }}" loading="lazy" decoding="async"></picture><figcaption>構成イメージ</figcaption></figure>
+            <div class="product-hub2-code"><b>{{ item.status }}</b></div>
+            <div class="product-hub2-row-main"><h3>{{ item.title }}</h3><p>{{ item.shortTitle }}</p></div>
+            <dl><div><dt>対象</dt><dd>{{ item.audience }}</dd></div><div><dt>現在地</dt><dd>{{ item.current[1].title }}</dd></div></dl>
+            <a class="product-hub2-link" href="{{ slug }}/"><span>詳しく見る</span><span aria-hidden="true">→</span></a>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="product-hub2-section product-hub2-dark" id="creative-products" data-section>
+      <div class="product-hub2-shell">
+        <div class="product-hub2-heading reveal"><p class="connection-label orange"><i></i>FOR PRODUCTION</p><h2>制作と運用を、<br><span class="word-expression">続けやすくする仕組み。</span></h2><p>一本の制作や一回の配信で終わらず、判断・素材・編集技法を次へ生かすための仕組みです。</p></div>
+        {% set creativeSlugs = ["bai-creative-os", "bai-davinci-extends", "creator-streaming-tools"] %}
+        <div class="product-hub2-list">
+          {% for slug in creativeSlugs %}
+          {% set item = productDetails[slug] %}
+          {% set seoItem = productSeo[slug] %}
+          <article class="product-hub2-row reveal">
+            <figure class="product-hub2-thumb"><picture><source srcset="..{{ seoItem.imageBase }}.avif" type="image/avif"><source srcset="..{{ seoItem.imageBase }}.webp" type="image/webp"><img src="..{{ seoItem.image }}" width="1672" height="941" alt="{{ seoItem.imageAlt }}" loading="lazy" decoding="async"></picture><figcaption>構成イメージ</figcaption></figure>
+            <div class="product-hub2-code"><b>{{ item.status }}</b></div>
+            <div class="product-hub2-row-main"><h3>{{ item.title }}</h3><p>{{ item.shortTitle }}</p></div>
+            <dl><div><dt>対象</dt><dd>{{ item.audience }}</dd></div><div><dt>現在地</dt><dd>{{ item.current[1].title }}</dd></div></dl>
+            <a class="product-hub2-link" href="{{ slug }}/"><span>詳しく見る</span><span aria-hidden="true">→</span></a>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="product-hub2-section" id="foundation-products" data-section>
+      <div class="product-hub2-shell">
+        <div class="product-hub2-heading reveal"><p class="connection-label violet"><i></i>FOR DEVELOPMENT</p><h2>製品を作り、確かめ、<br><span class="word-connect">改善するための基盤。</span></h2><p>一般利用者向けアプリではありません。複数の製品開発を、安全に続けるための裏側の仕組みです。</p></div>
+        {% set foundationSlugs = ["bai-development-os", "bai-knowledge-hub", "bai-development-hub"] %}
+        <div class="product-hub2-list">
+          {% for slug in foundationSlugs %}
+          {% set item = productDetails[slug] %}
+          {% set seoItem = productSeo[slug] %}
+          <article class="product-hub2-row reveal">
+            <figure class="product-hub2-thumb"><picture><source srcset="..{{ seoItem.imageBase }}.avif" type="image/avif"><source srcset="..{{ seoItem.imageBase }}.webp" type="image/webp"><img src="..{{ seoItem.image }}" width="1672" height="941" alt="{{ seoItem.imageAlt }}" loading="lazy" decoding="async"></picture><figcaption>構成イメージ</figcaption></figure>
+            <div class="product-hub2-code"><b>{{ item.status }}</b></div>
+            <div class="product-hub2-row-main"><h3>{{ item.title }}</h3><p>{{ item.shortTitle }}</p></div>
+            <dl><div><dt>役割</dt><dd>{{ item.summary }}</dd></div><div><dt>現在地</dt><dd>{{ item.current[1].title }}</dd></div></dl>
+            <a class="product-hub2-link" href="{{ slug }}/"><span>詳しく見る</span><span aria-hidden="true">→</span></a>
+          </article>
+          {% endfor %}
+        </div>
+        <aside class="product-hub2-codex-note reveal"><b>Codexの位置づけ</b><p>Codexは単独の製品ではなく、BAI DEVELOPMENT OSの規約と確認工程のもとで実装・検証を進める開発エージェントです。</p></aside>
+      </div>
+    </section>
+
+    <section class="product-hub2-connection" id="connection" data-section>
+      <div class="product-hub2-shell">
+        <div class="product-hub2-heading reveal"><p class="connection-label cyan"><i></i>HOW THEY CONNECT</p><h2>使った結果を、<br>次の<span class="word-development">開発</span>へ戻す。</h2><p>製品と開発基盤は同じものではありません。役割を分けたまま、必要な結果だけを次の改善へ渡します。</p></div>
+        <ol class="product-hub2-loop reveal"><li><span>使う</span><b>PRODUCTS</b><small>制作・配信・入力</small></li><li><span>残す</span><b>EVIDENCE</b><small>結果・判断・失敗</small></li><li><span>確かめる</span><b>KNOWLEDGE</b><small>候補として整理</small></li><li><span>改善する</span><b>DEVELOPMENT</b><small>人が確認して次へ</small></li></ol>
+      </div>
+    </section>
+
+    <section class="product-hub2-final" data-section>
+      <div class="product-hub2-shell reveal"><div><span>NOT SURE WHERE TO START?</span><h2>製品名ではなく、<br>変えたい工程から相談できます。</h2><p>現在の作り方や困りごとを伺い、どの製品・仕組みが関係するかを整理します。</p></div><a class="action action-white" data-cta-id="products-final-contact" href="../contact/#form"><span>相談内容とフォームを確認する</span><span aria-hidden="true">→</span></a></div>
+    </section>
+  </main>
+
+  {% include "partials/footer.njk" %}
+</body>
+</html>

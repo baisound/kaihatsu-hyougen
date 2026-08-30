@@ -29,8 +29,15 @@
 ```text
 TOP             → site/index.njk                  → /
 支援領域        → site/services/index.njk         → /services/
-つくる人        → site/about-isamu/index.njk      → /about-isamu/
+プロダクト      → site/products/index.njk         → /products/
+└ BAI VIDEO PRODUCTION
+                → site/products/bai-video-production/index.njk
+                                                   → /products/bai-video-production/
+└ その他8製品 → site/products/{製品名}/index.njk → /products/{製品名}/
+対応スキル      → site/skills/index.njk           → /skills/
+いさむについて  → site/about-isamu/index.njk      → /about-isamu/
 相談する        → site/contact/index.njk          → /contact/
+プライバシー    → site/privacy/index.njk          → /privacy/
 共通部品        → site/_includes/partials/
 共有CSS         → site/css/
 共有JavaScript  → site/scripts/
@@ -60,15 +67,33 @@ TOP             → site/index.njk                  → /
 │  ├─ 進め方
 │  └─ 相談できる状態／できない状態
 │
-├─ プロダクト / products.html
-│  ├─ BaiVoice Studio / product-baivoice.html
-│  └─ AI Development OS / product-development-os.html
+├─ プロダクト / products/
+│  ├─ BAI VIDEO PRODUCTION / products/bai-video-production/
+│  │  ├─ よくある困りごとと変わる制作体験
+│  │  ├─ 4つの利用工程
+│  │  ├─ 読みやすく切り出した開発中の実画面2点
+│  │  ├─ できていること・検証中・次に目指すこと
+│  │  └─ 折りたたみ式のTASK-051〜063開発記録
+│  ├─ makeTikTokGiftMaster / products/make-tiktok-gift-master/
+│  ├─ BAI VOICE APP / products/bai-voice-app/
+│  ├─ BAI CREATIVE OS / products/bai-creative-os/
+│  ├─ BAI DaVinci EXTENDS / products/bai-davinci-extends/
+│  ├─ Creator / Streaming Tools / products/creator-streaming-tools/
+│  ├─ BAI DEVELOPMENT OS / products/bai-development-os/
+│  ├─ BAI Knowledge Hub / products/bai-knowledge-hub/
+│  └─ BAI Development Hub / products/bai-development-hub/
 │
 ├─ 活動 / activity.html
 │  ├─ いさむの開発×表現 裏側ch / channel-isamu.html
 │  └─ バイサウンド / channel-baisound.html
 │
-├─ つくる人 / about-isamu/
+├─ 対応スキル / skills/
+│  ├─ 対応できる仕事
+│  ├─ 実務経験の土台
+│  ├─ 個人開発・研究
+│  └─ 技術スタック
+│
+├─ いさむについて / about-isamu/
 │  ├─ いさむについて
 │  ├─ 扱う領域
 │  ├─ 仕事で大切にすること
@@ -80,22 +105,23 @@ TOP             → site/index.njk                  → /
 │  ├─ 相談前に決まっていなくてよいこと
 │  └─ 連絡手段
 │
-└─ プライバシー / privacy.html
+└─ プライバシー・アクセス解析 / privacy/
 ```
 
 ## 4. グローバルナビゲーション
 
 ```text
-思想｜支援領域｜プロダクト｜活動｜つくる人｜相談する
+考え方｜支援領域｜対応スキル｜プロダクト｜活動・YouTube｜いさむ｜相談する
 ```
 
 | ラベル | 遷移先 | 役割 |
 |---|---|---|
 | 思想 | `/#about` | 屋号の考え方を読む |
 | 支援領域 | `/services/` | 依頼・相談できる内容を確認する |
-| プロダクト | `products.html` | 開発中の仕組みを見る |
+| 対応スキル | `/skills/` | いさむに任せられる仕事と経験の根拠を見る |
+| プロダクト | `/products/` | 製品・制作基盤・開発基盤の全体像と現在地を見る |
 | 活動 | `activity.html` | YouTubeと制作過程を見る |
-| つくる人 | `/about-isamu/` | 「いさむ」と制作環境を知る |
+| いさむ | `/about-isamu/` | 「いさむ」と制作環境を知る |
 | 相談する | `/contact/` | 相談方法を確認して連絡する |
 
 「ポートレート」は写真作品にも読めるため、メニューでは「つくる人」を推奨する。ページ内の英字ラベルとして `PORTRAIT / ISAMU` を残すことはできる。
@@ -116,14 +142,13 @@ TOP             → site/index.njk                  → /
 
 ### プロダクト
 
+トップのプロダクト棚は `/products/` へ接続する。全体ページでは、完成済み・開発中・調査中・構想・基盤・開発エージェントを混同せず、ステータスを明記する。
+
 ```text
-BaiVoice Studio      → product-baivoice.html
-AI Development OS   → product-development-os.html
+プロダクト全体を見る → /products/
 ```
 
-行動ラベル：`プロダクトの詳細へ →`
-
-開発中であることはリンクを無効にする理由にせず、下層ページに「現在地」「できていること」「検証中のこと」を分けて掲載する。
+すべての製品名から個別詳細LPへ接続する。各詳細では「困りごと → 変わる体験 → 4つの流れ → 現在地 → 対応範囲 → FAQ」を共通順序とし、未実装の機能を完成済みのように見せない。実画面がない場合は、架空UIではなく役割と情報の流れをHTMLで図解する。
 
 ### 活動・YouTube
 
@@ -208,9 +233,9 @@ AI Development OS   → product-development-os.html
 
 ### Phase 3：プロダクト詳細
 
-1. `products.html`
-2. `product-baivoice.html`
-3. `product-development-os.html`
+1. `/products/`（実装済み）
+2. 公開情報が固まった製品の個別詳細ページ
+3. 製品別の実画像への差し替え
 
 空ページは公開しない。ページ本文が完成するまでは、トップの現行セクション内リンクを維持する。
 

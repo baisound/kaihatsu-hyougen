@@ -7,7 +7,7 @@
     </div>
     <div>
       <h2>EXPLORE</h2>
-      <a href="{{ sectionPath }}#about">思想</a><a href="{{ rootPath }}services/">支援領域</a><a href="{{ sectionPath }}#products">プロダクト</a><a href="{{ sectionPath }}#activity">活動・YouTube</a><a href="{{ rootPath }}about-isamu/">つくる人</a>
+      <a href="{{ sectionPath }}#about">考え方</a><a href="{{ rootPath }}services/">支援領域</a><a href="{{ rootPath }}skills/">対応スキル</a><a href="{{ rootPath }}products/">プロダクト</a><a href="{{ sectionPath }}#activity">活動・YouTube</a><a href="{{ rootPath }}about-isamu/">いさむについて</a>
     </div>
     {% if pageKey == "home" %}
     <div>
@@ -19,10 +19,30 @@
       <h2>ACTIVITY</h2>
       <a href="{{ sectionPath }}#channel-behind">いさむの裏側ch</a><a href="{{ sectionPath }}#channel-baisound">バイサウンド</a><a href="{{ sectionPath }}#behind-picks">裏側ch おすすめ</a><a href="{{ sectionPath }}#baisound-picks">バイサウンド おすすめ</a>
     </div>
+    {% elseif pageKey == "products" %}
+    <div>
+      <h2>PRODUCT MAP</h2>
+      <a href="#user-products">利用者向け製品</a><a href="#creative-products">制作を支える仕組み</a><a href="#foundation-products">開発を支える基盤</a><a href="#connection">仕事がつながる流れ</a>
+    </div>
+    {% elseif pageKey == "bvp" %}
+    <div>
+      <h2>BAI VIDEO PRODUCTION</h2>
+      <a href="#problems">よくある困りごと</a><a href="#workflow">4つの制作工程</a><a href="#status">現在の開発状況</a><a href="#faq">よくある質問</a>
+    </div>
+    {% elseif pageKey == "productDetail" %}
+    <div>
+      <h2>{{ product.title }}</h2>
+      <a href="#problems">これまでの困りごと</a><a href="#workflow">4つの流れ</a><a href="#status">現在の状況</a><a href="#faq">よくある質問</a>
+    </div>
     {% elseif pageKey == "contact" %}
     <div>
       <h2>CONTACT</h2>
       <a href="#entrances">相談の入口</a><a href="#process">相談の進め方</a><a href="#form">フォームを開く</a><a href="{{ rootPath }}services/">支援領域を確認</a>
+    </div>
+    {% elseif pageKey == "skills" %}
+    <div>
+      <h2>対応スキル</h2>
+      <a href="#work">対応できる仕事</a><a href="#foundation">実務経験の土台</a><a href="#new-fields">個人開発・研究</a><a href="#stack">技術スタック</a>
     </div>
     {% else %}
     <div>
@@ -34,9 +54,12 @@
       <h2>INFORMATION</h2>
       <p><a href="{{ sectionPath }}#about">屋号：<span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a></p>
       <p><a href="{{ rootPath }}about-isamu/">活動名：いさむ</a></p>
-      <p><a href="https://kaihatsu-hyogen.co.jp/" aria-label="開発と表現 公式Webサイト">Web：kaihatsu-hyogen.co.jp</a></p>
+      <p><a href="{{ siteMeta.url }}/" aria-label="開発と表現 現在の公開URL">Web：baisound.github.io/kaihatsu-hyougen</a></p>
       <p><a href="{{ rootPath }}contact/">個人事業として準備・活動中</a></p>
+      <p><a href="{{ rootPath }}privacy/">プライバシー・アクセス解析</a></p>
+      {% if analytics.enabled %}<p><button class="footer-consent-button" type="button" data-consent-manage>解析の設定を変更</button></p>{% endif %}
     </div>
   </div>
-  <div class="footer-bottom"><a href="{{ sectionPath }}#top">© <span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a><a href="{{ sectionPath }}#about"><span class="word-development">Development</span> <b>と</b> <span class="word-expression">Expression</span></a><a href="#top">BACK TO TOP ↑</a></div>
+  <div class="footer-bottom"><a href="{{ sectionPath }}#top">© <span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a><a href="{{ rootPath }}privacy/">プライバシー</a><a href="#top">BACK TO TOP ↑</a></div>
 </footer>
+{% include "partials/consent-panel.njk" %}

@@ -1,0 +1,67 @@
+{% if analytics.enabled %}
+  <!-- Google Tag Manager: basic consent mode. The container is loaded only after analytics consent. -->
+  <script>
+  (function(w,d,i){
+    'use strict';
+    var storageKey='kaihatsu_hyougen_analytics_consent_v1';
+    var maxAge=180*24*60*60*1000;
+    var loaded=false;
+    w.dataLayer=w.dataLayer||[];
+    w.gtag=w.gtag||function(){w.dataLayer.push(arguments);};
+
+    function read(){
+      try {
+        var value=JSON.parse(w.localStorage.getItem(storageKey));
+        if(!value||!['granted','denied'].includes(value.choice)||Date.now()-value.updatedAt>maxAge){return null;}
+        return value.choice;
+      } catch(e){return null;}
+    }
+
+    function consentState(choice){
+      return {
+        analytics_storage:choice==='granted'?'granted':'denied',
+        ad_storage:'denied',
+        ad_user_data:'denied',
+        ad_personalization:'denied'
+      };
+    }
+
+    function load(){
+      if(loaded||read()!=='granted'){return;}
+      loaded=true;
+      w.dataLayer.push({'gtm.start':Date.now(),event:'gtm.js'});
+      var first=d.getElementsByTagName('script')[0];
+      var tag=d.createElement('script');
+      tag.async=true;
+      tag.src='https://www.googletagmanager.com/gtm.js?id='+i;
+      first.parentNode.insertBefore(tag,first);
+    }
+
+    function clearAnalyticsCookies(){
+      d.cookie.split(';').map(function(item){return item.trim().split('=')[0];}).filter(function(name){return name==='_ga'||name.indexOf('_ga_')===0;}).forEach(function(name){
+        d.cookie=name+'=; Max-Age=0; path=/; SameSite=Lax';
+      });
+    }
+
+    function set(choice){
+      if(!['granted','denied'].includes(choice)){return;}
+      try {w.localStorage.setItem(storageKey,JSON.stringify({choice:choice,updatedAt:Date.now()}));} catch(e){}
+      w.gtag('consent','update',consentState(choice));
+      w.dataLayer.push({
+        event:'site_consent_update',
+        consent_choice:choice,
+        site_environment:['localhost','127.0.0.1'].includes(w.location.hostname)?'local':'production'
+      });
+      if(choice==='granted'){load();}else{clearAnalyticsCookies();}
+      d.dispatchEvent(new CustomEvent('site-consent-changed',{detail:{choice:choice}}));
+    }
+
+    var initial=read();
+    w.gtag('consent','default',consentState(initial));
+    w.gtag('set','ads_data_redaction',true);
+    w.siteAnalyticsConsent={get:read,set:set,load:load,isLoaded:function(){return loaded;}};
+    if(initial==='granted'){load();}
+  })(window,document,'{{ analytics.gtmContainerId }}');
+  </script>
+  <!-- End Google Tag Manager -->
+{% endif %}

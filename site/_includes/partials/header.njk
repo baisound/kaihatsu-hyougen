@@ -9,24 +9,26 @@
       <img src="{{ rootPath }}images/assets/company-wordmark.png" width="2172" height="724" alt="開発と表現">
     </a>
     <nav class="desktop-nav" aria-label="主要ナビゲーション">
-      <a href="{{ sectionPath }}#about">思想</a>
+      <a href="{{ sectionPath }}#about">考え方</a>
       <a{% if pageKey == "services" %} class="nav-current" aria-current="page"{% endif %} href="{{ rootPath }}services/">支援領域</a>
-      <a href="{{ sectionPath }}#products">プロダクト</a>
+      <a{% if pageKey == "skills" %} class="nav-current" aria-current="page"{% endif %} href="{{ rootPath }}skills/">対応スキル</a>
+      <a{% if pageKey == "products" or pageKey == "bvp" or pageKey == "productDetail" %} class="nav-current" aria-current="page"{% endif %} href="{{ rootPath }}products/">プロダクト</a>
       <a href="{{ sectionPath }}#activity">活動・YouTube</a>
-      <a{% if pageKey == "about" %} class="nav-current" aria-current="page"{% endif %} href="{{ rootPath }}about-isamu/">つくる人</a>
+      <a{% if pageKey == "about" %} class="nav-current" aria-current="page"{% endif %} href="{{ rootPath }}about-isamu/">いさむ</a>
     </nav>
-    <a{% if pageKey == "contact" %} aria-current="page"{% endif %} class="header-contact" href="{% if pageKey == "contact" %}#form{% else %}{{ rootPath }}contact/{% endif %}"><span>相談する</span><span aria-hidden="true">{% if pageKey == "contact" %}↓{% else %}↗{% endif %}</span></a>
+    <a{% if pageKey == "contact" %} aria-current="page"{% endif %} class="header-contact" data-cta-id="header-contact" href="{% if pageKey == "contact" %}#form{% else %}{{ rootPath }}contact/{% endif %}"><span>相談する</span><span aria-hidden="true">{% if pageKey == "contact" %}↓{% else %}↗{% endif %}</span></a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
       <span class="sr-only">メニューを開く</span><span></span><span></span>
     </button>
   </div>
   <nav class="mobile-menu" id="mobile-menu" aria-label="モバイルナビゲーション" data-mobile-menu>
-    <a href="{{ sectionPath }}#about"><span>01</span>思想</a>
-    <a{% if pageKey == "services" %} aria-current="page"{% endif %} href="{{ rootPath }}services/"><span>02</span>支援領域</a>
-    <a href="{{ sectionPath }}#products"><span>03</span>プロダクト</a>
-    <a href="{{ sectionPath }}#activity"><span>04</span>活動・YouTube</a>
-    <a{% if pageKey == "about" %} aria-current="page"{% endif %} href="{{ rootPath }}about-isamu/"><span>05</span>つくる人</a>
-    <a{% if pageKey == "contact" %} aria-current="page"{% endif %} href="{% if pageKey == "contact" %}#form{% else %}{{ rootPath }}contact/{% endif %}"><span>06</span>相談する</a>
+    <a href="{{ sectionPath }}#about">考え方</a>
+    <a{% if pageKey == "services" %} aria-current="page"{% endif %} href="{{ rootPath }}services/">支援領域</a>
+    <a{% if pageKey == "skills" %} aria-current="page"{% endif %} href="{{ rootPath }}skills/">対応スキル</a>
+    <a{% if pageKey == "products" or pageKey == "bvp" or pageKey == "productDetail" %} aria-current="page"{% endif %} href="{{ rootPath }}products/">プロダクト</a>
+    <a href="{{ sectionPath }}#activity">活動・YouTube</a>
+    <a{% if pageKey == "about" %} aria-current="page"{% endif %} href="{{ rootPath }}about-isamu/">いさむについて</a>
+    <a{% if pageKey == "contact" %} aria-current="page"{% endif %} href="{% if pageKey == "contact" %}#form{% else %}{{ rootPath }}contact/{% endif %}">相談する</a>
   </nav>
 </header>
 
