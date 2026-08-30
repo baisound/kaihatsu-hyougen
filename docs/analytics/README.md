@@ -57,13 +57,13 @@ URL、ページ、外部リンク先などGA4に既定ディメンションが�
 | 環境 | 実際のURL | GA4測定ID | 用途 |
 |---|---|---|---|
 | Production | `https://baisound.github.io/kaihatsu-hyougen/` 以下 | `G-TWNC4EVTYD` | 週次定例レポート |
-| Local | `http://localhost:4173/` 以下 | `G-H68SYXZ86L` | 実装・イベント検証 |
+| Local | `http://localhost` または `http://127.0.0.1` の任意ポート | `G-H68SYXZ86L` | 実装・イベント検証 |
 
 GA4のストリーム作成画面はlocalhostをURLとして受理しないため、ローカルストリームの管理URLだけは予約ドメイン `http://local.kaihatsu-hyougen.test/` としている。実際の送信元判定はGTMで `localhost` または `127.0.0.1` を用いる。
 
 ## 運用上の境界
 
-- サイトは共通パーシャルから `GTM-NH7W8HHZ` を読み込み、各ページへ同じGTMスニペットを1組だけ出力する。
+- サイトは共通パーシャルでBasic Consent Modeを実装し、解析許可後だけ `GTM-NH7W8HHZ` を読み込む。広告用途の同意は常に拒否する。
 - ローカル通常ビルドにはGTMを出力しない。明示的に `ANALYTICS_ENABLED=true` と `GTM_CONTAINER_ID` を指定したときだけローカル計測を有効にする。
 - GitHub Pages用ビルドはRepository Variable `GTM_CONTAINER_ID` を受け取り、未設定・不正形式なら失敗する。
 - GTM側はホスト名によってProduction測定IDとLocal測定IDを振り分ける。直接 `gtag.js` は使用しない。
@@ -75,12 +75,13 @@ GA4のストリーム作成画面はlocalhostをURLとして受理しないた�
 ## QA結果（2026-08-31）
 
 - GTMの未公開バージョン2 `v1｜本番・ローカル分離計測（未公開）` を作成した。公開版は空コンテナのままで、サイトへの配信はしていない。
-- 既定の `localhost:4173` は別プロセスが使用中だったため、今回のブラウザQAだけ `localhost:4178` を代替使用した。GTMのローカル許可条件には4173と4178を登録している。
-- `/`、`/services/`、`/about-isamu/`、`/contact/` の4ページで、共有GTM scriptを各1件、直接gtagを0件確認した。
-- 本番相当ビルド後HTMLは4ページすべてGTM scriptとnoscriptが各1組、`GTM-NH7W8HHZ` が各2箇所、直接gtagが0件。通常ローカルビルドはGTM/gtagとも0件。内部リンク検査は4ページ、問題0件。
-- Tag Assistant履歴で `GTM-NH7W8HHZ` とローカル測定ID `G-H68SYXZ86L` を検出した。
-- GA4 DebugViewの直前30分に `page_view`、`first_visit`、`session_start` を含む4件のローカル受信を確認した。Tag Assistantの接続が短時間で切れたため、デバッグ端末表示は0のままだった。
-- `cta_click`、`contact_form_open`、`select_content` と各カスタムパラメータのLocal GA4実受信は、Tag Assistant接続断により未確認。GTM公開前QAの未完了項目として残す。
+- GTMのローカル判定は、開発サーバーのポート変更で本番タグへ流れないよう、`localhost` と `127.0.0.1` の任意ポートを対象にした。
+- 全16ページで共有Analytics partialを各1件、直接gtagライブラリを0件確認した。
+- 本番相当ビルド後HTMLは全16ページで、同意前はGTMを読み込まず、許可後loaderのみを各1件持つ。noscript iframeは置かない。通常ローカルビルドはGTM、同意UIとも0件。
+- Tag AssistantでローカルGoogleタグ `G-H68SYXZ86L` の1回発火と、Production Googleタグ `G-TWNC4EVTYD` の未発火を確認した。
+- GA4 DebugViewの直前30分に `page_view` 2件、`session_start` 1件、`user_engagement` 1件のLocal受信を確認した。
+- `cta_click`、`contact_form_open`、`select_content` と各カスタムパラメータのLocal GA4実受信は、Tag Assistant接続断により未確認。静的実装だけでPASSにせず、GTM公開前QAの未完了項目として残す。
+- 同意前はGTMを読み込まず、許可後に1回だけ読み込み、許可を取り消して再読込すると0件へ戻ることをブラウザQAで確認した。
 
 ## 公開前ゲート
 
@@ -97,6 +98,8 @@ GA4のストリーム作成画面はlocalhostをURLとして受理しないた�
 
 - Google公式：[イベントを設定する](https://developers.google.com/analytics/devguides/collection/ga4/events)
 - Google公式：[推奨イベント](https://developers.google.com/analytics/devguides/collection/ga4/reference/recommended-events)
+- Google公式：[同意モードを設定する](https://developers.google.com/tag-platform/security/guides/consent)
+- Google公式：[同意モードの概要](https://developers.google.com/tag-platform/security/concepts/consent-mode)
 - Google公式：[外部リンククリックを測定する](https://support.google.com/analytics/answer/13566436)
 - Google公式：[レポートナビゲーションをカスタマイズする](https://support.google.com/analytics/answer/10460557)
 - Google公式：[探索を開始する](https://support.google.com/analytics/answer/7579450)

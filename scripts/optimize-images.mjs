@@ -23,17 +23,15 @@ const sourceNames = [
   "products/bai-video-production/bvp-edit-workspace-v611",
   "products/bai-video-production/bvp-export-v611",
   "products/bai-video-production/bvp-world-lock-v611",
-  "products/placeholder-make-tiktok-gift-master",
-  "products/placeholder-bai-voice-app",
-  "products/placeholder-bai-creative-os",
-  "products/placeholder-bai-davinci-extends",
-  "products/placeholder-creator-streaming",
-  "products/placeholder-bai-development-os",
-  "products/placeholder-bai-knowledge-hub",
-  "products/placeholder-bai-development-hub"
+  "products/make-tiktok-gift-master-concept-v1",
+  "products/bai-voice-app-concept-v1",
+  "products/bai-creative-os-concept-v1",
+  "products/bai-davinci-extends-concept-v1",
+  "products/creator-streaming-tools-concept-v1",
+  "products/bai-development-os-concept-v1",
+  "products/bai-knowledge-hub-concept-v1",
+  "products/bai-development-hub-concept-v1"
 ];
-
-const svgSourceNames = sourceNames.filter((name) => name.includes("placeholder-"));
 
 async function needsUpdate(sourcePath, outputPath) {
   try {
@@ -74,15 +72,6 @@ async function convert(sourceName) {
   return { sourceName, generated: tasks.length };
 }
 
-async function ensurePngFromSvg(sourceName) {
-  const svgPath = path.join(assetDirectory, `${sourceName}.svg`);
-  const pngPath = path.join(assetDirectory, `${sourceName}.png`);
-  if (await needsUpdate(svgPath, pngPath)) {
-    await sharp(svgPath, { density: 144 }).png({ compressionLevel: 9 }).toFile(pngPath);
-  }
-}
-
-await Promise.all(svgSourceNames.map(ensurePngFromSvg));
 const results = await Promise.all(sourceNames.map(convert));
 const generatedCount = results.reduce((total, result) => total + result.generated, 0);
 console.log(`画像派生を確認しました: ${sourceNames.length}原本 / ${generatedCount}ファイル更新`);

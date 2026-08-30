@@ -2069,12 +2069,18 @@
 
 .product-hub2-row {
   display: grid;
-  grid-template-columns: 150px minmax(260px, .85fr) minmax(360px, 1.15fr) 150px;
-  gap: 34px;
+  grid-template-columns: 190px 125px minmax(240px, .75fr) minmax(320px, 1.15fr) 140px;
+  gap: 26px;
   align-items: center;
   padding: 34px 0;
   border-bottom: 2px solid currentColor;
 }
+
+.product-hub2-thumb { position: relative; margin: 0; border: 2px solid currentColor; overflow: hidden; background: var(--navy); }
+.product-hub2-thumb picture,
+.product-hub2-thumb img { display: block; width: 100%; }
+.product-hub2-thumb img { aspect-ratio: 3 / 2; object-fit: cover; }
+.product-hub2-thumb figcaption { position: absolute; right: 0; bottom: 0; padding: 5px 8px; background: rgb(7 13 32 / 86%); color: #fff; font-size: .62rem; font-weight: 900; letter-spacing: .08em; }
 
 .product-hub2-code span {
   display: block;
@@ -2314,6 +2320,15 @@
   background: #fff;
   box-shadow: 10px 10px 0 var(--product-accent);
 }
+
+.product-detail2-visual-stack { display: grid; gap: 24px; }
+.product-detail2-visual { margin: 0; border: 2px solid var(--navy); background: var(--navy); box-shadow: 10px 10px 0 var(--product-accent); }
+.product-detail2-visual picture,
+.product-detail2-visual img { display: block; width: 100%; }
+.product-detail2-visual img { aspect-ratio: 3 / 2; object-fit: cover; }
+.product-detail2-visual figcaption { display: grid; gap: 4px; padding: 14px 16px; background: var(--navy); color: #fff; }
+.product-detail2-visual figcaption b { color: var(--product-accent); font-size: .7rem; letter-spacing: .12em; }
+.product-detail2-visual figcaption span { color: #d6dbea; font-size: .72rem; line-height: 1.55; }
 
 .product-detail2-flow figcaption {
   display: grid;
@@ -2709,11 +2724,12 @@
   }
 
   .product-hub2-row {
-    grid-template-columns: 150px 1fr 1fr;
+    grid-template-columns: 180px 130px 1fr;
   }
 
+  .product-hub2-row dl,
   .product-hub2-row .product-hub2-link {
-    grid-column: 2 / -1;
+    grid-column: 3;
   }
 
   .product-detail2-flow {
@@ -2778,9 +2794,11 @@
   }
 
   .product-hub2-row {
-    grid-template-columns: 130px 1fr;
+    grid-template-columns: 160px 1fr;
   }
 
+  .product-hub2-row .product-hub2-code { grid-column: 2; }
+  .product-hub2-row .product-hub2-row-main,
   .product-hub2-row dl,
   .product-hub2-row .product-hub2-link {
     grid-column: 2;
@@ -2863,6 +2881,8 @@
   }
 
   .product-hub2-row dl,
+  .product-hub2-row .product-hub2-code,
+  .product-hub2-row .product-hub2-row-main,
   .product-hub2-row .product-hub2-link {
     grid-column: auto;
   }

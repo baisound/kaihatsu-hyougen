@@ -1,0 +1,14 @@
+{% if analytics.enabled %}
+<section class="consent-panel" data-consent-panel hidden aria-labelledby="consent-title" aria-describedby="consent-description">
+  <div class="consent-panel-copy">
+    <p class="consent-panel-label">ACCESS ANALYTICS</p>
+    <h2 id="consent-title">サイト改善のための計測について</h2>
+    <p id="consent-description">Google Analyticsを使い、閲覧ページや選択された導線を確認します。許可するまで計測タグは読み込みません。広告目的の計測は行いません。</p>
+    <a href="{{ rootPath }}privacy/#consent-policy">扱う情報と設定を確認する</a>
+  </div>
+  <div class="consent-panel-actions">
+    <button type="button" class="consent-choice consent-choice-primary" data-consent-choice="granted">解析を許可する</button>
+    <button type="button" class="consent-choice" data-consent-choice="denied">許可しない</button>
+  </div>
+</section>
+{% endif %}

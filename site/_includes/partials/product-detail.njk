@@ -35,14 +35,20 @@
             <p class="product-detail2-promise"><b>{{ product.promise }}</b></p>
             <div class="product-detail2-actions"><a class="action action-dark" data-cta-id="product-{{ productSlug }}-changes" href="#changes"><span>変わることを見る</span><span aria-hidden="true">↓</span></a><a class="action action-light" data-cta-id="product-{{ productSlug }}-status" href="#status"><span>現在の状況</span><span aria-hidden="true">↓</span></a></div>
           </div>
-          <figure class="product-detail2-flow reveal" style="--delay:100ms">
-            <figcaption><span>PRODUCT FLOW</span><b>現在の設計・実装範囲を、機能の流れで示しています。</b></figcaption>
-            <ol>
-              {% for step in product.flow %}
-              <li><span>0{{ loop.index }}</span><b>{{ step }}</b></li>
-              {% endfor %}
-            </ol>
-          </figure>
+          <div class="product-detail2-visual-stack">
+            <figure class="product-detail2-visual reveal" style="--delay:80ms">
+              <picture><source srcset="../..{{ seo.imageBase }}.avif" type="image/avif"><source srcset="../..{{ seo.imageBase }}.webp" type="image/webp"><img src="../..{{ seo.image }}" width="1672" height="941" alt="{{ seo.imageAlt }}" fetchpriority="high"></picture>
+              <figcaption><b>CONCEPT VISUAL</b><span>製品の用途を示す構成イメージです。実際の製品画面や利用環境ではありません。</span></figcaption>
+            </figure>
+            <figure class="product-detail2-flow reveal" style="--delay:140ms">
+              <figcaption><span>PRODUCT FLOW</span><b>現在の設計・実装範囲を、機能の流れで示しています。</b></figcaption>
+              <ol>
+                {% for step in product.flow %}
+                <li><span>0{{ loop.index }}</span><b>{{ step }}</b></li>
+                {% endfor %}
+              </ol>
+            </figure>
+          </div>
         </div>
       </div>
     </section>

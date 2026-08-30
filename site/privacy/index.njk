@@ -36,18 +36,19 @@ sectionPath: "../"
     <section class="sub-section" data-section>
       <div class="sub-section-inner">
         <div class="sub-intro reveal"><div><div class="connection-label cyan"><i></i>ACCESS ANALYTICS</div><h2>アクセス解析について</h2></div><p>サイトの改善と利用状況の把握に必要な範囲で利用します。</p></div>
-        <div class="detail-grid reveal"><p class="detail-statement">本番とローカルを、<br>分けて計測します。</p><div class="detail-copy"><p>本番公開後は、Googleタグマネージャーを通じてGoogle Analytics 4を利用する予定です。ページの閲覧、参照元、利用端末、CTAや外部リンクの選択などを確認し、内容と導線の改善に使います。</p><p>開発中のローカル環境は本番とは別のデータストリームで扱い、本番の利用状況と混ぜません。Google Formを開いた記録は「フォーム開始」であり、送信完了や実際の相談件数とは区別します。</p></div></div>
+        <div class="detail-grid reveal"><p class="detail-statement">本番とローカルを、<br>分けて計測します。</p><div class="detail-copy"><p>本番公開後は、Googleタグマネージャーを通じてGoogle Analytics 4を利用します。ページの閲覧、参照元、利用端末、CTAや外部リンクの選択などを確認し、内容と導線の改善に使います。</p><p>開発中のローカル環境は本番とは別のデータストリームで扱い、本番の利用状況と混ぜません。Google Formを開いた記録は「フォーム開始」であり、送信完了や実際の相談件数とは区別します。</p></div></div>
       </div>
     </section>
 
-    <section class="sub-section cyan-wash" data-section>
+    <section class="sub-section cyan-wash" id="consent-policy" data-section>
       <div class="sub-section-inner">
         <div class="sub-intro reveal"><div><div class="connection-label violet"><i></i>COOKIES / DATA</div><h2>Cookie等で扱う情報</h2></div><p>個人を直接特定する目的では利用しません。</p></div>
         <div class="principle-grid">
           <article class="principle-card reveal"><span>閲覧</span><div><h3>ページと操作</h3><p>閲覧したページ、滞在や遷移、選択したCTAや外部リンクなど。</p></div></article>
           <article class="principle-card reveal"><span>環境</span><div><h3>端末・ブラウザ</h3><p>ブラウザ、OS、画面サイズ、おおまかな地域など、Google Analyticsが提供する情報。</p></div></article>
-          <article class="principle-card reveal"><span>制御</span><div><h3>Cookieの管理</h3><p>ブラウザの設定でCookieを無効化できます。無効化により一部の計測が行われなくなる場合があります。</p></div></article>
+          <article class="principle-card reveal"><span>制御</span><div><h3>選ぶ・変更する</h3><p>初回表示で「解析を許可する」「許可しない」を選べます。選択後もフッターの「解析の設定を変更」からいつでも変更できます。</p></div></article>
         </div>
+        <div class="detail-grid reveal privacy-consent-detail"><p class="detail-statement">許可されるまで、<br>計測タグを読み込みません。</p><div class="detail-copy"><p>アクセス解析はBasic Consent Modeで実装します。初期状態ではGoogleタグマネージャーを読み込まず、解析を許可した場合にだけ読み込みます。広告用の保存、広告向けユーザーデータ、広告パーソナライズは、選択にかかわらず無効です。</p><p>選択内容はこのブラウザのlocalStorageへ180日間保存し、期限後にもう一度確認します。「許可しない」を選んでも、サイトの閲覧や相談フォームへの移動は制限されません。許可を取り消した場合は、当サイトが設定した解析Cookieを削除し、ページを再読み込みします。</p></div></div>
       </div>
     </section>
 

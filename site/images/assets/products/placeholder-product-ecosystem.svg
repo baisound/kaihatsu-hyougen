@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
-  <title id="t">Product ecosystem placeholder</title><desc id="d">Replace this placeholder with the final product ecosystem image.</desc>
-  <rect width="1600" height="900" fill="#0b132b"/><path d="M0 0h28v900H0z" fill="#12c6d9"/><path d="M1572 0h28v900h-28z" fill="#ff6b00"/>
-  <g fill="none" stroke-width="12"><path d="M230 450h250" stroke="#12c6d9"/><path d="M570 450h250" stroke="#7b36f2"/><path d="M910 450h250" stroke="#ff6b00"/><path d="M1260 450c0 235-1050 235-1050 0" stroke="#fff" stroke-dasharray="24 22"/></g>
-  <g fill="#fff"><circle cx="210" cy="450" r="62"/><circle cx="550" cy="450" r="62"/><circle cx="890" cy="450" r="62"/><circle cx="1230" cy="450" r="62"/></g>
-  <text x="120" y="140" fill="#12c6d9" font-family="Arial,sans-serif" font-size="32" font-weight="700" letter-spacing="8">IMAGE PLACEHOLDER</text>
-  <text x="120" y="250" fill="#fff" font-family="Arial,sans-serif" font-size="78" font-weight="800">PRODUCT ECOSYSTEM</text>
-  <text x="120" y="760" fill="#aeb9cf" font-family="Arial,sans-serif" font-size="27" letter-spacing="4">REPLACE LATER / 1600 × 900</text>
-</svg>

@@ -82,6 +82,7 @@
   updateScrollEffects();
 
   const sendAnalyticsEvent = (name, parameters) => {
+    if (window.siteAnalyticsConsent && window.siteAnalyticsConsent.get() !== 'granted') return;
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: name,
@@ -89,6 +90,33 @@
       ...parameters
     });
   };
+
+  const consentApi = window.siteAnalyticsConsent;
+  const consentPanel = document.querySelector('[data-consent-panel]');
+  const consentManage = document.querySelector('[data-consent-manage]');
+
+  const setConsentPanel = (open) => {
+    if (!consentPanel) return;
+    consentPanel.hidden = !open;
+    document.body.classList.toggle('consent-panel-open', open);
+    if (open) consentPanel.querySelector('[data-consent-choice="granted"]')?.focus({ preventScroll: true });
+  };
+
+  if (consentApi && consentPanel) {
+    if (consentApi.get() === null) setConsentPanel(true);
+
+    consentPanel.querySelectorAll('[data-consent-choice]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const previous = consentApi.get();
+        const choice = button.dataset.consentChoice;
+        consentApi.set(choice);
+        setConsentPanel(false);
+        if (previous === 'granted' && choice === 'denied') window.location.reload();
+      });
+    });
+
+    consentManage?.addEventListener('click', () => setConsentPanel(true));
+  }
 
   const getLinkText = (link) => (
     link.getAttribute('aria-label') || link.textContent || ''

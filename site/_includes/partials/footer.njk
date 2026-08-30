@@ -57,7 +57,9 @@
       <p><a href="{{ siteMeta.url }}/" aria-label="開発と表現 現在の公開URL">Web：baisound.github.io/kaihatsu-hyougen</a></p>
       <p><a href="{{ rootPath }}contact/">個人事業として準備・活動中</a></p>
       <p><a href="{{ rootPath }}privacy/">プライバシー・アクセス解析</a></p>
+      {% if analytics.enabled %}<p><button class="footer-consent-button" type="button" data-consent-manage>解析の設定を変更</button></p>{% endif %}
     </div>
   </div>
   <div class="footer-bottom"><a href="{{ sectionPath }}#top">© <span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span></a><a href="{{ rootPath }}privacy/">プライバシー</a><a href="#top">BACK TO TOP ↑</a></div>
 </footer>
+{% include "partials/consent-panel.njk" %}
