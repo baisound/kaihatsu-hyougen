@@ -4,5 +4,5 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% for route in siteMeta.routes %}  <url><loc>{{ siteMeta.url }}{{ route }}</loc></url>
+{% for route in siteMeta.sitemapRoutes %}  <url><loc>{{ siteMeta.url }}{{ route }}</loc></url>
 {% endfor %}</urlset>

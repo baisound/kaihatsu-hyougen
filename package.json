@@ -15,7 +15,8 @@
     "check:video-assets": "node scripts/sync-video-assets.mjs --check",
     "check:links": "node scripts/check-links.mjs _site",
     "check:meta": "node scripts/check-meta.mjs",
-    "check": "pnpm run build && pnpm run check:links && pnpm run check:meta && pnpm run check:video-assets"
+    "check:analytics": "node scripts/check-analytics.mjs",
+    "check": "pnpm run build && node scripts/check-analytics.mjs --disabled && pnpm run check:links && pnpm run check:meta && pnpm run check:video-assets"
   },
   "devDependencies": {
     "@11ty/eleventy": "3.1.6",

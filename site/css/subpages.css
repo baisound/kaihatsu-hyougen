@@ -16,6 +16,7 @@
 .skills-proof div + div { border-top: 2px solid var(--navy); }
 .skills-proof dt { margin-bottom: 8px; color: var(--violet); font-size: clamp(1.6rem, 2.6vw, 2.8rem); line-height: 1; font-weight: 950; letter-spacing: -.045em; }
 .skills-proof dd { margin: 0; color: var(--muted); line-height: 1.7; font-weight: 700; }
+.skills-proof-note { grid-column: 2; margin: -42px 0 0; color: #5d6880; font-size: .76rem; font-weight: 700; line-height: 1.6; }
 .skills-local-nav { position: sticky; z-index: 90; top: var(--header-h); border-bottom: 2px solid var(--navy); background: rgba(247,249,252,.97); backdrop-filter: blur(14px); }
 .skills-local-nav .skills-shell { display: grid; grid-template-columns: repeat(4, 1fr); }
 .skills-local-nav a { padding: 22px 20px; border-right: 1px solid var(--line); color: var(--navy); text-align: center; text-decoration: none; font-size: .83rem; font-weight: 900; }
@@ -67,6 +68,7 @@
   .skills-hero-grid,
   .skills-heading { grid-template-columns: 1fr; }
   .skills-hero-grid { margin-top: 70px; }
+  .skills-proof-note { grid-column: 1; margin: -30px 0 0; }
   .skills-timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .skills-timeline article:nth-child(3) { border-top: 1px solid rgba(255,255,255,.45); border-left: 0; }
   .skills-timeline article:nth-child(4) { border-top: 1px solid rgba(255,255,255,.45); }

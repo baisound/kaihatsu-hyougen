@@ -9,10 +9,11 @@ sectionPath: "../"
 {% set metaCurrentTitle = "いさむについて" %}
 {% set metaSchemaType = "ProfilePage" %}
 {% set metaImage = "/images/assets/photo-workspace-master-v4.png" %}
-{% set metaImageAlt = "いさむが開発、映像編集、音声制作に使う作業環境" %}
+{% set metaImageAlt = "いさむの実機構成をもとに再構成した開発・制作環境のイメージ" %}
 <!doctype html>
 <html lang="ja">
 <head>
+  {% include "partials/analytics-head.njk" %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 {% include "partials/meta.njk" %}
@@ -21,6 +22,7 @@ sectionPath: "../"
   <script src="../scripts/script.js" defer></script>
 </head>
 <body>
+  {% include "partials/analytics-body.njk" %}
   {% include "partials/header.njk" %}
 
   <main id="content" class="subpage-main">
@@ -33,7 +35,7 @@ sectionPath: "../"
           <p class="subhero-lead">屋号「<span class="word-development">開発</span><span class="word-connect">と</span><span class="word-expression">表現</span>」を運営し、設計・実装・制作・発信を行っています。実名ではなく、活動名「いさむ」で統一しています。</p>
         </div>
         <div class="subhero-visual reveal" style="--delay:120ms">
-          <figure class="drift drift-b"><picture class="responsive-picture"><source srcset="../images/assets/photo-workspace-master-v4.avif" type="image/avif"><source srcset="../images/assets/photo-workspace-master-v4.webp" type="image/webp"><img src="../images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="いさむが実際に開発、収録、編集、配信に使う作業環境" fetchpriority="high"></picture><figcaption>ISAMU / ACTUAL WORKSPACE</figcaption></figure>
+          <figure class="drift drift-b"><picture class="responsive-picture"><source srcset="../images/assets/photo-workspace-master-v4.avif" type="image/avif"><source srcset="../images/assets/photo-workspace-master-v4.webp" type="image/webp"><img src="../images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="いさむの実機構成をもとに再構成した開発・制作環境のイメージ" fetchpriority="high"></picture><figcaption>WORKSPACE CONFIGURATION IMAGE</figcaption></figure>
           <div class="visual-node drift drift-c" aria-hidden="true">人</div>
         </div>
       </div>
@@ -43,7 +45,7 @@ sectionPath: "../"
 
     <section class="sub-section" id="portrait" data-section>
       <div class="sub-section-inner identity-board">
-        <figure class="identity-photo reveal"><picture class="responsive-picture"><source srcset="../images/assets/photo-workspace-master-v4.avif" type="image/avif"><source srcset="../images/assets/photo-workspace-master-v4.webp" type="image/webp"><img src="../images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="4面モニター、音響機材、編集機材を備えた実際の制作机" loading="lazy" decoding="async"></picture><figcaption>NOT A SHOWROOM / BETWEEN TASKS</figcaption></figure>
+        <figure class="identity-photo reveal"><picture class="responsive-picture"><source srcset="../images/assets/photo-workspace-master-v4.avif" type="image/avif"><source srcset="../images/assets/photo-workspace-master-v4.webp" type="image/webp"><img src="../images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="4面モニター、音響機材、編集機材の実機構成をもとにした再構成イメージ" loading="lazy" decoding="async"></picture><figcaption>RECONSTRUCTED FROM THE ACTUAL SETUP</figcaption></figure>
         <div class="identity-copy reveal" style="--delay:100ms">
           <div class="connection-label violet"><i></i>PORTRAIT</div>
           <h2>いさむ<span class="roman">ISAMU / PUBLIC ACTIVITY NAME</span></h2>
@@ -70,7 +72,7 @@ sectionPath: "../"
 
     <section class="sub-section dark" id="workspace" data-section>
       <div class="sub-section-inner">
-        <div class="sub-intro reveal"><div><div class="connection-label orange"><i></i>ACTUAL WORKSPACE</div><h2>実際に使っている、<br>仕事の道具。</h2></div><p>見せるための架空スタジオではなく、開発、配信、収録、編集を往復している実際の構成です。</p></div>
+        <div class="sub-intro reveal"><div><div class="connection-label orange"><i></i>WORKSPACE</div><h2>実際に使っている、<br>仕事の道具。</h2></div><p>掲載画像は実機構成をもとにした再構成イメージです。機材名と役割は実際の構成、細かな形状と配置は説明用に整えています。</p></div>
         <ul class="scope-list reveal">
           <li><span>DISPLAY</span><b>27インチモニター × 4</b><p>Codex、配信マルチビュー、OBS、DaVinci Resolveを同時に確認。</p></li>
           <li><span>COMPUTE</span><b>PC × 2</b><p>開発・制作と配信・処理を分けて運用。</p></li>

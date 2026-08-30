@@ -16,6 +16,7 @@ async function walk(dir) {
 await walk(root);
 const seenTitles = new Map();
 const issues = [];
+const expectedOrigin = "https://baisound.github.io/kaihatsu-hyougen";
 
 for (const file of files) {
   const html = await readFile(file, "utf8");
@@ -24,10 +25,10 @@ for (const file of files) {
   const required = [
     ['meta[name="description"]', /<meta name="description" content="[^"]+">/],
     ['meta[name="robots"]', /<meta name="robots" content="[^"]+">/],
-    ["canonical", /<link rel="canonical" href="https:\/\/kaihatsu-hyogen\.co\.jp\/[^"]*">/],
+    ["canonical", new RegExp(`<link rel="canonical" href="${expectedOrigin.replaceAll("/", "\\/")}\\/[^"]*">`)],
     ["og:title", /<meta property="og:title" content="[^"]+">/],
     ["og:description", /<meta property="og:description" content="[^"]+">/],
-    ["og:image", /<meta property="og:image" content="https:\/\/kaihatsu-hyogen\.co\.jp\/[^"]+">/],
+    ["og:image", new RegExp(`<meta property="og:image" content="${expectedOrigin.replaceAll("/", "\\/")}\\/[^"]+">`)],
     ["twitter:card", /<meta name="twitter:card" content="summary_large_image">/],
     ["JSON-LD", /<script type="application\/ld\+json">[\s\S]+?<\/script>/]
   ];

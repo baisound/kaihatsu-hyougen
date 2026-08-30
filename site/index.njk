@@ -10,6 +10,7 @@ sectionPath: ""
 <!doctype html>
 <html lang="ja">
 <head>
+  {% include "partials/analytics-head.njk" %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 {% include "partials/meta.njk" %}
@@ -17,6 +18,7 @@ sectionPath: ""
   <script src="scripts/script.js" defer></script>
 </head>
 <body>
+  {% include "partials/analytics-body.njk" %}
   {% include "partials/header.njk" %}
 
   <main id="content">
@@ -246,15 +248,15 @@ sectionPath: ""
     <section class="portrait section-pad" id="portrait" data-section>
       <div class="portrait-grid">
         <figure class="portrait-image reveal">
-          <picture class="responsive-picture"><source srcset="images/assets/photo-workspace-master-v4.avif" type="image/avif"><source srcset="images/assets/photo-workspace-master-v4.webp" type="image/webp"><img src="images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="ATEM系マルチビュー、OBS、Codex、DaVinci Resolveを4面表示した生活感ある制作環境" loading="lazy" decoding="async"></picture>
-          <figcaption>WORKSPACE / BETWEEN TASKS</figcaption>
+          <picture class="responsive-picture"><source srcset="images/assets/photo-workspace-master-v4.avif" type="image/avif"><source srcset="images/assets/photo-workspace-master-v4.webp" type="image/webp"><img src="images/assets/photo-workspace-master-v4.png" width="1086" height="1448" alt="実機構成をもとに、ATEM系マルチビュー、OBS、Codex、DaVinci Resolveを4面表示した再構成イメージ" loading="lazy" decoding="async"></picture>
+          <figcaption>RECONSTRUCTED FROM THE ACTUAL SETUP</figcaption>
         </figure>
         <div class="portrait-copy reveal" style="--delay:120ms">
           <div class="section-index"><span>06</span><span>PORTRAIT</span></div>
           <p class="eyebrow">運営 / 設計 / 実装 / 制作</p>
           <h2>いさむ<br><small>ISAMU</small></h2>
           <blockquote>技術を動かすだけでなく、誰かに届き、使われ、続いていくところまでを仕事にしたい。</blockquote>
-          <p>20年以上のエンジニアリング経験を基盤に、システム<span class="word-development">開発</span>、AI、自動化、映像、音楽、配信を横断しています。できることと検証中のことを分け、判断と工程を記録しながら完成まで進めます。</p>
+          <p>20年以上のエンジニアリング経験を基盤に、システム<span class="word-development">開発</span>、AI、自動化、映像、音楽、配信を横断しています。できることと検証中のことを分け、判断と工程を記録しながら完成まで進めます。掲載画像は実機構成をもとにした再構成イメージです。</p>
           <div class="portrait-roles"><span>ENGINEERING</span><span>AI / AUTOMATION</span><span>VIDEO / AUDIO</span><span>DOCUMENTATION</span></div>
           <div class="portrait-links"><a class="inline-link" href="skills/">対応できる仕事と経験を見る <span>→</span></a><a class="inline-link" href="about-isamu/">いさむについて見る <span>→</span></a></div>
         </div>

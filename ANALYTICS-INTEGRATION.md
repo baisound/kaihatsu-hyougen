@@ -1,6 +1,8 @@
-# Analytics / GTM 統合前チェック
+# Analytics / GTM 統合状態と公開前チェック
 
 Analytics専用タスクの最終commitは `7d72bc9`（`d048872` を含む）。専用worktreeは `kaihatsu-hyougen-analytics`、branchは `codex/analytics-tag-injection`。
+
+共有partialと検査は制作ブランチへ統合済み。通常ローカルでは無効、GTMコンテナは未公開の状態を維持する。
 
 ## 維持する実装境界
 

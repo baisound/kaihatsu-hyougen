@@ -28,7 +28,7 @@ site/
 ├─ about-isamu/index.njk      # つくる人
 ├─ contact/index.njk          # 相談する
 ├─ privacy/index.njk          # プライバシー・アクセス解析
-├─ _includes/partials/        # 共通ヘッダー・フッター・Meta
+├─ _includes/partials/        # 共通ヘッダー・フッター・Meta・GTM
 ├─ css/
 │  ├─ styles.css              # サイト共通
 │  └─ subpages.css            # 下層ページ共通
@@ -71,6 +71,22 @@ pnpm check
 ```
 
 この処理は写真のAVIF/WebP派生、動画用ロゴ同期、Eleventyビルド、ローカルリンク検査、全ページのMeta・canonical・JSON-LD検査を行います。
+
+## Google Analytics
+
+通常のローカルビルドと `pnpm serve` ではGTMを出力せず、Google Analyticsへデータを送信しません。
+
+ローカル計測を明示的に有効にする場合は、GTMのプレビューを開始したうえで次を実行します。トップと3つの下層ページはすべて同じ共通GTMパーシャルを読みます。
+
+```powershell
+$env:ANALYTICS_ENABLED = "true"
+$env:GTM_CONTAINER_ID = "GTM-NH7W8HHZ"
+pnpm serve
+```
+
+GitHub Pages用のワークフローはRepository Variable `GTM_CONTAINER_ID` を受け取り、共通テンプレートから全HTMLへGTMを出力します。IDが未設定・不正形式なら本番ビルドは失敗します。
+
+コンテナIDは生成後のHTMLに公開される識別子であり、認証情報ではありません。そのためGitHub Actions SecretではなくRepository Variableで管理します。GA4測定IDはGTM内でホスト名に応じてProductionとLocalへ振り分けます。
 
 ## ブランドサイトの内容
 

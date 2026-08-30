@@ -22,3 +22,6 @@ video-top/public/top-page.webm
 .env
 .env.*
 !.env.example
+
+# Analytics administration evidence (may contain account identifiers)
+docs/analytics/setup-captures/
