@@ -1,0 +1,166 @@
+---
+pageKey: kotolvi
+rootPath: "../../"
+sectionPath: "../../"
+---
+{% set metaTitle = "KOTOLVI（コトルヴィ）｜会話・動画・配信の翻訳ワークスペース" %}
+{% set metaDescription = "会話、YouTube動画、画面内テキスト、OBS字幕、議事録を一つのWindowsワークスペースで扱うKOTOLVI。発売準備中の機能、実画面、価格方針、未完了条件を紹介します。" %}
+{% set canonicalPath = "/products/kotolvi/" %}
+{% set metaCurrentTitle = "KOTOLVI" %}
+{% set metaParentTitle = "プロダクト" %}
+{% set metaParentPath = "/products/" %}
+{% set metaRobots = "noindex,follow,max-image-preview:large" %}
+{% set metaImage = "/images/assets/products/kotolvi/kotolvi-talk.png" %}
+{% set metaImageAlt = "KOTOLVIの開発中画面。英語と日本語の会話翻訳を左右に表示" %}
+<!doctype html>
+<html lang="ja">
+<head>
+  {% include "partials/analytics-head.njk" %}
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0;url=https://baisound.github.io/BAI-Atlas-Live/">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+{% include "partials/meta.njk" %}
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/subpages.css">
+  <link rel="stylesheet" href="../../css/kotolvi.css">
+  <script src="../../scripts/script.js" defer></script>
+</head>
+<body>
+  {% include "partials/analytics-body.njk" %}
+  {% include "partials/header.njk" %}
+
+  <main id="content" class="kotolvi-page">
+    <p><a href="https://baisound.github.io/BAI-Atlas-Live/">KOTOLVIの独立した製品サイトへ移動する →</a></p>
+    <section class="kotolvi-hero" id="top" data-section>
+      <div class="kotolvi-shell">
+        <nav class="breadcrumbs kotolvi-breadcrumbs" aria-label="パンくず"><a href="../../">HOME</a><b aria-hidden="true">/</b><a href="../">プロダクト</a><b aria-hidden="true">/</b><span>KOTOLVI</span></nav>
+        <div class="kotolvi-hero-grid">
+          <div class="kotolvi-hero-copy reveal">
+            <p class="kotolvi-status"><span>PRE-LAUNCH</span><span>WINDOWS</span><span>LOCAL-FIRST</span></p>
+            <p class="kotolvi-kicker">KOTOLVI <b>／ コトルヴィ</b></p>
+            <h1><span>自分の声で、</span><br><em>10言語へ。</em></h1>
+            <p class="kotolvi-lead">日本語で話した返事を、自分の声の英語で相手に届ける。KOTOLVIは、この日英通話から10言語への対応を進めるWindows向け通話翻訳ソフトです。</p>
+            <div class="kotolvi-actions"><a class="kotolvi-button kotolvi-button-primary" data-cta-id="kotolvi-hero-experience" href="#experience">体験を見る <span aria-hidden="true">↓</span></a><a class="kotolvi-button" data-cta-id="kotolvi-hero-status" href="#status">発売までの現在地 <span aria-hidden="true">↓</span></a></div>
+            <p class="kotolvi-candidate-note"><b>販売名候補・公開前ページ</b>　KOTOLVIは権利確認中の名称候補です。開発中画面には現行コード名「BAI ATLAS」が表示されます。</p>
+          </div>
+          <figure class="kotolvi-hero-screen reveal" style="--delay:100ms">
+            <picture><source srcset="../../images/assets/products/kotolvi/kotolvi-talk.avif" type="image/avif"><source srcset="../../images/assets/products/kotolvi/kotolvi-talk.webp" type="image/webp"><img src="../../images/assets/products/kotolvi/kotolvi-talk.png" width="1920" height="1080" alt="英語と日本語の会話翻訳を左右に表示するKOTOLVIの開発中画面" fetchpriority="high"></picture>
+            <figcaption><span>01 / LIVE CONVERSATION</span><b>実際の開発中UI</b></figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="kotolvi-signal" aria-hidden="true"><span>LISTEN</span><i></i><span>UNDERSTAND</span><i></i><span>SHARE</span></div>
+    </section>
+
+    <nav class="kotolvi-local-nav" aria-label="ページ内メニュー"><div class="kotolvi-shell"><a href="#value">できること</a><a href="#workflow">使い方</a><a href="#reel">紹介映像設計</a><a href="#experience">実画面</a><a href="#plans">価格方針</a><a href="#status">現在地</a><a href="#faq">FAQ</a></div></nav>
+
+    <section class="kotolvi-section kotolvi-value" id="value" data-section>
+      <div class="kotolvi-shell">
+        <header class="kotolvi-heading reveal"><p>最初の10言語</p><h2>いつもの声で、<br><span>相手の言葉へ。</span></h2><p>音声翻訳の初期対応対象は、日本語・英語・韓国語・中国語（簡体字）・スペイン語・フランス語・ドイツ語・ポルトガル語・イタリア語・ロシア語。最初の実演は、日本語で答えた返事が、本人の声で英語になって届く日英通話です。</p></header>
+        <div class="kotolvi-value-grid">
+          <article class="reveal"><span>01</span><h3>会話を聞く</h3><p>相手が英語で告げた集合場所を日本語字幕で確かめ、日本語で返事をする。相手には、自分の声の英語が届きます。</p><small>日英通話 / 本人声送話</small></article>
+          <article class="reveal" style="--delay:60ms"><span>02</span><h3>動画を追う</h3><p>聞き直したい字幕に★を付けて、続きを見る。あとでその行を選ぶと、元のYouTubeタブが同じ発話に戻ります。</p><small>対応する動画 / ★とメモ</small></article>
+          <article class="reveal" style="--delay:120ms"><span>03</span><h3>画面を読む</h3><p>コメントやゲーム画面など、必要な範囲を選び、新着だけを追える形を目指します。</p><small>範囲翻訳 / 新着監視 / OCR候補</small></article>
+          <article class="reveal" style="--delay:180ms"><span>04</span><h3>伝わる形へ出す</h3><p>訳文をOBS字幕や議事録へ渡し、会話のあとまで使える情報に整えます。</p><small>OBS / 議事録 / 書き出し</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="kotolvi-section kotolvi-workflow" id="workflow" data-section>
+      <div class="kotolvi-shell">
+        <header class="kotolvi-heading kotolvi-heading-light reveal"><p>HOW IT WORKS</p><h2>4つの動きで、<br><span>ことばを次へ<br>渡す。</span></h2></header>
+        <ol class="kotolvi-flow reveal">
+          <li><b>01</b><span>INPUT</span><h3>場面を選ぶ</h3><p>会話、動画、画面範囲など、いま理解したい入力を選びます。</p></li>
+          <li><b>02</b><span>CAPTURE</span><h3>音や文字を受け取る</h3><p>必要な入力だけを扱い、処理の状態を画面で確認します。</p></li>
+          <li><b>03</b><span>UNDERSTAND</span><h3>原文と訳文を並べる</h3><p>元のことばを消さず、訳だけを確定情報のように見せません。</p></li>
+          <li><b>04</b><span>OUTPUT</span><h3>視聴・配信・記録へ</h3><p>字幕、目印、メモ、議事録など、次に使う形へ渡します。</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="kotolvi-section kotolvi-reel" id="reel" data-section>
+      <div class="kotolvi-shell">
+        <header class="kotolvi-heading reveal"><p>PRODUCT PROOF REEL / IN DESIGN</p><h2>説明した直後に、<br><span>実画面と結果で<br>証明する。</span></h2><p>画面共有を小さく貼るのではなく、会話、動画、OBSを一本の字幕リボンでつなぐ60秒の紹介映像を設計しています。</p></header>
+        <div class="kotolvi-reel-stage reveal" aria-label="KOTOLVI紹介映像の構成案">
+          <div class="kotolvi-reel-frame">
+            <picture><source srcset="../../images/assets/products/kotolvi/kotolvi-talk.avif" type="image/avif"><source srcset="../../images/assets/products/kotolvi/kotolvi-talk.webp" type="image/webp"><img src="../../images/assets/products/kotolvi/kotolvi-talk.png" width="1920" height="1080" alt="会話翻訳を表示する開発中画面" loading="lazy"></picture>
+            <span><b>00–15s</b> 会話の原文と訳文</span>
+          </div>
+          <div class="kotolvi-reel-frame">
+            <picture><source srcset="../../images/assets/products/kotolvi/kotolvi-video.avif" type="image/avif"><source srcset="../../images/assets/products/kotolvi/kotolvi-video.webp" type="image/webp"><img src="../../images/assets/products/kotolvi/kotolvi-video.png" width="1920" height="1080" alt="動画字幕と再生位置を表示する開発中画面" loading="lazy"></picture>
+            <span><b>15–35s</b> 動画と字幕の時刻同期</span>
+          </div>
+          <div class="kotolvi-reel-frame">
+            <picture><source srcset="../../images/assets/products/kotolvi/kotolvi-obs.avif" type="image/avif"><source srcset="../../images/assets/products/kotolvi/kotolvi-obs.webp" type="image/webp"><img src="../../images/assets/products/kotolvi/kotolvi-obs.png" width="1920" height="1080" alt="OBS字幕の出力プレビューを表示する開発中画面" loading="lazy"></picture>
+            <span><b>35–50s</b> 同じことばを配信字幕へ</span>
+          </div>
+          <div class="kotolvi-caption-ribbon"><span>LISTEN</span><i>EN</i><b>相手のことばを受け取る</b><em aria-hidden="true">→</em><i>JA</i><b>字幕として次の場面へ</b><span>SHARE</span></div>
+        </div>
+        <ol class="kotolvi-reel-plan reveal"><li><b>0–3秒</b><span>説明より先に、原文と訳文を同時に見せる。</span></li><li><b>3–35秒</b><span>入力、処理中、結果を一つの機能で見せ切る。</span></li><li><b>35–50秒</b><span>動画・OBSへ同じ字幕が渡ることを証明する。</span></li><li><b>50–60秒</b><span>確認済み・統合中・発売前条件とCTAを一つに絞る。</span></li></ol>
+        <p class="kotolvi-reel-note reveal"><b>完成PVではありません。</b> 実会話、一般動画、OBSの通し収録と音の聴取確認が揃うまでは、完成したように見せる動画を公開しません。まず12秒の非公開サンプルで、クロップ、字幕リボン、ナレーション密度を確認します。</p>
+      </div>
+    </section>
+
+    <section class="kotolvi-section kotolvi-experience" id="experience" data-section>
+      <div class="kotolvi-shell">
+        <header class="kotolvi-heading reveal"><p>ACTUAL DEVELOPMENT UI</p><h2>説明より先に、<br><span>いま動いている<br>画面を見る。</span></h2><p>以下は架空の完成画面ではなく、開発中ビルドの実画面です。製品版では名称・文言・機能配置が変わる場合があります。</p></header>
+        <div class="kotolvi-screen-grid">
+          <figure class="kotolvi-screen-wide reveal"><picture><source srcset="../../images/assets/products/kotolvi/kotolvi-video.avif" type="image/avif"><source srcset="../../images/assets/products/kotolvi/kotolvi-video.webp" type="image/webp"><img src="../../images/assets/products/kotolvi/kotolvi-video.png" width="1920" height="1080" alt="YouTubeタブとの接続、再生時刻、字幕生成操作を表示する開発中の動画字幕画面" loading="lazy" decoding="async"></picture><figcaption><span>VIDEO CAPTIONS</span><h3>見ている動画と、字幕の時間をつなぐ。</h3><p>普段のYouTubeタブへの接続、再生時刻、目印、メモを一つの流れで扱う設計です。</p></figcaption></figure>
+          <figure class="reveal"><picture><source srcset="../../images/assets/products/kotolvi/kotolvi-obs.avif" type="image/avif"><source srcset="../../images/assets/products/kotolvi/kotolvi-obs.webp" type="image/webp"><img src="../../images/assets/products/kotolvi/kotolvi-obs.png" width="1920" height="1080" alt="字幕入力、話者色、プリセット、出力プレビューを表示する開発中のOBS字幕スタジオ画面" loading="lazy" decoding="async"></picture><figcaption><span>OBS CAPTION STUDIO</span><h3>訳文を、配信で読める字幕へ。</h3><p>話者色、レイアウト、出力プレビューを確認してからOBSへ渡します。</p></figcaption></figure>
+          <figure class="reveal" style="--delay:60ms"><picture><source srcset="../../images/assets/products/kotolvi/kotolvi-myvoice.avif" type="image/avif"><source srcset="../../images/assets/products/kotolvi/kotolvi-myvoice.webp" type="image/webp"><img src="../../images/assets/products/kotolvi/kotolvi-myvoice.png" width="1920" height="1080" alt="読み上げ台本、採録時間、音声ファイル取込を表示する開発中の本人声素材画面" loading="lazy" decoding="async"></picture><figcaption><span>YOUR VOICE</span><h3>自分の声を、許可と確認のある素材へ。</h3><p>採録、取込、区間確認を分け、本人の確認なしに学習済みと扱わない設計です。</p></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="kotolvi-section kotolvi-plans" id="plans" data-section>
+      <div class="kotolvi-shell">
+        <header class="kotolvi-heading kotolvi-heading-light reveal"><p>PLANNED EDITIONS</p><h2>まず試せる入口と、<br><span>続けて使う機能を<br>分ける。</span></h2><p>価格と機能配分は発売前の方針で、ストア設定済みの価格ではありません。購入・復元・返金の実機試験後に確定します。</p></header>
+        <div class="kotolvi-plan-grid">
+          <article class="reveal"><p>FREE</p><h3><span>¥</span>0</h3><b>基本の字幕体験</b><ul><li>会話・字幕の基本導線</li><li>OBSで試せる入口</li><li>機能範囲は発売ビルドで確定</li></ul></article>
+          <article class="is-focus reveal" style="--delay:60ms"><p>PRO</p><h3><span>¥</span>6,480<small> / 買切り方針</small></h3><b>保存・再開を含む日常利用</b><ul><li>履歴や素材を扱う機能案</li><li>翻訳作業を続きから再開</li><li>購入権の復元試験は未完了</li></ul></article>
+          <article class="reveal" style="--delay:120ms"><p>MAX</p><h3><span>¥</span>8,980<small> / 初期価格案</small></h3><b>拡張機能を含む上位版</b><ul><li>通常価格案は12,800円</li><li>Max固有機能は未確定</li><li>初期期間と終了日は未決定</li></ul></article>
+        </div>
+        <p class="kotolvi-plan-note reveal">SteamとMicrosoft Storeで同時期に国内発売する方針です。発売日、海外価格、各版の最終機能は未決定です。</p>
+      </div>
+    </section>
+
+    <section class="kotolvi-section kotolvi-status-section" id="status" data-section>
+      <div class="kotolvi-shell">
+        <header class="kotolvi-heading reveal"><p>WHERE WE ARE</p><h2>できたことと、<br><span>発売できることを<br>混ぜない。</span></h2><p>現在は機能統合中で、Windows閉鎖試用の前です。設計資料のレビュー合格は、販売版の完成やストア審査通過を意味しません。</p></header>
+        <div class="kotolvi-status-grid">
+          <article class="is-done reveal"><span>CONFIRMED IN BOUNDED TESTS</span><h3>限定条件で確認済み</h3><ul><li>会話・動画・範囲・議事録をつなぐ操作モック</li><li>普段のYouTubeタブとの時刻同期と切替・終了時の消去</li><li>PC AのOBS表示、透過、話者色の一部条件</li><li>本人声素材の取込・境界候補・明示承認の導線</li></ul></article>
+          <article class="is-now reveal" style="--delay:70ms"><span>INTEGRATION NOW</span><h3>いま統合していること</h3><ul><li>個別画面を一つのWindows製品としてつなぐ</li><li>実会話・自然音声・一般動画での通し評価</li><li>UIと翻訳方向、対応言語の境界整理</li><li>販売名、規約、権利、ストア説明の確定</li></ul></article>
+          <article class="is-next reveal" style="--delay:140ms"><span>BEFORE RELEASE</span><h3>発売前に残ること</h3><ul><li>署名済みEXEのクリーン導入・再起動・削除・復元</li><li>全字幕テーマと長文・再接続のOBS実機試験</li><li>Steam／Microsoft Storeの購入・復元・返金・審査</li><li>価格、版別機能、発売日、サポート窓口の最終決定</li></ul></article>
+        </div>
+        <aside class="kotolvi-honesty reveal"><b>LOCAL-FIRST, NOT MAGIC</b><p>字幕がない任意動画から必ず自動生成できる、あらゆる会議アプリへ自動接続できる、本人声が完成している、といった説明はしません。対応範囲は実装・実機確認に合わせて更新します。</p></aside>
+      </div>
+    </section>
+
+    <section class="kotolvi-section kotolvi-maker" data-section>
+      <div class="kotolvi-shell kotolvi-maker-grid">
+        <div class="reveal"><p>DEVELOPED BY BAI</p><h2>開発と表現を、<br>同じ現場でつなぐ。</h2></div>
+        <div class="reveal" style="--delay:80ms"><p>BAIは、配信・映像・音声・ローカルAIの実制作で生まれた不便を、使える道具へ変える開発活動です。KOTOLVIでは翻訳だけでなく、視聴、配信、記録までを一つの体験として設計します。</p><a href="../../about-isamu/">つくる人と活動を見る <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+    <section class="kotolvi-section kotolvi-faq" id="faq" data-section>
+      <div class="kotolvi-shell">
+        <header class="kotolvi-heading reveal"><p>QUESTIONS</p><h2>発売前に、<br><span>分かっていること。</span></h2></header>
+        <div class="kotolvi-faq-list">
+          <details class="reveal"><summary>いまダウンロードできますか？</summary><p>まだできません。現在は機能統合中で、Windows閉鎖試用、署名済みEXE、ストア購入・復元試験が残っています。</p></details>
+          <details class="reveal"><summary>KOTOLVIは正式名称ですか？</summary><p>現時点では販売名の第一候補です。商標・同名サービス・ストア表示を最終確認するまで正式採用とは扱いません。開発中画面には現行コード名「BAI ATLAS」が表示されます。</p></details>
+          <details class="reveal"><summary>すべてクラウドで処理しますか？</summary><p>ローカル処理を中心に設計しています。ただしYouTube再生やストア、連携先など、外部サービスが必要な機能もあります。機能ごとに通信条件を明示します。</p></details>
+          <details class="reveal"><summary>最初の10言語はどれですか？</summary><p>音声翻訳の初期対応対象は、日本語・英語・韓国語・中国語（簡体字）・スペイン語・フランス語・ドイツ語・ポルトガル語・イタリア語・ロシア語です。試用版では、まず日本語から本人声の英語を送る経路と、英語を日本語で受ける経路を確認しています。</p><p>動画字幕プレイヤーの操作画面では、日本語・英語・韓国語・簡体字中国語の4言語を切り替えられます。</p></details>
+          <details class="reveal"><summary>価格は確定していますか？</summary><p>いいえ。Free 0円、Pro 6,480円、Max初期8,980円／通常12,800円は国内の価格方針です。版別機能、発売日、ストア設定、購入復元の確認後に確定します。</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="kotolvi-final" data-section>
+      <div class="kotolvi-shell reveal"><div><p>PRE-LAUNCH / KOTOLVI</p><h2>ことばの壁を、<br>作業の壁にしない。</h2><span>公開前ページへの感想や、使いたい場面を聞かせてください。</span></div><div class="kotolvi-final-actions"><a class="kotolvi-button kotolvi-button-light" data-cta-id="kotolvi-final-contact" href="../../contact/#form">相談内容とフォームを確認する <span aria-hidden="true">→</span></a><a href="../">プロダクト一覧へ戻る →</a></div></div>
+    </section>
+  </main>
+
+  {% include "partials/footer.njk" %}
+</body>
+</html>

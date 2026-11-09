@@ -1,0 +1,37 @@
+---
+pageKey: portfolio
+rootPath: "../"
+sectionPath: "../"
+---
+{% set metaTitle = "実績・作品・開発ポートフォリオ｜開発と表現" %}
+{% set metaDescription = "Web開発で担当した仕事と、バイサウンド名義で制作した受賞MVを紹介します。" %}
+{% set canonicalPath = "/portfolio/" %}
+{% set metaCurrentTitle = "実績・作品" %}
+{% set metaSchemaType = "CollectionPage" %}
+{% set metaImage = "/images/assets/youtube/sRgZwjuOr3A.jpg" %}
+{% set metaImageAlt = "Trick or Moonlight!のMVNT Halloween Danceathon応募作品" %}
+{% from "partials/video-player.njk" import videoPlayer %}
+<!doctype html>
+<html lang="ja">
+<head>
+  {% include "partials/analytics-head.njk" %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+{% include "partials/meta.njk" %}
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/subpages.css">
+  <link rel="stylesheet" href="../css/portfolio.css">
+  <script src="../scripts/script.js" defer></script>
+  <link rel="stylesheet" href="../css/selected-work.css">
+  <link rel="stylesheet" href="{{ rootPath }}css/inline-video.css">
+  <script src="{{ rootPath }}scripts/inline-video.js" defer></script>
+</head>
+<body>
+  {% include "partials/analytics-body.njk" %}
+  {% include "partials/header.njk" %}
+
+  <main id="content" class="folio-page"><div class="folio-shell"><header class="folio-title" id="top"><a href="../">開発と表現</a><h1>実績・作品</h1><p>Web開発で担当した仕事と、バイサウンド名義で制作した受賞MVを紹介します。</p></header><nav class="work-jumps" aria-label="実績の種類"><a href="#career">Web開発</a><a href="#awards">受賞MV</a><a href="#works">制作の裏側</a><a href="#video-library">これまでの動画</a></nav><article class="folio-row" id="career"><h2>Web開発の実績</h2><div><p>ECの管理画面・認証連携、データベースの移行・性能改善を担当してきました。</p><a href="../about-isamu/#career">経歴と担当内容を見る →</a></div></article><section class="folio-block" id="awards"><h2>MVNTの受賞作品</h2><p>賞名と順位は、本人が保管しているMVNTの受賞発表記録に基づきます。</p><div class="film-pair">{% for f in featuredFilms %}{% if loop.index <= 2 %}<article>{{ videoPlayer(f, "../images/assets/youtube/" ~ f.id ~ ".jpg") }}<small>{{ f.badge }}</small><h3>{{ f.title }}</h3><p>{{ f.role }}</p></article>{% endif %}{% endfor %}</div></section><section class="folio-block" id="works"><h2>制作の裏側</h2><div class="film-trio">{% for f in featuredFilms %}{% if loop.index > 2 %}<article>{{ videoPlayer(f, "../images/assets/youtube/" ~ f.id ~ ".jpg") }}<small>{{ f.badge }}</small><h3>{{ f.title }}</h3><p>{{ f.role }}</p></article>{% endif %}{% endfor %}</div></section><section id="video-library" class="folio-block"><h2>これまでの動画</h2><ul class="library-list">{% for film in videoLibrary %}<li><small>{{ film.channel }}</small>{{ videoPlayer(film) }}</li>{% endfor %}</ul></section><article class="folio-row" id="projects"><h2>開発したツール</h2><div><p>映像制作、音声入力、ゲーム配信で使うツールを開発しています。</p><a href="../products/">ツールの画面と提供状況を見る →</a></div></article><div class="folio-end"><a class="form-btn" href="../contact/#form">開発・制作を相談する →</a></div></div></main>
+
+  {% include "partials/footer.njk" %}
+</body>
+</html>

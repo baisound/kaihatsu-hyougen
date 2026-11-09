@@ -1,0 +1,41 @@
+[
+  {
+    "id": "sRgZwjuOr3A",
+    "title": "Trick or Moonlight!",
+    "badge": "2026年11月受賞 · MVNT Spooky Szn 1位",
+    "role": "3人のダンスをBlenderで調整し、Unreal EngineでハロウィンのMVに仕上げました。",
+    "channel": "バイサウンド",
+    "latest": true,
+    "published": "2026-10-31"
+  },
+  {
+    "id": "fvNRYEmh6JQ",
+    "title": "境界 - KYO-KAI -",
+    "badge": "2026年10月受賞 · MVNT Danceathon「Human × AI」賞",
+    "role": "自作曲に合わせて指や手首の動きを直し、3Dダンスと歌詞を編集したMVです。",
+    "channel": "バイサウンド"
+  },
+  {
+    "id": "gvfFCDpU3rI",
+    "title": "自作アニメ V02 プリビズ",
+    "badge": "アニメ試作",
+    "role": "本番の映像を作る前に、カメラ位置と動きを確かめるための試作です。",
+    "channel": "いさむの開発×表現 裏側ch",
+    "latest": true,
+    "published": "2026-11-04"
+  },
+  {
+    "id": "1AoEFFYh3ss",
+    "title": "『境界』の指はどう直したか",
+    "badge": "3Dモーション修正",
+    "role": "手首は動くのに指が動かない。MVのダンスを9時間・12版にわたって直した制作記録です。",
+    "channel": "バイサウンド"
+  },
+  {
+    "id": "CDraJp9VfDk",
+    "title": "ゲームの足音を聴き比べる",
+    "badge": "整音・EQ",
+    "role": "加工前の音とEQ調整後の音を並べ、足音やうめき声の聞こえ方を比較します。",
+    "channel": "いさむの開発×表現 裏側ch"
+  }
+]

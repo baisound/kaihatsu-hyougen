@@ -82,41 +82,21 @@
   updateScrollEffects();
 
   const sendAnalyticsEvent = (name, parameters) => {
-    if (window.siteAnalyticsConsent && window.siteAnalyticsConsent.get() !== 'granted') return;
+    if (!window.siteAnalyticsEnabled) return;
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
+      // GTM retains data layer values across events. Clear fields from the previous click.
+      cta_id: undefined,
+      cta_text: undefined,
+      cta_location: undefined,
+      link_url: undefined,
+      content_type: undefined,
+      item_id: undefined,
       event: name,
       site_environment: ['localhost', '127.0.0.1'].includes(window.location.hostname) ? 'local' : 'production',
       ...parameters
     });
   };
-
-  const consentApi = window.siteAnalyticsConsent;
-  const consentPanel = document.querySelector('[data-consent-panel]');
-  const consentManage = document.querySelector('[data-consent-manage]');
-
-  const setConsentPanel = (open) => {
-    if (!consentPanel) return;
-    consentPanel.hidden = !open;
-    document.body.classList.toggle('consent-panel-open', open);
-    if (open) consentPanel.querySelector('[data-consent-choice="granted"]')?.focus({ preventScroll: true });
-  };
-
-  if (consentApi && consentPanel) {
-    if (consentApi.get() === null) setConsentPanel(true);
-
-    consentPanel.querySelectorAll('[data-consent-choice]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const previous = consentApi.get();
-        const choice = button.dataset.consentChoice;
-        consentApi.set(choice);
-        setConsentPanel(false);
-        if (previous === 'granted' && choice === 'denied') window.location.reload();
-      });
-    });
-
-    consentManage?.addEventListener('click', () => setConsentPanel(true));
-  }
 
   const getLinkText = (link) => (
     link.getAttribute('aria-label') || link.textContent || ''
@@ -133,9 +113,13 @@
     || `${getLinkLocation(link)}:${url.pathname || 'page'}:${url.hash || 'link'}`
   ).toString().slice(0, 100);
 
+  document.addEventListener('site-video-select', ({ detail }) => {
+    sendAnalyticsEvent('select_content', { content_type: 'youtube_video', item_id: detail.id });
+  });
+
   const getYouTubeId = (url) => {
     if (url.hostname === 'youtu.be') return url.pathname.slice(1);
-    return url.searchParams.get('v') || url.pathname.split('/').filter(Boolean).pop();
+    return url.searchParams.get('v');
   };
 
   document.addEventListener('click', (event) => {
@@ -158,14 +142,16 @@
     }
 
     if (url.hostname === 'youtube.com' || url.hostname === 'www.youtube.com' || url.hostname === 'youtu.be') {
+      const videoId = getYouTubeId(url);
+      const channel = url.pathname.split('/').find(part => part.startsWith('@'));
       sendAnalyticsEvent('select_content', {
-        content_type: 'youtube_video',
-        item_id: getYouTubeId(url)
+        content_type: videoId ? 'youtube_video' : 'youtube_channel',
+        item_id: videoId || channel || url.pathname
       });
       return;
     }
 
-    if (link.matches('.action')) {
+    if (['http:', 'https:'].includes(url.protocol)) {
       sendAnalyticsEvent('cta_click', {
         cta_id: ctaId,
         cta_text: ctaText,

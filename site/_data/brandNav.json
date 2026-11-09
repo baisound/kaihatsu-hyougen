@@ -1,0 +1,40 @@
+[
+  {
+    "label": "仕事内容",
+    "path": "services/",
+    "activePages": [
+      "services"
+    ]
+  },
+  {
+    "label": "技術スタック",
+    "path": "skills/#stack",
+    "activePages": [
+      "skills"
+    ]
+  },
+  {
+    "label": "開発ツール",
+    "path": "products/",
+    "activePages": [
+      "products",
+      "bvp",
+      "productDetail",
+      "kotolvi"
+    ]
+  },
+  {
+    "label": "実績・作品",
+    "path": "portfolio/",
+    "activePages": [
+      "portfolio"
+    ]
+  },
+  {
+    "label": "いさむについて",
+    "path": "about-isamu/",
+    "activePages": [
+      "about"
+    ]
+  }
+]

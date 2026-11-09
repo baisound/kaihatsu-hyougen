@@ -1,0 +1,74 @@
+[
+  {
+    "name": "KOTOLVI / BAI ATLAS",
+    "type": "翻訳ワークスペース",
+    "status": "機能統合中",
+    "tone": "product",
+    "summary": "会話、動画字幕、OBS字幕、議事録を一つのWindowsワークスペースへまとめる発売準備中の製品です。",
+    "href": "https://baisound.github.io/BAI-Atlas-Live/",
+    "external": true,
+    "linkLabel": "KOTOLVI 製品サイト"
+  },
+  {
+    "name": "BAI Creator Studio",
+    "type": "クリエイティブ制作環境",
+    "status": "開発中",
+    "tone": "creative",
+    "summary": "素材、編集、音声、書き出しを一つの制作画面へつなぐデスクトップ制作環境です。",
+    "href": "https://github.com/baisound/BAI_CREATER_STUDIO",
+    "external": true,
+    "linkLabel": "公開リポジトリ"
+  },
+  {
+    "name": "BAI VIDEO PRODUCTION",
+    "type": "動画制作ワークフロー",
+    "status": "Alpha・検証中",
+    "tone": "creative",
+    "summary": "映像・音声の分析から字幕、編集判断、DaVinci Resolveへの受け渡しまでを扱います。",
+    "href": "/products/bai-video-production/",
+    "external": false,
+    "linkLabel": "製品ページ"
+  },
+  {
+    "name": "BAI CineForge",
+    "type": "AI映像・3D制作",
+    "status": "開発中",
+    "tone": "creative",
+    "summary": "Blenderを土台に、素材管理、AI提案、編集、映像出力を段階的につなぐ制作システムです。"
+  },
+  {
+    "name": "BAI ChaosGuard",
+    "type": "3D品質検査",
+    "status": "開発・実機検証中",
+    "tone": "engineering",
+    "summary": "Unreal Engine上の衣装・身体の干渉を検出し、非破壊で修正候補と証拠を残す開発ツールです。"
+  },
+  {
+    "name": "BAI Relay",
+    "type": "安全な作業引継ぎ",
+    "status": "開発・QA中",
+    "tone": "engineering",
+    "summary": "大きな制作・開発作業を、履歴と検査結果を保ったまま別の環境へ渡すためのローカルツールです。"
+  },
+  {
+    "name": "BAI Local Dev AI",
+    "type": "ローカル開発AI",
+    "status": "移送・実機検証中",
+    "tone": "foundation",
+    "summary": "GPUを使うローカル開発支援を、再現可能なコード、テスト、結果、復旧手順と一緒に整えます。"
+  },
+  {
+    "name": "BAI SFX Engine",
+    "type": "効果音検索・設計",
+    "status": "開発中",
+    "tone": "creative",
+    "summary": "効果音の解析、意味検索、参照比較、タイムライン上の音設計をローカルで支援します。"
+  },
+  {
+    "name": "BAI My Voice",
+    "type": "本人声TTS研究",
+    "status": "研究・評価中",
+    "tone": "research",
+    "summary": "本人声の収録・区間確認・学習候補・試聴評価を分け、多言語会話への接続を検証しています。"
+  }
+]
