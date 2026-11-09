@@ -1,0 +1,15 @@
+{% macro videoPlayer(film, poster='', priority=false) %}
+<div class="inline-video{% if not poster %} inline-video-compact{% endif %}">
+  <button type="button" class="video-trigger" data-video-id="{{ film.id }}" data-video-title="{{ film.title }}" aria-label="{{ film.title }}を再生">
+    {% if poster %}
+    <img src="{{ poster }}" width="640" height="360" alt="" {% if priority %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>
+    <span class="video-play-label">▶ 再生</span>
+    {% else %}
+    <span aria-hidden="true">▶</span> {{ film.title }}
+    {% endif %}
+  </button>
+  <noscript>
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ film.id }}?playsinline=1" loading="lazy" title="{{ film.title }}" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </noscript>
+</div>
+{% endmacro %}

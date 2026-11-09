@@ -55,9 +55,10 @@ for (const file of htmlFiles) {
   const noscriptCount = html.split("googletagmanager.com/ns.html?id=").length - 1;
   const directGaCount = html.split("googletagmanager.com/gtag/js").length - 1;
   const expectedIdCount = expectedId ? html.split(expectedId).length - 1 : 0;
-  const consentApiCount = html.split("siteAnalyticsConsent=").length - 1;
   const consentPanelCount = html.split("data-consent-panel").length - 1;
-  const analyticsDeniedCount = html.split("analytics_storage:choice==='granted'?'granted':'denied'").length - 1;
+  if (consentPanelCount || html.includes("data-consent-manage")) {
+    throw new Error(file + ": 削除した解析設定UIが残っています。");
+  }
 
   if (expectDisabled) {
     if (loaderCount !== 0 || noscriptCount !== 0 || directGaCount !== 0 || expectedIdCount !== 0 || consentPanelCount !== 0) {
@@ -66,13 +67,13 @@ for (const file of htmlFiles) {
     continue;
   }
 
-  if (loaderCount !== 1 || noscriptCount !== 0 || expectedIdCount !== 1 || directGaCount !== 0 || consentApiCount !== 1 || consentPanelCount !== 1 || analyticsDeniedCount !== 1) {
-    throw new Error(`${file}: GTM loader=${loaderCount}, noscript=${noscriptCount}, expected ID=${expectedIdCount}, direct gtag=${directGaCount}, consent API=${consentApiCount}, consent panel=${consentPanelCount}, denied default=${analyticsDeniedCount}`);
+  if (loaderCount !== 1 || noscriptCount !== 0 || expectedIdCount !== 1 || directGaCount !== 0 || !html.includes("window.siteAnalyticsEnabled = true") || !html.includes("ad_storage: 'denied'")) {
+    throw new Error(`${file}: GTM loader=${loaderCount}, noscript=${noscriptCount}, expected ID=${expectedIdCount}, direct gtag=${directGaCount}`);
   }
 }
 
 if (expectDisabled) {
   console.log(`${pageFiles.length}テンプレートが共有partialを参照し、通常ローカル生成${htmlFiles.length} HTMLはGTM/gtag 0件です。`);
 } else {
-  console.log(`${pageFiles.length}テンプレートが共有partialを各1回参照し、${htmlFiles.length} HTMLは同意前GTM未読込・広告同意拒否・${expectedId}の許可後loader各1件・直接gtag 0件です。`);
+  console.log(`${pageFiles.length}テンプレートが共有partialを各1回参照し、${htmlFiles.length} HTMLは同意パネル0件・広告用途無効・${expectedId}のloader各1件・直接gtag 0件です。`);
 }

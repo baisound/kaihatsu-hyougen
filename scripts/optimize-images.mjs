@@ -30,7 +30,11 @@ const sourceNames = [
   "products/creator-streaming-tools-concept-v1",
   "products/bai-development-os-concept-v1",
   "products/bai-knowledge-hub-concept-v1",
-  "products/bai-development-hub-concept-v1"
+  "products/bai-development-hub-concept-v1",
+  "products/kotolvi/kotolvi-talk",
+  "products/kotolvi/kotolvi-video",
+  "products/kotolvi/kotolvi-obs",
+  "products/kotolvi/kotolvi-myvoice"
 ];
 
 async function needsUpdate(sourcePath, outputPath) {

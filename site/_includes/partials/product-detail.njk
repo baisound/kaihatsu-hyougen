@@ -59,7 +59,7 @@
 
     <section class="product-detail2-section" id="problems" data-section>
       <div class="product-detail2-shell">
-        <div class="product-detail2-heading reveal"><p class="connection-label cyan"><i></i>PROBLEMS</p><h2>この道具が向き合う、<br><span class="word-development">3つの困りごと。</span></h2><p>{{ product.summary }}</p></div>
+        <div class="product-detail2-heading reveal"><p class="connection-label cyan"><i></i>PROBLEMS</p><h2>どんな作業に使うか</h2></div>
         <div class="product-detail2-card-grid">
           {% for item in product.problems %}
           <article class="product-detail2-card reveal" style="--delay:{{ loop.index0 * 60 }}ms"><span>0{{ loop.index }}</span><h3>{{ item.title }}</h3><p>{{ item.text }}</p></article>
@@ -70,7 +70,7 @@
 
     <section class="product-detail2-section product-detail2-changes" id="changes" data-section>
       <div class="product-detail2-shell">
-        <div class="product-detail2-heading reveal"><p class="connection-label orange"><i></i>WHAT CHANGES</p><h2>できることではなく、<br><span class="word-expression">仕事の変わり方</span>で見る。</h2><p>機能名を覚えなくても、利用前と利用後の違いが分かるように整理しています。</p></div>
+        <div class="product-detail2-heading reveal"><p class="connection-label orange"><i></i>WHAT CHANGES</p><h2>主な機能</h2></div>
         <div class="product-detail2-change-grid">
           {% for item in product.changes %}
           <article class="reveal" style="--delay:{{ loop.index0 * 60 }}ms"><div>{{ item.mark }}</div><h3>{{ item.title }}</h3><p>{{ item.text }}</p></article>
@@ -81,7 +81,7 @@
 
     <section class="product-detail2-section" id="workflow" data-section>
       <div class="product-detail2-shell">
-        <div class="product-detail2-heading reveal"><p class="connection-label violet"><i></i>WORKFLOW</p><h2>使う時の流れを、<br><span class="word-connect">4つに絞る。</span></h2><p>内部の技術構成ではなく、利用者や運用担当が行う順番で説明します。</p></div>
+        <div class="product-detail2-heading reveal"><p class="connection-label violet"><i></i>WORKFLOW</p><h2>使い方</h2></div>
         <ol class="product-detail2-steps">
           {% for item in product.workflow %}
           <li class="reveal" style="--delay:{{ loop.index0 * 50 }}ms"><span>0{{ loop.index }}</span><h3>{{ item.title }}</h3><p>{{ item.text }}</p></li>
@@ -92,14 +92,14 @@
 
     <section class="product-detail2-section product-detail2-status-section" id="status" data-section>
       <div class="product-detail2-shell">
-        <div class="product-detail2-heading reveal"><p class="connection-label orange"><i></i>CURRENT STATUS</p><h2>完成したように見せず、<br><span class="word-expression">いまの位置</span>を伝える。</h2><p>提供中、開発中、設計中、基盤検証中を混ぜず、現在確認できている範囲で示します。</p></div>
+        <div class="product-detail2-heading reveal"><p class="connection-label orange"><i></i>CURRENT STATUS</p><h2>開発・提供状況</h2></div>
         <div class="product-detail2-status-grid">
           {% for item in product.current %}
           <article class="is-{{ item.tone }} reveal" style="--delay:{{ loop.index0 * 60 }}ms"><span>{{ item.label }}</span><h3>{{ item.title }}</h3><p>{{ item.text }}</p></article>
           {% endfor %}
         </div>
         <details class="product-detail2-evidence reveal">
-          <summary><span>説明の根拠を確認する</span><small>確認できていること</small></summary>
+          <summary><span>開発記録</span><small>確認できていること</small></summary>
           <ul>{% for item in product.evidence %}<li>{{ item }}</li>{% endfor %}</ul>
         </details>
       </div>
@@ -107,7 +107,7 @@
 
     <section class="product-detail2-section" id="boundaries" data-section>
       <div class="product-detail2-shell">
-        <div class="product-detail2-heading reveal"><p class="connection-label violet"><i></i>BOUNDARIES</p><h2>便利さと同じくらい、<br><span class="word-connect">大切にすること。</span></h2><p>自動化や連携を広げる前に、利用者の判断、元データ、公開範囲を守る境界を決めます。</p></div>
+        <div class="product-detail2-heading reveal"><p class="connection-label violet"><i></i>BOUNDARIES</p><h2>利用上の注意</h2></div>
         <div class="product-detail2-boundary-grid">
           {% for item in product.boundaries %}
           <article class="reveal" style="--delay:{{ loop.index0 * 60 }}ms"><h3>{{ item.title }}</h3><p>{{ item.text }}</p></article>
@@ -129,7 +129,7 @@
 
     <section class="product-detail2-final" data-section>
       <div class="product-detail2-shell reveal">
-        <div><span>DISCUSS THE USE CASE</span><h2>この製品で変えたい工程を、聞かせてください。</h2><p>現在の作り方や運用を伺い、支援できる範囲と、まだできないことを分けてお伝えします。</p></div>
+        <div><span>DISCUSS THE USE CASE</span><h2>このツールについて相談する</h2><p>現在の作り方や運用を伺い、支援できる範囲と、まだできないことを分けてお伝えします。</p></div>
         <div class="product-detail2-final-actions"><a class="action action-white" data-cta-id="product-{{ productSlug }}-contact" href="../../contact/#form"><span>相談内容とフォームを確認する</span><span aria-hidden="true">→</span></a><a href="../">プロダクト一覧へ戻る →</a></div>
       </div>
     </section>
